@@ -12,20 +12,21 @@
                 </div>
                 <div class="max-w-xl py-2 ">
                     <div class="group relative py-4 px-4">
-                        <h3 class="mt-1 text-secondary-500 text-lg md:text-2xl font-bold leading-6">
+                        <h3 class="mt-1 text-primary-500 text-lg md:text-2xl font-bold leading-6">
                             <a href="{{ route('permalink.show', $project->link?->slug) }}">
                                 <span class="absolute inset-0 text-center"></span>
                                 {{ $project->name }}
                             </a>
                         </h3>
                         <div>
-                            <p class="flex flex-col md:flex-row justify-between gap-4"><span class="font-bold text-secondary-500">Purpose</span> :
-                                <span class="font-light  text-md ">
+                            <p class="flex flex-col md:flex-row justify-between gap-4">
+                                <span class="font-bold text-secondary-500">Purpose</span> :
+                                <span class="font-normal ">
                                 {{ $project->purpose }}
                                 </span>
                             </p>
                             <p class="flex flex-col md:flex-row justify-between"><span class="font-bold text-secondary-500">Location: </span>
-                                <span class="font-light  text-md ">
+                                <span class="font-normal ">
                                     {{ $project->location }}
                                 </span>
                             </p>
