@@ -4,7 +4,7 @@
 
  @endphp
 
-<div class="bg-gray-950 text-white md:fixed md:top-0 left-0 right-0 md:z-50 mt-0 pt-0" x-data="{ open: false }">
+<div class="bg-secondary-900 text-white md:fixed md:top-0 left-0 right-0 md:z-50 mt-0 pt-0" x-data="{ open: false }">
     <div class=" mx-auto w-4/5 lg:max-w-7xl">
         <div class="container py-2 md:py-2 flex  flex-col md:flex-row  md:justify-between">
 
