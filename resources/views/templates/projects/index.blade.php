@@ -15,6 +15,7 @@
                     <div class="md:mx-auto max-w-2xl text-center">
                         <div class="mt-10 flex items-center justify-center gap-x-6">
                             <a
+                                wire:navigate
                                 href="{{ route('permalink.show', $section->extra['project_link']) }}"
                                 class="button">
                                 View more Projects <span aria-hidden="true">→</span></a>

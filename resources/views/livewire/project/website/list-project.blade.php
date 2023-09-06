@@ -18,6 +18,10 @@
                                 {{ $project->name }}
                             </a>
                         </h3>
+                        <div>
+                            <p class="flex">Purpose: {{ $project->purpose }}</p>
+                            <p>Location: {{ $project->location }}</p>
+                        </div>
                         <div class="flex flex-row justify-between gap-4 w-auto">
 
                             <p class="mt-5 line-clamp-3 text-sm leading-1  font-semibold">
