@@ -27,11 +27,11 @@
         @livewireStyles
         {!! app(\App\Settings\ScriptSettings::class)?->header !!}
     </head>
-    <body class="h-full bg-gray-50 text-gray-900 antialiased">
+    <body class="h-full bg-gray-50 text-gray-900 font-sans">
     {!! app(\App\Settings\ScriptSettings::class)?->body !!}
 
     @include('layouts.partials.navigation',['options' => $options])
-        <div class="text-gray-900 antialiased ">
+        <div class="text-gray-900  ">
             {{ $slot }}
 
             @livewire('notifications')
