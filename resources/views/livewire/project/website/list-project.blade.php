@@ -31,12 +31,12 @@
                                     {{ $project->location }}
                                 </span>
                             </p>
-                        </div>
-                        <div class="flex flex-row justify-between gap-4 w-auto">
 
-                            <p class="mt-5 line-clamp-3 text-sm leading-1  font-semibold">
-                                {{  money($project->price , 'kes', true) }}
+                            <p>
+                                Discounted Cash Price of {{  money($project->price , 'kes', true) }}
                             </p>
+                        </div>
+                        <div class="flex flex-row justify-center gap-4 w-auto">
                             <a class="mt-5 @if($project->status == \App\Utils\Enums\ProjectStatusEnum::SOLD_OUT) bg-rose-600 @else  bg-primary-600 @endif button">
                                 View project
                             </a>
