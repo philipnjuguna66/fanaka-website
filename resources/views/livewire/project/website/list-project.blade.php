@@ -32,13 +32,15 @@
                                 </span>
                             </p>
 
-                            <p class="flex justify-center text-red-600">
+                            <p class="flex justify-center text-red-600 font-semibold">
                                 Discounted Cash Price of {{  money($project->price , 'kes', true) }}
                             </p>
                         </div>
                         <div class="flex flex-row justify-center gap-4 w-auto">
-                            <a class="mt-5 @if($project->status == \App\Utils\Enums\ProjectStatusEnum::SOLD_OUT) bg-rose-600 @else  bg-primary-600 @endif button">
-                                View project
+                            <a class="mt-5 button
+                            shadow-sm hover-shadow-2xl
+                             @if($project->status == \App\Utils\Enums\ProjectStatusEnum::SOLD_OUT) bg-rose-600 @else bg-white text-secondary-500  @endif ">
+                                View Details
                             </a>
 
                         </div>
