@@ -38,7 +38,7 @@
                         </div>
                         <div class="flex flex-row justify-center gap-4 w-auto">
                             <a class="mt-5 transition-all shadow-xl hover:shadow-2xl hover:border-transparent
-                             @if($project->status == \App\Utils\Enums\ProjectStatusEnum::SOLD_OUT) bg-rose-600 @else bg-white text-secondary-500  @endif ">
+                             @if($project->status == \App\Utils\Enums\ProjectStatusEnum::SOLD_OUT) bg-rose-600 @else bg-white text-secondary-500  @endif button ">
                                 View Details
                             </a>
 
