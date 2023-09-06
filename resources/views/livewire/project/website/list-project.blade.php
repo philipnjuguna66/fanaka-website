@@ -19,8 +19,16 @@
                             </a>
                         </h3>
                         <div>
-                            <p class="flex">Purpose: {{ $project->purpose }}</p>
-                            <p>Location: {{ $project->location }}</p>
+                            <p class="flex"><span class="font-bold text-primary-500">Purpose</span> :
+                                <span class="font-light ">
+                                {{ $project->purpose }}
+                                </span>
+                            </p>
+                            <p><span class="font-bold text-primary-500">Location</span>
+                                <span class="font-light ">
+                                    {{ $project->location }}
+                                </span>
+                            </p>
                         </div>
                         <div class="flex flex-row justify-between gap-4 w-auto">
 
