@@ -27,7 +27,7 @@
         @livewireStyles
         {!! app(\App\Settings\ScriptSettings::class)?->header !!}
     </head>
-    <body class="h-full bg-gray-50 text-gray-900 font-sans">
+    <body class="h-full bg-gray-50 text-gray-900 font-poppins">
     {!! app(\App\Settings\ScriptSettings::class)?->body !!}
 
     @include('layouts.partials.navigation',['options' => $options])
