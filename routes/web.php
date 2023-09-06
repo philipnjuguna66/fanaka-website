@@ -29,4 +29,5 @@ Route::get('/', function () {
 Route::redirect('/property','/properties-for-sale');
 
 Route::get('location/{branch:slug}', ShowLocationPageController::class)->name('permalink.location.show');
+Route::get('property/{permalink:slug}', ShowPageController::class)->name('permalink.property.show');
 Route::get('/{permalink:slug}', ShowPageController::class)->name('permalink.show');
