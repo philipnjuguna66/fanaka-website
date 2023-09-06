@@ -13,25 +13,19 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
 
-
-        <style>
-            body{
-                font-family: 'Poppins', sans-serif;
-            }
-        </style>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
         {!! app(\App\Settings\ScriptSettings::class)?->header !!}
     </head>
-    <body class="h-full bg-gray-50 text-gray-900 font-poppins">
+    <body class="h-full bg-gray-50 poppins text-gray-900 antialiased">
     {!! app(\App\Settings\ScriptSettings::class)?->body !!}
 
     @include('layouts.partials.navigation',['options' => $options])
-        <div class="text-gray-900  ">
+        <div class="font-poppins text-gray-900 antialiased ">
             {{ $slot }}
 
             @livewire('notifications')
