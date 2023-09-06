@@ -5,8 +5,6 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
             @if(isset(app(\App\Settings\FooterSettings::class)->sections  ) && is_array(app(\App\Settings\FooterSettings::class)->sections))
                 @foreach(app(\App\Settings\FooterSettings::class)->sections as $footerSection)
-
-
                         <div class="">
                             @if($footerSection['type'] == "text")
                             <div>
