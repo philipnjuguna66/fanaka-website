@@ -1,0 +1,47 @@
+<x-guest-layout>
+    @section('title', str($post?->meta_title)->headline()->title())
+    @section('description', $post?->meta_description)
+    @push('metas')
+
+
+        @meta("title", $post?->meta_title)
+        @meta("description", $post?->meta_description)
+    @endpush
+
+    <section class="mt-28 py-4 md:mx-auto max-w-7xl md:w-4/5">
+        <div class="mt-4">
+            <div class="bg-transparent px-6 pt-4 sm:pt-12 lg:px-8">
+                <h1 class="font-bold text-2xl">{{ $post->title }}</h1>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-2 px-8">
+                <img src="{{ \Illuminate\Support\Facades\Storage::url($post?->featured_image) }}"
+                     class="w-[800px] h-[500px] rounded-md   bg-gray-100 object-contain aspect-ratio"
+                     alt="{{ $post?->meta_title }}"
+                     loading="lazy"
+                >
+                <article class="prose max-w-7xl mt-12 text-justify">
+
+                    {{ new \Illuminate\Support\HtmlString($post?->body) }}
+                </article>
+            </div>
+            <div class="">
+
+                <div class="bg-white py-2 rounded-md shadow-xl shadow-gray-950/20">
+                    <livewire:contact.book-site-visit/>
+                </div>
+
+                    <div class="grid grid-cols-1  gap-2 my-12">
+                        <h3 class="font-bold text-xl pt-8">Latest projects</h3>
+                        <livewire:project.website.similar-project  :grid="1"/>
+                    </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+</x-guest-layout>
