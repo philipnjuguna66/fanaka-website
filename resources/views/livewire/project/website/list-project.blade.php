@@ -32,7 +32,7 @@
                                 </span>
                             </p>
 
-                            <p>
+                            <p class="flex justify-center text-red-600">
                                 Discounted Cash Price of {{  money($project->price , 'kes', true) }}
                             </p>
                         </div>
