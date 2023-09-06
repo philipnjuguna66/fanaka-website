@@ -61,6 +61,8 @@ class EditProject extends EditRecord
                 'map' => $data['map'],
                 'mutation' => $data['mutation'],
                 'meta_title' => $data['meta_title'],
+                'location' => $data['location'],
+                'purpose' => $data['purpose'],
                 'meta_description' => $data['meta_description'],
             ]);
 
