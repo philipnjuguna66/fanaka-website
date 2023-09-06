@@ -19,12 +19,12 @@
                             </a>
                         </h3>
                         <div>
-                            <p class="flex"><span class="font-bold text-primary-500">Purpose</span> :
+                            <p class="flex flex-col md:flex-row justify-between"><span class="font-bold text-primary-500">Purpose</span> :
                                 <span class="font-light ">
                                 {{ $project->purpose }}
                                 </span>
                             </p>
-                            <p><span class="font-bold text-primary-500">Location</span>
+                            <p class="flex flex-col md:flex-row justify-between"><span class="font-bold text-primary-500">Location: </span>
                                 <span class="font-light ">
                                     {{ $project->location }}
                                 </span>

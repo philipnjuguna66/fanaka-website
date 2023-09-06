@@ -25,7 +25,7 @@
     {!! app(\App\Settings\ScriptSettings::class)?->body !!}
 
     @include('layouts.partials.navigation',['options' => $options])
-        <div class="font-sans text-gray-900 antialiased ">
+        <div class="font-poppins text-gray-900 antialiased ">
             {{ $slot }}
 
             @livewire('notifications')
