@@ -38,7 +38,7 @@
             </div>
 
             <div class="flex">
-                <p class="prose  px-8 md:px-0 ">
+                <p class="prose-md tracking-normal leading-relaxed  px-8 md:px-0 ">
                     {{ str($page->body)->toHtmlString() }}
                 </p>
             </div>
