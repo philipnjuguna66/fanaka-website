@@ -126,7 +126,7 @@
             </div>
 
 
-            <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md py-12">
+                <div class="">
 
                 <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
 
