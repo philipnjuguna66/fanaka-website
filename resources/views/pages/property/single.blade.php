@@ -71,7 +71,7 @@
 
             </div>
 
-            <div class=" px-8 md:px-0">
+            <div class=" px-8 md:px-0 py-12">
 
                 @if(is_array($page->gallery))
 
@@ -94,7 +94,7 @@
             </div>
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
 
                 <div class="border-b-2 border-primary-500">
@@ -126,7 +126,7 @@
             </div>
 
 
-            <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
+            <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md py-12">
 
                 <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
 
