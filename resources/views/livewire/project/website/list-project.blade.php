@@ -37,8 +37,9 @@
                             </p>
                         </div>
                         <div class="flex flex-row justify-center gap-4 w-auto">
-                            <a class="mt-5 py-1 px-4 transition-all shadow-xl hover:shadow-2xl hover:border-transparent rounded-md font-bold
-                             @if($project->status == \App\Utils\Enums\ProjectStatusEnum::SOLD_OUT) bg-rose-600 @else bg-white text-secondary-500  @endif ">
+                            <a
+                                class="inline-flex items-center gap-x-1.5 rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-secondary-500 shadow-sm hover:bg-secondary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+                             @if($project->status == \App\Utils\Enums\ProjectStatusEnum::SOLD_OUT) bg-rose-600 @endif ">
                                 View Details
                             </a>
 
