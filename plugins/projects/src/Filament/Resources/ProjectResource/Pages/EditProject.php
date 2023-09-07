@@ -53,6 +53,7 @@ class EditProject extends EditRecord
                 'name' => $data['name'],
                 'status' => $data['status'],
                 'price' => $data['price'],
+                'cta' => $data['cta'],
                 'body' => $data['body'],
                 'amenities' => $data['amenities'],
                 'featured_image' => $data['featured_image'],

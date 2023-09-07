@@ -27,6 +27,7 @@ class CreateProject extends CreateRecord
                 'status' => $data['status'],
                 'price' => $data['price'],
                 'body' => $data['body'],
+                'cta' => $data['cta'],
                 'location' => $data['location'],
                 'purpose' => $data['purpose'],
                 'amenities' => $data['amenities'],
