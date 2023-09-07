@@ -25,11 +25,6 @@
                         @endif
 
 
-
-
-
-
-
                     </article>
                 </div>
 
@@ -40,15 +35,17 @@
 
             </div>
 
-
+            <div class="flex justify-center">
+                <p class="prose text-justify px-8 md:px-0 ">
+                    {{ str($page->body)->toHtmlString() }}
+                </p>
+            </div>
 
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
                 <div>
-                    <p class="prose text-justify px-8 md:px-0 ">
-                        {{ str($page->body)->toHtmlString() }}
-                    </p>
+
 
                     <div class="mt-2">
                         @if( ! is_null($page->map)  )
@@ -69,77 +66,75 @@
                         @endif
                     </div>
                 </div>
-                <div class="">
-
-
-                    <div  class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
-
-                        <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
-
-                        <livewire:project.website.similar-project :project="$page"/>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class=" px-8 md:px-0">
-
-                @if(is_array($page->gallery))
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-                        @foreach($page->gallery as $gallery)
-                            <div>
-
-                                <img class="h-auto w-full max-w-full rounded-lg object-cover object-center"
-                                     src="{{  \Illuminate\Support\Facades\Storage::url($gallery)}}"
-                                     alt="{{ $page->meta_title }}"
-                                >
-                            </div>
-                        @endforeach
-
-                    </div>
-                @endif
-
-
-
-            </div>
-
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-
-                <div class="border-b-2 border-primary-500">
-                    <livewire:contact.book-site-visit :page="$page->title"/>
-                </div>
-
-                <div class="">
-                    <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2"> Amenities and
-                        Features</h3>
-
-                    @if(is_array($page->amenities))
-                        <ul class="list-decimal mx-4">
-                            @foreach($page->amenities as $amenity => $value)
-
-                                <li class="px-8 font-semibold">
-                                    {{ str($value)->toHtmlString() }}
-                                </li>
-
-                            @endforeach
-                        </ul>
-                    @else
-                        <div class="px-8 py-4 prose">
-                            {{ str($page->amenities)->toHtmlString() }}
-                        </div>
-                    @endif
-
-                </div>
 
             </div>
 
         </div>
+
+        <div class=" px-8 md:px-0">
+
+            @if(is_array($page->gallery))
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                    @foreach($page->gallery as $gallery)
+                        <div>
+
+                            <img class="h-auto w-full max-w-full rounded-lg object-cover object-center"
+                                 src="{{  \Illuminate\Support\Facades\Storage::url($gallery)}}"
+                                 alt="{{ $page->meta_title }}"
+                            >
+                        </div>
+                    @endforeach
+
+                </div>
+            @endif
+
+
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+
+            <div class="border-b-2 border-primary-500">
+                <livewire:contact.book-site-visit :page="$page->title"/>
+            </div>
+
+            <div class="">
+                <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2"> Amenities and
+                    Features</h3>
+
+                @if(is_array($page->amenities))
+                    <ul class="list-decimal mx-4">
+                        @foreach($page->amenities as $amenity => $value)
+
+                            <li class="px-8 font-semibold">
+                                {{ str($value)->toHtmlString() }}
+                            </li>
+
+                        @endforeach
+                    </ul>
+                @else
+                    <div class="px-8 py-4 prose">
+                        {{ str($page->amenities)->toHtmlString() }}
+                    </div>
+                @endif
+
+            </div>
+
+        </div>
+
+
+        <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
+
+            <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
+
+            <livewire:project.website.similar-project :project="$page"/>
+        </div>
+
+
+    </div>
     </div>
 
 </x-guest-layout>
