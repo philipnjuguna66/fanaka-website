@@ -14,7 +14,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
-                <div class="flex justify-center px-8 md:px-0 py-8">
+                <div class="px-8 md:px-0 py-8">
 
                     <article class="prose  text-lg  ">
                         @if(! is_null($page->video_path))
