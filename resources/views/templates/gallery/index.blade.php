@@ -11,7 +11,7 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
 
-                    @foreach($section->extra['image'] as $image)
+                    @foreach($section->extra['images'] as $image)
                         <div>
 
                             <img class="h-auto max-w-full rounded-lg object-cover object-center"
