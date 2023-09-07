@@ -1,9 +1,7 @@
 <div class="">
-
-    <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center py-0"> Book a free site visit</h3>
     <form
         method="post"
-        class="filament-form font-extrabold px-6 pb-4 pt-4 sm:pb-4 lg:px-8 lg:py-4"
+        class="filament-form font-extrabold"
         wire:submit.prevent="bookVisit"
     >
         {{ $this->form }}
