@@ -16,7 +16,7 @@
 
                             <img class="h-auto max-w-full rounded-lg object-cover object-center"
                                  src="{{  \Illuminate\Support\Facades\Storage::url($image)}}"
-                                 alt="">
+                                 alt="{{ $page->meta_title }}">
                         </div>
                     @endforeach
 
