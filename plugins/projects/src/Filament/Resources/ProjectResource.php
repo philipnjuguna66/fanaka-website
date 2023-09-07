@@ -67,7 +67,8 @@ class ProjectResource extends Resource
                                     ->enum(fn() => ProjectStatusEnum::class)
                                     ->required(),
                                 TextInput::make('price')
-                                    ->numeric()
+                                    ->string()
+                                    ->helperText("e.g: 1.3M")
                                     ->required(),
                                 TextInput::make('video_path')
                                     ->maxLength(255),
