@@ -10,26 +10,37 @@
         <div class="mx-auto md:w-4/5 lg:max-w-7xl py-8 md:mt-20 md:py-12 ">
             <h1 class="py-4 font-extrabold text-2xl lg:text-4xl text-center uppercase px-8 md:px-0">{{ $page->name }}</h1>
 
-            <div class="flex justify-center px-8 md:px-0 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
-                <article class="prose  text-lg  ">
-                    @if(! is_null($page->video_path))
-                        @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $page->video_path, 'autoplay' => true ])
-                    @else
-                        <img class="h-auto w-full max-w-full rounded-lg object-cover object-center"
-                             src="{{  \Illuminate\Support\Facades\Storage::url($page->featured_image)}}"
-                             alt="{{ $page->meta_title }}"
-                        >
-                    @endif
+                <div class="flex justify-center px-8 md:px-0 py-8">
 
-
-
-
+                    <article class="prose  text-lg  ">
+                        @if(! is_null($page->video_path))
+                            @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $page->video_path, 'autoplay' => true ])
+                        @else
+                            <img class="h-auto w-full max-w-full rounded-lg object-cover object-center"
+                                 src="{{  \Illuminate\Support\Facades\Storage::url($page->featured_image)}}"
+                                 alt="{{ $page->meta_title }}"
+                            >
+                        @endif
 
 
 
-                </article>
+
+
+
+
+                    </article>
+                </div>
+
+
+                <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
+                    <livewire:contact.book-site-visit :page="$page->title"/>
+                </div>
+
             </div>
+
+
 
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
@@ -59,9 +70,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
-                        <livewire:contact.book-site-visit :page="$page->title"/>
-                    </div>
+
 
                     <div  class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
 
