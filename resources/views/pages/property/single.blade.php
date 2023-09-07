@@ -10,7 +10,7 @@
         <div class="mx-auto md:w-4/5 lg:max-w-7xl py-8 md:mt-20 md:py-12 ">
             <h1 class="py-4 font-extrabold text-2xl lg:text-4xl text-center uppercase px-8 md:px-0">{{ $page->name }}</h1>
 
-            <div class="flex justify-center px-8 md:px-0">
+            <div class="flex justify-center px-8 md:px-0 py-8">
 
                 <article class="prose  text-lg  ">
                     @if(! is_null($page->video_path))
@@ -32,7 +32,7 @@
             </div>
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
                 <div>
                     <p class="prose text-justify px-8 md:px-0 ">
