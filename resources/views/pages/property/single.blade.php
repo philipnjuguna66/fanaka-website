@@ -10,7 +10,7 @@
         <div class="mx-auto md:w-4/5 lg:max-w-7xl py-8 md:mt-20 md:py-12 ">
             <h1 class="py-4 font-extrabold text-2xl lg:text-4xl text-center uppercase px-8 md:px-0">{{ $page->name }}</h1>
 
-            <div class="col-span-3 px-8 md:px-0">
+            <div class="flex justify-center px-8 md:px-0">
 
                 <article class="prose  text-lg  ">
                     @if(! is_null($page->video_path))
@@ -60,6 +60,10 @@
                 </div>
                 <div class="border-b-2 border-primary-500">
                     <livewire:contact.book-site-visit :page="$page->title"/>
+
+                    <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
+
+                    <livewire:project.website.similar-project :project="$page"/>
                 </div>
 
             </div>
@@ -83,9 +87,7 @@
                     </div>
                 @endif
 
-                <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
 
-                <livewire:project.website.similar-project :project="$page"/>
 
             </div>
 
