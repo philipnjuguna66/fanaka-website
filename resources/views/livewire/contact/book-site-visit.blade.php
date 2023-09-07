@@ -1,4 +1,4 @@
-<div class="">
+<div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
     <form
         method="post"
         class="filament-form font-extrabold"

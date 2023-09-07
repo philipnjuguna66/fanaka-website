@@ -31,7 +31,7 @@
                 </div>
 
 
-                <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
+                <div class="">
                     <livewire:contact.book-site-visit :page="$page->title"/>
                 </div>
 
