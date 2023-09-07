@@ -98,6 +98,7 @@
 
 
                 <div class="">
+                    <p> BOOK A FREE SITE  </p>
                     <livewire:contact.book-site-visit :page="$page->title"/>
                 </div>
 
