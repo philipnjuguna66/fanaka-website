@@ -2,7 +2,7 @@
     <div class="mx-auto px-4 mt-16 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-4 lg:max-w-none lg:grid-cols-{{ $grid }}">
 
         @foreach($projects as $project)
-            <article class="flex flex-col items-start justify-between shadow-2xl shadow-gray-900/50 rounded-xl ">
+            <article class="bg-white flex flex-col items-start justify-between shadow-2xl shadow-gray-900/50 rounded-xl ">
                 <div class="relative w-full">
                     <img
                         src="{{ \Illuminate\Support\Facades\Storage::url($project->featured_image) }}"
