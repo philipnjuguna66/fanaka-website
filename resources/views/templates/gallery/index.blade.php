@@ -15,7 +15,7 @@
                         <div>
 
                             <img class="h-auto max-w-full rounded-lg object-cover object-center"
-                                 src="{{  \Illuminate\Support\Facades\Storage::url($image)}}"
+                                 src="{{  \Illuminate\Support\Facades\Storage::url($image['image'])}}"
                                  alt="{{ $page->meta_title }}">
                         </div>
                     @endforeach
@@ -31,10 +31,10 @@
                          <div class="relative h-56 overflow-hidden rounded-lg md:h-[500px]">
 
 
-                             @foreach($section->extra['image'] as $slider)
+                             @foreach($section->extra['images'] as $slider)
                                  <!-- Item {{ $loop->index + 1 }} -->
                                  <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                     <img src="{{  \Illuminate\Support\Facades\Storage::url($image)}}"
+                                     <img src="{{  \Illuminate\Support\Facades\Storage::url($image['image'])}}"
                                           class="w-[800px] h-auto absolute block max-w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
                                  </div>
 
