@@ -97,7 +97,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
 
-                <div class="border-b-2 border-primary-500">
+                <div class="">
                     <livewire:contact.book-site-visit :page="$page->title"/>
                 </div>
 
