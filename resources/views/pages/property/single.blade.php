@@ -58,7 +58,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="border-b-2 border-primary-500">
+                <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
                     <livewire:contact.book-site-visit :page="$page->title"/>
 
                     <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
