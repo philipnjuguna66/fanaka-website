@@ -33,7 +33,7 @@
                             </p>
 
                             <p class="flex justify-center text-red-600 font-semibold">
-                                Discounted Cash Price of {{  money($project->price , 'kes', true) }}
+                                Discounted Cash Price of Kes. {{ $project->price}}
                             </p>
                         </div>
                         <div class="flex flex-row justify-center gap-4 w-auto">
