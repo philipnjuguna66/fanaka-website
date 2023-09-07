@@ -35,7 +35,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 <div>
-                    <p class="prose  text-lg px-8 md:px-0 ">
+                    <p class="prose text-justify px-8 md:px-0 ">
                         {{ str($page->body)->toHtmlString() }}
                     </p>
 
@@ -58,12 +58,19 @@
                         @endif
                     </div>
                 </div>
-                <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
-                    <livewire:contact.book-site-visit :page="$page->title"/>
+                <div class="">
+                    <div class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
+                        <livewire:contact.book-site-visit :page="$page->title"/>
+                    </div>
 
-                    <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
+                    <div  class="border-b-2 border-primary-500 shadow-xl bg-white px-8 py-4 rounded-md">
 
-                    <livewire:project.website.similar-project :project="$page"/>
+                        <h3 class="py-4 mt-3 text-center font-bold text-md md:text-4xl">Similar Projects</h3>
+
+                        <livewire:project.website.similar-project :project="$page"/>
+                    </div>
+
+
                 </div>
 
             </div>
