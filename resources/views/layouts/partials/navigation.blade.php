@@ -73,7 +73,7 @@
 
     <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-2">
-            <a href="#" class="flex items-center">
+            <a href="/" class="flex items-center">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class="h-8 mr-3" alt="{{ $options?->name }}" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ $options?->name }}</span>
             </a>
