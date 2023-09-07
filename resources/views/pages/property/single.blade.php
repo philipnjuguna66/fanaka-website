@@ -38,7 +38,7 @@
             </div>
 
             <div class="block justify-center">
-                <p class="prose-md tracking-normal leading-relaxed  px-8 md:px-0 ">
+                <p class="prose leading-relaxed  px-8 md:px-0 py-2">
                     {{ str($page->body)->toHtmlString() }}
                 </p>
             </div>
