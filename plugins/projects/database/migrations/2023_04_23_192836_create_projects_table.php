@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name')->fulltext();
             $table->string('status')->default('for sale');
-            $table->decimal('price', 15, 2);
+            $table->string('price');
             $table->text('body')->nullable();
             $table->text('amenities');
             $table->string('featured_image');
