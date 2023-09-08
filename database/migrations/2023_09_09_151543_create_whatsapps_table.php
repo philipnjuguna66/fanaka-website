@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('whatsapps', function (Blueprint $table) {
 
-            $table->dropConstrainedForeignIdFor('location_id');
+            $table->dropConstrainedForeignIdFor(\Appsorigin\Plots\Models\Location::class);
 
             $table->dropForeign('location_id');
 
