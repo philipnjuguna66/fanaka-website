@@ -19,13 +19,13 @@
                             </a>
                         </h3>
                         <div>
-                            <p class="flex md:justify-between ">
+                            <p class="flex justify-between gap-4">
                                 <span class="font-bold text-secondary-500">Purpose: </span>
                                 <span class="font-normal ">
                                 {{ $project->purpose }}
                                 </span>
                             </p>
-                            <p class="flex  md:justify-between gap-4">
+                            <p class="flex justify-between gap-4">
                                 <span class="font-bold text-secondary-500">Location: </span>
                                 <span class="font-normal ">
                                     {{ $project->location }}
