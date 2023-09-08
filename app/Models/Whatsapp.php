@@ -11,8 +11,4 @@ class Whatsapp extends Model
 {
     use HasFactory;
 
-    public function branch() : BelongsTo
-    {
-        return  $this->belongsTo(Location::class);
-    }
 }
