@@ -10,7 +10,7 @@
 @endphp
 
 <iframe
-    src="{{ $videoUri }}?rel=0&&mute=0&controls=0&autoplay={{ isset($autopla) ?? 0 }}"
+    src="{{ $videoUri }}?rel=0&&mute=0&controls=0&autoplay={{ isset($autoplay) ?? 0 }}"
     class="w-full aspect-video"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
