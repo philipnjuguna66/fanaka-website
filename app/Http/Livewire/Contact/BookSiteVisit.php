@@ -53,7 +53,6 @@ class BookSiteVisit extends Component implements HasForms
                     ->pluck('name','name'))
                 ->searchable()
                 ->preload()
-                ->maxItems(5)
                 ->required(fn() : bool =>  ! filled($this->page))
                 ->hidden(fn() : bool =>   filled($this->page))
             ])->inlineLabel(),
