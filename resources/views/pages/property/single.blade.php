@@ -12,7 +12,7 @@
         <div class="mx-auto md:w-4/5 lg:max-w-7xl py-8 md:mt-20 md:py-12 ">
             <h1 class="py-4 font-extrabold text-2xl lg:text-4xl text-center uppercase px-8 md:px-0">{{ $page->name }}</h1>
 
-            <div class="flex justify-center px-8 md:px-0 py-8">
+            <div class="justify-center px-8 md:px-0 py-8">
 
                 <article class="prose  text-lg  ">
                     @if(! is_null($page->video_path))
