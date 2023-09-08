@@ -28,11 +28,18 @@
                 </article>
             </div>
 
+            <div class="mx-auto max-w-4xl">
+                {{ str($page->body)->toHtmlString() }}
+
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
               <div>
                   <p class="prose leading-relaxed  px-8 md:px-0 py-2">
-                      {{ str($page->body)->toHtmlString() }}
+                      @if( filled($page->map)  )
+                          {{  new \Illuminate\Support\HtmlString($page->map) }}
+                      @endif
                   </p>
               </div>
 
@@ -45,16 +52,11 @@
 
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
+            <div class="mx-auto max-w-4xl py-4">
 
                 <div>
 
 
-                    <div class="mt-2">
-                        @if( ! is_null($page->map)  )
-                            {{  new \Illuminate\Support\HtmlString($page->map) }}
-                        @endif
-                    </div>
 
                     <div class="mt-2">
                         @if( ! is_null($page->mutation)  )
