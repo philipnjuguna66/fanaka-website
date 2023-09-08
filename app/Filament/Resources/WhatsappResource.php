@@ -5,7 +5,12 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\WhatsappResource\Pages;
 use App\Filament\Resources\WhatsappResource\RelationManagers;
 use App\Models\Whatsapp;
+use Appsorigin\Plots\Models\Location;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -25,13 +30,40 @@ class WhatsappResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('location_id')
-                    ->label('Location')
-                    ->relationship('branch','name')
+                Select::make('location_id')
+                    ->label('Location Tags')
+                    ->options(Location::query()->pluck('name', 'id'))
+                    ->getSearchResultsUsing(fn(string $search) => Location::where('name', 'like', "%{$search}%")->limit(50)->pluck('name', 'id'))
+                    ->multiple()
                     ->createOptionForm([
-                        Forms\Components\TextInput::make('name')->required(),
-                        Forms\Components\TextInput::make('phone_number')->required(),
+                        Grid::make()
+                            ->schema([
+                                TextInput::make('name')
+                                    ->reactive()
+                                    ->afterStateUpdated(fn($set, $state) => $set('slug', str($state)->slug()))
+                                    // ->disabled(fn(Page $livewire) : bool => $livewire instanceof  Pages\EditProject)
+                                    ->required(),
+                                TextInput::make('slug')->required()->unique('locations', 'slug'),
+                            ]),
                     ])
+                    ->createOptionModalHeading("Create a Location")
+                    ->createOptionUsing(function (array $data, \Closure $set) {
+                        if (Location::query()->where([
+                            'name' => $data['name'],
+                            'slug' => $data['slug'],
+                        ])->exists())
+                        {
+                            return Notification::make()
+                                ->title("Something went wrong")
+                                ->body("Location Tag already exists")
+                                ->send();
+                        }
+                        Location::create([
+                            'name' => $data['name'],
+                            'slug' => $data['slug'],
+                        ]);
+
+                    })
                     ->searchable()
                     ->preload()
                     ->required(),
