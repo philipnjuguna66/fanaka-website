@@ -11,4 +11,9 @@ class Whatsapp extends Model
 {
     use HasFactory;
 
+
+    protected $casts = [
+        'location_tags' => 'array'
+    ];
+
 }
