@@ -12,23 +12,27 @@
         <div class="mx-auto md:w-4/5 lg:max-w-7xl py-8 md:mt-20 md:py-12 ">
             <h1 class="py-4 font-extrabold text-2xl lg:text-4xl text-center uppercase px-8 md:px-0">{{ $page->name }}</h1>
 
+            <div class="flex justify-center px-8 md:px-0 py-8">
+
+                <article class="prose  text-lg  ">
+                    @if(! is_null($page->video_path))
+                        @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $page->video_path, 'autoplay' => true ])
+                    @else
+                        <img class="h-auto w-full max-w-full rounded-lg object-cover object-center"
+                             src="{{  \Illuminate\Support\Facades\Storage::url($page->featured_image)}}"
+                             alt="{{ $page->meta_title }}"
+                        >
+                    @endif
+
+
+                </article>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
-                <div class="px-8 md:px-0 py-8">
-
-                    <article class="prose  text-lg  ">
-                        @if(! is_null($page->video_path))
-                            @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $page->video_path, 'autoplay' => true ])
-                        @else
-                            <img class="h-auto w-full max-w-full rounded-lg object-cover object-center"
-                                 src="{{  \Illuminate\Support\Facades\Storage::url($page->featured_image)}}"
-                                 alt="{{ $page->meta_title }}"
-                            >
-                        @endif
-
-
-                    </article>
-                </div>
+                <p class="prose leading-relaxed  px-8 md:px-0 py-2">
+                    {{ str($page->body)->toHtmlString() }}
+                </p>
 
 
                 <div class="shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
@@ -37,11 +41,6 @@
 
             </div>
 
-            <div class="block justify-center">
-                <p class="prose leading-relaxed  px-8 md:px-0 py-2">
-                    {{ str($page->body)->toHtmlString() }}
-                </p>
-            </div>
 
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
