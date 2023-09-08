@@ -30,9 +30,11 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
-                <p class="prose leading-relaxed  px-8 md:px-0 py-2">
-                    {{ str($page->body)->toHtmlString() }}
-                </p>
+              <div>
+                  <p class="prose leading-relaxed  px-8 md:px-0 py-2">
+                      {{ str($page->body)->toHtmlString() }}
+                  </p>
+              </div>
 
 
                 <div class="shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
