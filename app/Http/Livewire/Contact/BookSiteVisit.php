@@ -79,9 +79,9 @@ class BookSiteVisit extends Component implements HasForms
 
 
         try {
-          /* (new SendSms())
+           (new SendSms())
                 ->send(
-                    to: 254790185555,
+                    to: 254714686511,
                     text: $message
                 );
            (new SendSms())
@@ -93,7 +93,7 @@ class BookSiteVisit extends Component implements HasForms
                 ->send(
                     to: $phone,
                     text: "We have received your request and one of our agents will call you shortly"
-                );*/
+                );
 
             Lead::create([
                 'name' => $data['name'],
