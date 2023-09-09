@@ -16,7 +16,7 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
-class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar, ShouldQueue, WithChunkReading
+class PropertiesImport implements ToCollection, WithHeadingRow
 {
     use Importable;
 
