@@ -21,9 +21,12 @@
                      alt="{{ $post?->meta_title }}"
                      loading="lazy"
                 >
-                <article class="prose max-w-7xl mt-12 text-justify">
+                <article class=" max-w-7xl mt-12 text-justify">
 
-                    {{ new \Illuminate\Support\HtmlString($post?->body) }}
+                    <div class="prose">
+                        {{ str($post?->body)->toHtmlString() }}
+                    </div>
+
                 </article>
             </div>
             <div class="">
