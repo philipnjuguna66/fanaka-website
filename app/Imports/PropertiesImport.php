@@ -9,9 +9,10 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\ToCollection;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 
-class PropertiesImport implements ToCollection
+class PropertiesImport implements ToCollection, WithHeadingRow
 {
 
     public function collection(Collection $blogs)
