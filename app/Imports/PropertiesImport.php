@@ -54,7 +54,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
 
                     $blog->link()->create([
                         'type' => 'post',
-                        'slug' => $article['post_name'],
+                        'slug' => str($article['post_title'])->slug()->toString(),
                     ]);
 
                     event(new BlogCreatedEvent($blog));
