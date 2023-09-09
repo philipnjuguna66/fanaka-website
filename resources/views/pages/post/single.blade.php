@@ -14,6 +14,7 @@
                 <h1 class="font-bold text-2xl text-center">{{ $post->title }}</h1>
             </div>
         </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
             <div class="col-span-2 ">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($post?->featured_image) }}"
@@ -21,14 +22,14 @@
                      alt="{{ $post?->meta_title }}"
                      loading="lazy"
                 >
-                <article class="prose mt-12 ">
+                <article class="prose mt-12 max-w-7xl justify-center align-middle">
 
 
                         {{ str($post?->body)->toHtmlString() }}
 
                 </article>
             </div>
-            <div class="">
+            <div class="col-span-1">
 
                 <div class="shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600 px-8">
                     <livewire:contact.book-site-visit/>
