@@ -3,7 +3,9 @@
 use App\Http\Controllers\ShowLocationPageController;
 use App\Http\Controllers\ShowPageController;
 use App\Http\Controllers\ShowPropertyController;
+use App\Imports\PropertiesImport;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 use Spatie\Sitemap\SitemapGenerator;
 
@@ -25,7 +27,7 @@ Route::get('/', function () {
     return view('welcome')->with(['page' => $page]);
 })->name('home.page');
 
-Route::get('test', fn() => \Appsorigin\Blog\Models\Blog::query()->get());
+Route::get('test', fn() =>  Excel::import(new PropertiesImport(), public_path('posts.xlsx')));
 
 Route::redirect('/property','/properties-for-sale');
 
