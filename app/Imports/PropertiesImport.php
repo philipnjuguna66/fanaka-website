@@ -40,9 +40,6 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
                             'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
                         ]);
 
-
-                        dump($blog);
-
                         $blog->setCreatedAt(Carbon::parse($article['post_date']));
 
                         $blog->link()->delete();
