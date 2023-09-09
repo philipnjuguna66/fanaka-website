@@ -36,12 +36,15 @@ Route::get('test', function (){
 
         if (! isset($link->linkable->id))
         {
-            dump($link->slug);
+           $link->delete();
         }
     }
-    dd('done');
+
+
 
     try {
+        \Appsorigin\Blog\Models\Blog::query()->delete();
+
         Excel::import(new PropertiesImport(), public_path('posts.xlsx'));
 
         return "success";
