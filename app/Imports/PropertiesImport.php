@@ -24,14 +24,15 @@ class PropertiesImport implements ToCollection, WithHeadingRow
     {
         return 100;
     }
+
     public function collection(Collection $rows)
     {
 
         try {
             DB::beginTransaction();
 
-            $rows->each(function ($article){
-                if ($article['post_status'] === "publish") {
+            $rows->each(function ($article) {
+                if ($article['post_status'] === "publish" && !Blog::query()->where(['title' => $article['post_title']])->exists()) {
 
                     /**
                      * @var $blog Blog
@@ -61,11 +62,8 @@ class PropertiesImport implements ToCollection, WithHeadingRow
             });
 
             DB::commit();
-        }
-        catch (\Exception $e)
-        {
+        } catch (\Exception $e) {
             DB::rollBack();
-
 
 
             throw  new \Exception($e->getMessage());
