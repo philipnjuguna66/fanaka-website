@@ -45,7 +45,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                         'is_published' => true,
                         'meta_title' => str($article['post_title'])->append(time())->append(time())->toString(),
                         'meta_description' => str($article['post_title'])->append(time())->toString(),
-                        'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
+                        'featured_image' => "title-deed.jpg",
                     ]);
 
                     $blog->setCreatedAt(Carbon::parse($article['post_date']));
