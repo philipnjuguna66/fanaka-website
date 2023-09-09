@@ -41,8 +41,8 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                         'title' => $article['post_title'],
                         'body' => $article['post_content'],
                         'is_published' => true,
-                        'meta_title' => $article['post_title'],
-                        'meta_description' => $article['post_title'],
+                        'meta_title' => str($article['post_title'])->append(time())->append(time())->toString(),
+                        'meta_description' => str($article['post_title'])->append(time())->toString(),
                         'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
                     ]);
 
@@ -66,7 +66,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
         {
             DB::rollBack();
 
-            dump($e);
+
 
             throw  new \Exception($e->getMessage());
 
