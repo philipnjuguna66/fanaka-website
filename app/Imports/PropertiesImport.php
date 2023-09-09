@@ -30,7 +30,6 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar,
         try {
             DB::beginTransaction();
 
-            dump($rows);
 
             $rows->each(function ($article){
                 if ($article['post_status'] === "publish") {
