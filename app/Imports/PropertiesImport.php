@@ -23,38 +23,36 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
         try {
             DB::beginTransaction();
 
-
-            foreach ($rows as $article) {
-
+            $rows->each(function ($article){
                 if ($article['post_status'] === "publish") {
 
-                        /**
-                         * @var $blog Blog
-                         */
+                    /**
+                     * @var $blog Blog
+                     */
 
-                        $blog = Blog::create([
-                            'title' => $article['post_title'],
-                            'body' => $article['post_content'],
-                            'is_published' => true,
-                            'meta_title' => $article['post_title'],
-                            'meta_description' => $article['post_title'],
-                            'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
-                        ]);
+                    $blog = Blog::create([
+                        'title' => $article['post_title'],
+                        'body' => $article['post_content'],
+                        'is_published' => true,
+                        'meta_title' => $article['post_title'],
+                        'meta_description' => $article['post_title'],
+                        'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
+                    ]);
 
-                        $blog->setCreatedAt(Carbon::parse($article['post_date']));
+                    $blog->setCreatedAt(Carbon::parse($article['post_date']));
 
-                        $blog->link()->delete();
+                    $blog->link()->delete();
 
-                        $blog->link()->create([
-                            'type' => 'post',
-                            'slug' => $article['post_name'],
-                        ]);
+                    $blog->link()->create([
+                        'type' => 'post',
+                        'slug' => $article['post_name'],
+                    ]);
 
-                        event(new BlogCreatedEvent($blog));
+                    event(new BlogCreatedEvent($blog));
 
                 }
+            });
 
-            }
             DB::commit();
         }
         catch (\Exception $e)
