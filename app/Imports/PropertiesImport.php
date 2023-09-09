@@ -66,6 +66,8 @@ class PropertiesImport implements ToCollection, WithHeadingRow
         {
             DB::rollBack();
 
+            dump($e);
+
             throw  new \Exception($e->getMessage());
 
         }
