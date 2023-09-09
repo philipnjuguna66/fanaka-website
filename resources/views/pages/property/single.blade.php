@@ -31,7 +31,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
               <div>
-                  <p class="prose  px-8 md:px-0 py-2">
+                  <p class="px-8 py-4 prose">
                       {{ str($page->body)->toHtmlString() }}
                   </p>
               </div>
