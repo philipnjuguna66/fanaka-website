@@ -18,15 +18,18 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
 {
     use Importable;
 
-    public function collection(Collection $blogs)
+    public function collection(Collection $rows)
     {
         try {
             DB::beginTransaction();
 
 
-            foreach ($blogs as $article) {
+            foreach ($rows as $article) {
+                dump($article);
+
                 if ($article['post_status'] === "publish") {
 
+                    dd($article, 'publused');
                         /**
                          * @var $blog Blog
                          */
