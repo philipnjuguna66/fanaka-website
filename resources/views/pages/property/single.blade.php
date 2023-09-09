@@ -72,7 +72,7 @@
 
             </div>
 
-            <div class=" px-8 md:px-0 py-12">
+            <div class=" py-12">
 
                 @if(is_array($page->gallery))
 
