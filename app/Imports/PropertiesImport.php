@@ -25,11 +25,9 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
 
 
             foreach ($rows as $article) {
-                dump($article);
 
                 if ($article['post_status'] === "publish") {
 
-                    dd($article, 'publused');
                         /**
                          * @var $blog Blog
                          */
