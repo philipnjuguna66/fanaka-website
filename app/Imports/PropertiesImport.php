@@ -6,6 +6,7 @@ namespace App\Imports;
 use App\Events\BlogCreatedEvent;
 use Appsorigin\Blog\Models\Blog;
 use Carbon\Carbon;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Importable;
@@ -14,14 +15,16 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
-class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
+class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar, ShouldQueue
 {
     use Importable;
 
+    public function chunkSize(): int
+    {
+        return 100;
+    }
     public function collection(Collection $rows)
     {
-        dd($rows);
-
 
         try {
             DB::beginTransaction();
