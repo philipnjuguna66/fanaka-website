@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->dropConstrainedForeignIdFor(\Appsorigin\Plots\Models\Location::class);
 
-            $table->dropForeign('location_id');
+            $table->dropColumn('location_id');
 
             $table->string('phone_number')->nullable()->change();
 
