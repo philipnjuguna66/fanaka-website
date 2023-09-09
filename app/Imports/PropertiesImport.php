@@ -8,12 +8,15 @@ use Appsorigin\Blog\Models\Blog;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
-class PropertiesImport implements ToCollection, WithHeadingRow
+class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
 {
+    use Importable;
 
     public function collection(Collection $blogs)
     {
