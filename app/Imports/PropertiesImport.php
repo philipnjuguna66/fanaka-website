@@ -17,40 +17,47 @@ class PropertiesImport implements ToCollection, WithHeadingRow
 
     public function collection(Collection $blogs)
     {
-        foreach ($blogs as $article) {
-            if ($article['post_status'] === "publish") {
+        try {
+            foreach ($blogs as $article) {
+                if ($article['post_status'] === "publish") {
 
 
-                DB::transaction(function () use ( $article) {
+                    DB::transaction(function () use ( $article) {
 
-                    /**
-                     * @var $blog Blog
-                     */
+                        /**
+                         * @var $blog Blog
+                         */
 
 
-                    $blog = Blog::updateOrCreate([
-                        'title' => $article['post_title'],
-                    ], [
-                        'title' => $article['post_title'],
-                        'body' => $article['post_content'],
-                        'is_published' => true,
-                        'meta_title' => $article['post_title'],
-                        'meta_description' => $article['post_title'],
-                        'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
-                    ]);
+                        $blog = Blog::updateOrCreate([
+                            'title' => $article['post_title'],
+                        ], [
+                            'title' => $article['post_title'],
+                            'body' => $article['post_content'],
+                            'is_published' => true,
+                            'meta_title' => $article['post_title'],
+                            'meta_description' => $article['post_title'],
+                            'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
+                        ]);
 
-                    $blog->setCreatedAt(Carbon::parse($article['post_date']));
+                        $blog->setCreatedAt(Carbon::parse($article['post_date']));
 
-                    $blog->link()->delete();
+                        $blog->link()->delete();
 
-                    $blog->link()->create([
-                        'type' => 'post',
-                        'slug' => $article['post_name'],
-                    ]);
+                        $blog->link()->create([
+                            'type' => 'post',
+                            'slug' => $article['post_name'],
+                        ]);
 
-                    event(new BlogCreatedEvent($blog));
-                });
+                        event(new BlogCreatedEvent($blog));
+                    });
+                }
+
             }
+        }
+        catch (\Exception $e)
+        {
+            throw  new \Exception($e->getMessage());
 
         }
     }
