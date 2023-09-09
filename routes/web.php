@@ -25,6 +25,7 @@ Route::get('/', function () {
     return view('welcome')->with(['page' => $page]);
 })->name('home.page');
 
+Route::get('test', fn() => \Appsorigin\Blog\Models\Blog::query()->get());
 
 Route::redirect('/property','/properties-for-sale');
 
