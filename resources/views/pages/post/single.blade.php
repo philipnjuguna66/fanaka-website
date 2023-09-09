@@ -8,14 +8,14 @@
         @meta("description", $post?->meta_description)
     @endpush
 
-    <section class="mt-28 py-4 md:mx-auto max-w-7xl md:w-4/5">
+    <section class="mt-28 py-4 md:mx-auto max-w-7xl md:w-4/5 px-8 prose-md ">
         <div class="mt-4">
             <div class="bg-transparent px-6 pt-4 sm:pt-12 lg:px-8">
-                <h1 class="font-bold text-2xl">{{ $post->title }}</h1>
+                <h1 class="font-bold text-2xl text-center">{{ $post->title }}</h1>
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="col-span-2 px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div class="col-span-2 ">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($post?->featured_image) }}"
                      class="w-[800px] h-[500px] rounded-md   bg-gray-100 object-contain aspect-ratio"
                      alt="{{ $post?->meta_title }}"
