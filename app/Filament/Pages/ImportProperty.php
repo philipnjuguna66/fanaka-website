@@ -14,6 +14,8 @@ class ImportProperty extends Page
     protected static string $view = 'filament.pages.import-property';
 
 
+    public $property;
+
 
     protected function getFormSchema(): array
     {
