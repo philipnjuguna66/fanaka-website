@@ -2,6 +2,7 @@
 
 namespace Appsorigin\Blog\Models;
 
+use App\Events\BlogCreatedEvent;
 use App\Models\Permalink;
 use App\Utils\Concerns\InteractsWithPermerlinks;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,6 +23,9 @@ class Blog extends Model
         'link',
     ];
 
+    protected $dispatchesEvents = [
+        BlogCreatedEvent::class,
+    ];
     public function link()
     {
         return $this->morphOne(Permalink::class, 'linkable');

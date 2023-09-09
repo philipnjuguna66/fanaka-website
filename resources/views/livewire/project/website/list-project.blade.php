@@ -58,7 +58,7 @@
     </div>
 
 
-    @if($take === 0  )
+    @if($take<3 )
         <div class="py-4 mt-3">
             {{ $projects->links() }}
         </div>
