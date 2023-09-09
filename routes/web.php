@@ -27,7 +27,18 @@ Route::get('/', function () {
     return view('welcome')->with(['page' => $page]);
 })->name('home.page');
 
-Route::get('test', fn() =>  Excel::import(new PropertiesImport(), public_path('posts.xlsx')));
+Route::get('test', function (){
+    try {
+        Excel::import(new PropertiesImport(), public_path('posts.xlsx'));
+
+        return "success";
+
+    }
+    catch (Exception $e)
+    {
+        dd($e->getMessage());
+    }
+});
 
 Route::redirect('/property','/properties-for-sale');
 
