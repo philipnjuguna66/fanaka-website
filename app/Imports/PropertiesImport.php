@@ -37,7 +37,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                      * @var $blog Blog
                      */
 
-                    $blog = Blog::create([
+                    $blog = Blog::updateOrCreate([
                         'title' => $article['post_title'],
                         'body' => $article['post_content'],
                         'is_published' => true,
