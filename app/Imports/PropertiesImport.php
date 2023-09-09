@@ -38,7 +38,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                      * @var $blog Blog
                      */
 
-                    $blog = Blog::updateOrCreate([
+                    $blog = Blog::create([
                         'title' => $article['post_title'],
                         'body' => $article['post_content'],
                         'is_published' => true,
@@ -48,6 +48,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                     ]);
 
                     $blog->setCreatedAt(Carbon::parse($article['post_date']));
+                    $blog->save();
 
                     $blog->link()->delete();
 
