@@ -27,7 +27,7 @@ class ImportProperty extends Page
 
     public function save()
     {
-        $data =  $this->form->getData();
+        $data = $this->form->getState();
 
         Excel::import(new PropertiesImport(), $data['property']);
 
