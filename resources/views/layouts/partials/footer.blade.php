@@ -108,7 +108,7 @@
                                     <div class="flex flex-col">
                                         <a target="_blank"
                                            class="mt-1 text-lg font-semibold"
-                                           href="https://api.whatsapp.com/send/?phone=+25479900113&text=may I know more about this project">
+                                           href="https://api.whatsapp.com/send/?phone=+254799001133&text=may I know more about this project">
                                             <span class="text-xs font-bold"> Online </span>
                                         </a>
 
@@ -117,7 +117,7 @@
                             </div>
                             <a target="_blank"
                                class="mt-1 text-sm font-semibold"
-                               href="tel:+25479900113">
+                               href="tel:+254799001133">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="bg-green-600" viewBox="0 0 24 24"
                                      stroke-width="1.5" stroke="bg-green-600" class="w-5 h-5 rotate-180">
                                     <path stroke-linecap="round" stroke-linejoin="round"
