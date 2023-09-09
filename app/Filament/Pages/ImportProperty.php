@@ -33,9 +33,7 @@ class ImportProperty extends Page
             $data = $this->form->getState();
 
 
-            $imported = Excel::import(new PropertiesImport(), $data['property']);
-
-            dump($imported);
+            Excel::import(new PropertiesImport(), $data['property']);
 
             return Notification::make()
                 ->body("successfully imported")

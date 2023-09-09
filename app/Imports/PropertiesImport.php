@@ -31,8 +31,6 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
                          * @var $blog Blog
                          */
 
-                        dump($article);
-
 
                         $blog = Blog::create([
                             'title' => $article['post_title'],
