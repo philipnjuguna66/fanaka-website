@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('name')->nullable()->change();
             $table->string('avatar')->nullable()->change();
 
-            $table->json('location_tags')->nullable();
+            $table->json('location_tags')->nullable()->change();
         });
     }
 
