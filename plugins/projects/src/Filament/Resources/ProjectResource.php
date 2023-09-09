@@ -175,7 +175,7 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('location')
                     ->default(fn(Project $record) => $record->branches()?->implode('name', ' , ')),
 
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('status')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('price'),
             ])
             ->filters([
