@@ -21,7 +21,7 @@
                      alt="{{ $post?->meta_title }}"
                      loading="lazy"
                 >
-                <article class=" max-w-7xl mt-12 text-justify">
+                <article class="mt-12 text-justify">
 
                     <div class="prose">
                         {{ str($post?->body)->toHtmlString() }}
