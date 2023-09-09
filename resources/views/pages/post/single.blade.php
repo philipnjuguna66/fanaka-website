@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
             <div class="col-span-2 ">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($post?->featured_image) }}"
-                     class="w-[800px] h-[500px] rounded-md   bg-gray-100 object-contain aspect-ratio"
+                     class="w-[800px] h-[500px] rounded-md object-contain aspect-ratio"
                      alt="{{ $post?->meta_title }}"
                      loading="lazy"
                 >
