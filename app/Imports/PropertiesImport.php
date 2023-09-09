@@ -11,11 +11,12 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToCollection;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
-class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar, ShouldQueue
+class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar, ShouldQueue, WithChunkReading
 {
     use Importable;
 
