@@ -21,11 +21,13 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
     public function collection(Collection $blogs)
     {
         try {
+            DB::beginTransaction();
+
+
             foreach ($blogs as $article) {
                 if ($article['post_status'] === "publish") {
 
 
-                    DB::transaction(function () use ( $article) {
 
                         /**
                          * @var $blog Blog
@@ -54,13 +56,16 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
                         ]);
 
                         event(new BlogCreatedEvent($blog));
-                    });
+
                 }
 
             }
+            DB::commit();
         }
         catch (\Exception $e)
         {
+            DB::rollBack();
+
             throw  new \Exception($e->getMessage());
 
         }
