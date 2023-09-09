@@ -27,12 +27,9 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
             foreach ($blogs as $article) {
                 if ($article['post_status'] === "publish") {
 
-
-
                         /**
                          * @var $blog Blog
                          */
-
 
                         $blog = Blog::create([
                             'title' => $article['post_title'],
