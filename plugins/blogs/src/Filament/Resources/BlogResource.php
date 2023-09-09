@@ -82,7 +82,7 @@ class BlogResource extends Resource
             ->columns([
 
                 Tables\Columns\ImageColumn::make('featured_image')->circular(),
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('title')->searchable(),
                 Tables\Columns\IconColumn::make('is_published')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('updated_at')
