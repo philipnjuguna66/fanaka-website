@@ -28,6 +28,19 @@ Route::get('/', function () {
 })->name('home.page');
 
 Route::get('test', function (){
+
+    $links = \App\Models\Permalink::query()->with('linkable')->get();
+
+
+    foreach ($links as $link) {
+
+        if (! isset($link->linkable->id))
+        {
+            dump($link->slug);
+        }
+    }
+    dd('done');
+
     try {
         Excel::import(new PropertiesImport(), public_path('posts.xlsx'));
 
