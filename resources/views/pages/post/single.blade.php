@@ -28,13 +28,13 @@
             </div>
             <div class="">
 
-                <div class="hadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600 px-8">
+                <div class="shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600 px-8">
                     <livewire:contact.book-site-visit/>
                 </div>
 
-                    <div class="hadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600 grid grid-cols-1  gap-2 my-12">
+                    <div class="grid grid-cols-1  gap-2 my-12">
                         <h3 class="font-bold text-xl pt-8">Latest projects</h3>
-                        <livewire:project.website.similar-project  :grid="1"/>
+                        <livewire:project.website.similar-project  :grid="1" class="shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600"/>
                     </div>
 
 
