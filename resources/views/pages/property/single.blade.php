@@ -31,9 +31,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
               <div>
-                  <p class="px-8 py-4 prose">
+                  <div class="px-8 py-4 prose">
                       {{ str($page->body)->toHtmlString() }}
-                  </p>
+                  </div>
               </div>
 
 
