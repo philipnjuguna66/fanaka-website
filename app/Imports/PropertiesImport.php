@@ -20,6 +20,9 @@ class PropertiesImport implements ToCollection, WithHeadingRow, WithProgressBar
 
     public function collection(Collection $rows)
     {
+        dd($rows);
+
+
         try {
             DB::beginTransaction();
 

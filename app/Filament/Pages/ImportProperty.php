@@ -32,7 +32,7 @@ class ImportProperty extends Page
         try {
             $data = $this->form->getState();
 
-            dd($data['property']);
+
 
             Excel::import(new PropertiesImport(), $data['property']);
 
