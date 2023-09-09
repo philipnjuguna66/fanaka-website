@@ -4,6 +4,7 @@ namespace App\Imports;
 
 
 use App\Events\BlogCreatedEvent;
+use App\Models\Permalink;
 use Appsorigin\Blog\Models\Blog;
 use Carbon\Carbon;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -52,9 +53,17 @@ class PropertiesImport implements ToCollection, WithHeadingRow
 
                     $blog->link()->delete();
 
+
+                    $slug = $article['post_name'];
+
+                    if ( Permalink::query()->where('slug', $article['post_name'])->exists())
+                    {
+                        $slug = str($slug)->append($blog->id)->append('-'.time())->slug();
+                    }
+
                     $blog->link()->create([
                         'type' => 'post',
-                        'slug' => str($article['post_title'])->slug()->toString(),
+                        'slug' => $slug,
                     ]);
 
                     event(new BlogCreatedEvent($blog));
