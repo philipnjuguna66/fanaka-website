@@ -28,6 +28,9 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                          * @var $blog Blog
                          */
 
+                        dump($article);
+
+
                         $blog = Blog::create([
                             'title' => $article['post_title'],
                             'body' => $article['post_content'],
@@ -36,6 +39,9 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                             'meta_description' => $article['post_title'],
                             'featured_image' => "https://fanaka.co.ke/storage/title-deed.jpg",
                         ]);
+
+
+                        dump($blog);
 
                         $blog->setCreatedAt(Carbon::parse($article['post_date']));
 
