@@ -44,6 +44,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                         'body' => str($article['post_content'])->stripTags()
                             ->replace('_x000D_',' ')
                             ->replace('_x000D_',' ')
+                            ->replace('.',' . </p><p>')
                             ->value(),
                         'is_published' => true,
                         'meta_title' => str($article['post_title'])->append(time())->append(time())->toString(),
