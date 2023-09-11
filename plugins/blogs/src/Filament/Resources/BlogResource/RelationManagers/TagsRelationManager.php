@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TagsRelationManager extends RelationManager
 {
-    protected static string $relationship = 'blogs';
+    protected static string $relationship = 'tags';
 
     protected static ?string $recordTitleAttribute = 'name';
 
