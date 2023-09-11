@@ -47,8 +47,8 @@ class PropertiesImport implements ToCollection, WithHeadingRow
                             ->replace('.',' . </p><p>')
                             ->value(),
                         'is_published' => true,
-                        'meta_title' => str($article['post_title'])->append(time())->append(time())->toString(),
-                        'meta_description' => str($article['post_title'])->append(time())->toString(),
+                        'meta_title' => str($article['post_title'])->toString(),
+                        'meta_description' => str($article['post_title'])->toString(),
                         'featured_image' => "title-deed.jpg",
                     ]);
 
