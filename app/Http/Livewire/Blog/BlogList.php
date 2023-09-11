@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Blog;
 
+use App\Models\Tag;
 use Appsorigin\Blog\Models\Blog;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -9,10 +10,12 @@ use Livewire\WithPagination;
 class BlogList extends Component
 {
     use  WithPagination;
+
     const CACHE_KEY = 'post';
 
     public $take = 0;
 
+    public ?Tag $tag;
 
     public function mount(?int $take): void
     {

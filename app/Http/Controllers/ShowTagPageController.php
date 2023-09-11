@@ -9,8 +9,8 @@ class ShowTagPageController extends Controller
     public function __invoke(Tag $tag)
     {
 
-        return view('pages.locations.archives', [
-                'branch' => $tag ,
+        return view('pages.tags.archives', [
+                'tags' => $tag ,
             ]);
 
 
