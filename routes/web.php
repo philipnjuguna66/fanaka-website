@@ -41,6 +41,9 @@ Route::get('test', function (){
         $tag->save();
 
     }
+
+
+    dd('done');
   /*  $links = \App\Models\Permalink::query()->with('linkable')->get();
 
 
