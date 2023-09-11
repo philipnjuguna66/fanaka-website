@@ -49,11 +49,10 @@ class BlogResource extends Resource
                               ->disabled(function (): bool {
                                   return false;
                               })
-                              ->required()
-                              ->maxLength(60),
+                              ->required(),
                           Forms\Components\TextInput::make('meta_title')
                               ->required()
-                              ->maxLength(60),
+                              ->maxLength(100),
                           Forms\Components\Textarea::make('meta_description')
                               ->required()
                               ->maxLength(153),
