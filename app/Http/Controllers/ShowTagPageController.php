@@ -10,7 +10,7 @@ class ShowTagPageController extends Controller
     {
 
         return view('pages.tags.archives', [
-                'tags' => $tag ,
+                'tag' => $tag ,
             ]);
 
 
