@@ -15,7 +15,7 @@
                 <div class="px-6 py-2 sm:px-6 sm:py-1 lg:px-8">
                     <div class="md:mx-auto max-w-2xl text-center">
                         <div class="mt-10 flex items-center justify-center gap-x-6">
-                            <a href="/blogs-and-news" class="text-sm font-semibold leading-6 text-gray-900">View more blog
+                            <a href="/news-and-blogs" class="text-sm font-semibold leading-6 text-gray-900">View more blog
                                 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>

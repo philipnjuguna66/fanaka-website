@@ -6,6 +6,7 @@ namespace Appsorigin\Blog\Filament\Resources;
 use Appsorigin\Blog\Filament\Resources\BlogResource\Pages\CreateBlog;
 use Appsorigin\Blog\Filament\Resources\BlogResource\Pages\EditBlog;
 use Appsorigin\Blog\Filament\Resources\BlogResource\Pages\ListBlogs;
+use Appsorigin\Blog\Filament\Resources\BlogResource\RelationManagers\TagsRelationManager;
 use Appsorigin\Blog\Models\Blog;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -103,7 +104,7 @@ class BlogResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            TagsRelationManager::class
         ];
     }
 
