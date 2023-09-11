@@ -7,7 +7,7 @@
                     <h1 class="text-3xl font-bold tracking-tight sm:text-4xl"> {{ $tag->name  }} </h1>
                 </div>
 
-                <livewire:blog.website.tag-posts :tag="$tag"/>
+                <livewire:blog.tag-posts :tag="$tag"/>
 
             </div>
         </div>
