@@ -33,6 +33,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
             DB::beginTransaction();
 
             $rows->each(function ($article) {
+
                 if ($article['post_status'] === "publish" && !Blog::query()->where(['title' => $article['post_title']])->exists() ) {
 
                     /**
