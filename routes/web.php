@@ -41,6 +41,7 @@ Route::get('test', function (){
     }
 
 
+    dd("dek");
 
     try {
         \Appsorigin\Blog\Models\Blog::query()->delete();
