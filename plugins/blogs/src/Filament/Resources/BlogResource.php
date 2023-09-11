@@ -52,10 +52,10 @@ class BlogResource extends Resource
                               ->required(),
                           Forms\Components\TextInput::make('meta_title')
                               ->required()
-                              ->maxLength(100),
+                              ->maxLength(153),
                           Forms\Components\Textarea::make('meta_description')
                               ->required()
-                              ->maxLength(153),
+                              ->maxLength(200),
 
                       ]),
                     Forms\Components\Section::make('featured image')
