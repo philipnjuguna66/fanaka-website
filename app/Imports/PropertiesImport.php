@@ -33,7 +33,7 @@ class PropertiesImport implements ToCollection, WithHeadingRow
             DB::beginTransaction();
 
             $rows->each(function ($article) {
-                if ($article['post_status'] === "publish" && !Blog::query()->where(['title' => $article['post_title']])->exists()) {
+                if ($article['post_status'] === "publish" && !Blog::query()->where(['title' => $article['post_title']])->exists() && ! Permalink::query()->where('slug', $article['post_name'])->exists()) {
 
                     /**
                      * @var $blog Blog
@@ -60,10 +60,6 @@ class PropertiesImport implements ToCollection, WithHeadingRow
 
                     $slug = $article['post_name'];
 
-                    if ( Permalink::query()->where('slug', $article['post_name'])->exists())
-                    {
-                        $slug = str($slug)->append($blog->id)->append('-'.time())->slug();
-                    }
 
                     $blog->link()->create([
                         'type' => 'post',
