@@ -30,7 +30,18 @@ Route::get('/', function () {
 
 Route::get('test', function (){
 
-    $links = \App\Models\Permalink::query()->with('linkable')->get();
+
+    \Illuminate\Support\Facades\Schema::table('tags', function (\Illuminate\Database\Schema\Blueprint $table){
+        $table->string('slug');
+    });
+
+
+    foreach (\App\Models\Tag::query()->get() as $tag) {
+        $tag->slug= str($tag->name)->slug()->value();
+        $tag->save();
+
+    }
+  /*  $links = \App\Models\Permalink::query()->with('linkable')->get();
 
 
     foreach ($links as $link) {
@@ -55,7 +66,7 @@ Route::get('test', function (){
     catch (Exception $e)
     {
         dd($e->getMessage());
-    }
+    }*/
 });
 
 Route::redirect('/property','/properties-for-sale');
