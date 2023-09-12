@@ -20,6 +20,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Filament\Resources\Form;
+use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
@@ -50,7 +51,7 @@ class ProjectResource extends Resource
                                     ->label('Title')
                                     ->required()
                                     ->reactive()
-                                    ->afterStateUpdated(fn(\Closure $set, $state): string => $set('slug', str($state)->slug()))
+                                    ->afterStateUpdated(fn(\Closure $set, $state,Page $livewire) => $livewire instanceof  CreateProject ?? $set('slug', str($state)->slug()))
                                     ->maxLength(255),
                                 Select::make('status')
                                     ->options(function (): array {
