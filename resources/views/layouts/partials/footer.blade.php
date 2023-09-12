@@ -108,7 +108,7 @@
                                     <div class="flex flex-col">
                                         <a target="_blank"
                                            class="mt-1 text-lg font-semibold"
-                                           href="https://api.whatsapp.com/send/?phone=+254799001133&text=may I know more about this project">
+                                           href="https://api.whatsapp.com/send?phone=254799001133&text=Hi tel me more about {{ url()->current() }}.">
                                             <span class="text-xs font-bold"> Online </span>
                                         </a>
 
