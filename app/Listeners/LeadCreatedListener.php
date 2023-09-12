@@ -11,7 +11,7 @@ use Appsorigin\Leads\Models\Lead;
 use Carbon\Carbon;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-
+use Illuminate\Support\Facades\Log;
 
 
 class LeadCreatedListener implements ShouldQueue
@@ -27,7 +27,7 @@ class LeadCreatedListener implements ShouldQueue
      */
     public function handle(LeadCreatedEvent $event)
     {
-
+        Log::info($event->message , ['lead' => $event->lead->toArray()]);
 
         (new TelegramBot())->sendMessage($event->message);
     }
