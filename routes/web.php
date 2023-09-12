@@ -28,49 +28,6 @@ Route::get('/', function () {
     return view('welcome')->with(['page' => $page]);
 })->name('home.page');
 
-Route::get('test', function (){
-
-
-    \Illuminate\Support\Facades\Schema::table('tags', function (\Illuminate\Database\Schema\Blueprint $table){
-        $table->string('slug');
-    });
-
-
-    foreach (\App\Models\Tag::query()->get() as $tag) {
-        $tag->slug= str($tag->name)->slug()->value();
-        $tag->save();
-
-    }
-
-
-    dd('done');
-  /*  $links = \App\Models\Permalink::query()->with('linkable')->get();
-
-
-    foreach ($links as $link) {
-
-        if (! isset($link->linkable->id))
-        {
-           $link->delete();
-        }
-    }
-
-
-
-
-    try {
-        \Appsorigin\Blog\Models\Blog::query()->delete();
-
-        Excel::import(new PropertiesImport(), public_path('posts.xlsx'));
-
-        return "success";
-
-    }
-    catch (Exception $e)
-    {
-        dd($e->getMessage());
-    }*/
-});
 
 Route::redirect('/property','/properties-for-sale');
 
