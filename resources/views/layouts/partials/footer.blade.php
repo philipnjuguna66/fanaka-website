@@ -53,7 +53,7 @@
 
 
         <div class="mt-16 border-t border-white/10 pt-2 sm:mt-2 lg:mt-2 text-center">
-            <p class="text-xs leading-5 text-gray-50 ">&copy; 2019-{{ now()->format('Y') }}
+            <p class="text-xs leading-5 text-gray-50 ">&copy; 2016-{{ now()->format('Y') }}
                 {{ config('app.name') }}. All rights reserved.
 
                 <span class=" text-gray-50/70">Powered By <a
