@@ -35,6 +35,7 @@ Route::get('location/{branch:slug}', ShowLocationPageController::class)->name('p
 Route::get('tag/{tag:slug}', ShowTagPageController::class)->name('permalink.tag.show');
 Route::get('property/{permalink:slug}', ShowPageController::class)->name('permalink.property.show');
 Route::get('/{permalink:slug}', ShowPageController::class)->name('permalink.show');
+
 Route::fallback(function () {
     return redirect('/properties-for-sale');
 });
