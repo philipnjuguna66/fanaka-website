@@ -12,7 +12,7 @@
                 </div>
                 <div class="max-w-xl py-2 ">
                     <div class="group relative py-4 px-4">
-                        <h3 class="mt-1 text-primary-500 text-lg font-bold leading-6">
+                        <h3 wire:navigate class="mt-1 text-primary-500 text-lg font-bold leading-6">
                             <a href="{{ route('permalink.property.show', $project->link?->slug) }}">
                                 <span class="absolute inset-0 text-center"></span>
                                 {{ $project->name }}
