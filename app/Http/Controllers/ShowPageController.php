@@ -14,12 +14,15 @@ class ShowPageController extends Controller
 
         $key = $permalink->linkable::CACHE_KEY.".{$permalink->linkable_id}";
 
+
+        if (! Cache::has($key))
+        {
+            return  redirect('/');
+        }
+
+
         $page = Cache::get($key);
 
-        if (! $page?->id)
-        {
-            abort(404);
-        }
 
         return view($permalink->type->template(), [
             'page' => $page,
