@@ -1,6 +1,6 @@
 <footer class="bg-secondary-900 py-12" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto md:w-4/5 max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto md:w-4/5 max-w-8xl px-6 lg:px-8">
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-x-2 justify-between gap-y-4">
             @if(isset(app(\App\Settings\FooterSettings::class)->sections  ) && is_array(app(\App\Settings\FooterSettings::class)->sections))
