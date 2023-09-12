@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Listeners;
+
+
+use App\Events\LeadCreatedEvent;
+use App\Utils\Services\SMS\SendSms;
+use App\Utils\Services\Telegram\TelegramBoot;
+use App\Utils\TelegramBot;
+use Appsorigin\Leads\Models\Lead;
+use Carbon\Carbon;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+
+
+
+class LeadCreatedListener implements ShouldQueue
+{
+    use  InteractsWithQueue;
+
+
+    /**
+     * Handle the event.
+     *
+     * @param LeadCreatedEvent $event
+     * @return void
+     */
+    public function handle(LeadCreatedEvent $event)
+    {
+
+
+        (new TelegramBot())->sendMessage($event->message);
+    }
+
+
+}

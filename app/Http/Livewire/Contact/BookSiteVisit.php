@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Contact;
 
+use App\Events\LeadCreatedEvent;
 use App\Utils\Enums\ProjectStatusEnum;
 use App\Utils\SendSms;
 use Appsorigin\Leads\Models\Lead;
@@ -76,7 +77,6 @@ class BookSiteVisit extends Component implements HasForms
            $message .= " to view {$data['project']}";
        }
 
-
         try {
            (new SendSms())
                 ->send(
@@ -94,12 +94,15 @@ class BookSiteVisit extends Component implements HasForms
                     text: "We have received your request and one of our agents will call you shortly"
                 );
 
-            Lead::create([
+           $lead =  Lead::create([
                 'name' => $data['name'],
                 'phone_number' => $data['phone_number'],
                 'date' => Carbon::parse($data['date']),
                 'page' => $this->page,
             ]);
+
+            event( new LeadCreatedEvent(lead:  $lead ,  message: $message));
+
 
             $this->form->fill([
                 'name' => '',

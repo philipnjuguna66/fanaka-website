@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Events\BlogCreatedEvent;
+use App\Events\LeadCreatedEvent;
 use App\Events\PageCreatedEvent;
 use App\Listeners\BlackListLoginAttempt;
+use App\Listeners\LeadCreatedListener;
 use App\Listeners\PageCreatedListener;
 use App\Listeners\PostCreatedListener;
 use Illuminate\Auth\Events\Registered;
@@ -32,6 +34,9 @@ class EventServiceProvider extends ServiceProvider
         BlogCreatedEvent::class => [
             PostCreatedListener::class,
         ],
+        LeadCreatedEvent::class => [
+            LeadCreatedListener::class
+        ]
 
     ];
 
