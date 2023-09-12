@@ -16,7 +16,7 @@ class ShowPageController extends Controller
 
         $page = Cache::get($key);
 
-        if (! $page->id)
+        if (! $page?->id)
         {
             abort(404);
         }
