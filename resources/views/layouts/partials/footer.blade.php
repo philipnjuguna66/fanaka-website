@@ -30,7 +30,7 @@
                                                 {!! $footerSection['data']['content'] !!}
                                             </p>
 
-                                            <ul role="list" class="mt-6 list-disc">
+                                            <ul role="list" class="mt-6">
 
                                                 @foreach($footerSection['data']['links'] as $link)
                                                     <li class="">
