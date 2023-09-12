@@ -14,8 +14,8 @@
                                          alt="Company name">
                                 @endif
 
-                                <h3 class="text-sm font-semibold leading-6 text-white">{{ $footerSection['data']['heading'] }}</h3>
-                                <span class="text-sm leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
+                                <h3 class=" font-semibold leading-6 text-white">{{ $footerSection['data']['heading'] }}</h3>
+                                <span class=" leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
                                   {{ str($footerSection['data']['content'])->toHtmlString() }}
                                 </span>
                             </div>
@@ -25,8 +25,8 @@
 
                                         <div class="">
 
-                                            <h3 class="text-sm font-semibold leading-6 text-white ">{{ $footerSection['data']['heading'] }}</h3>
-                                            <p class="text-sm leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
+                                            <h3 class=" font-semibold leading-6 text-white ">{{ $footerSection['data']['heading'] }}</h3>
+                                            <p class=" leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
                                                 {!! $footerSection['data']['content'] !!}
                                             </p>
 
@@ -35,7 +35,7 @@
                                                 @foreach($footerSection['data']['links'] as $link)
                                                     <li class="">
                                                         <a href="{{ $link['link'] }}"
-                                                           class="text-sm leading-6 text-gray-50 hover:text-white">{{ $link['label'] }}</a>
+                                                           class=" leading-6 text-gray-50 hover:text-white">{{ $link['label'] }}</a>
                                                     </li>
                                                 @endforeach
 
@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                             <a target="_blank"
-                               class="mt-1 text-sm font-semibold"
+                               class="mt-1  font-semibold"
                                href="tel:+254799001133">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="bg-green-600" viewBox="0 0 24 24"
                                      stroke-width="1.5" stroke="bg-green-600" class="w-5 h-5 rotate-180">
