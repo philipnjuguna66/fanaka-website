@@ -21,9 +21,9 @@
                             </div>
                             @endif
                                 @if($footerSection['type'] == "list")
-                                    <div class="prose">
+                                    <div class="">
 
-                                        <div>
+                                        <div class="prose">
 
                                             <h3 class="text-sm font-semibold leading-6 text-white ">{{ $footerSection['data']['heading'] }}</h3>
                                             <p class="text-sm leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
