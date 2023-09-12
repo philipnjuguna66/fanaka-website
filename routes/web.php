@@ -37,5 +37,7 @@ Route::get('property/{permalink:slug}', ShowPageController::class)->name('permal
 Route::get('/{permalink:slug}', ShowPageController::class)->name('permalink.show');
 
 Route::fallback(function () {
-    return redirect('/properties-for-sale');
+    $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
+
+    return view('welcome')->with(['page' => $page]);
 });
