@@ -2,11 +2,11 @@
     <div class="  lg:py-24 py-4 md:mx-auto md:w-4/5">
         <div {{ $animationEffect }}  class="lg:mx-auto max-w-7xl px-6 lg:px-8">
             <div class="lg:mx-auto max-w-2xl text-center">
-                <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">{{ $section->extra['heading'] }}</h2>
+                <h2 class=" font-bold tracking-tight sm:text-xl">{{ $section->extra['heading'] }}</h2>
                 <p class="mt-2 text-lg leading-8 text-gray-600">{{ $section->extra['subheading'] }}</p>
             </div>
             <div
-                class="md:mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-4 lg:gap-y-20  lg:mx-0 lg:max-w-none lg:grid-cols-{{ $section->extra['columns'] }}">
+                class="mt-16 grid grid-cols-1 gap-x-8 gap-y-4 lg:gap-y-20  lg:mx-0 lg:max-w-none lg:grid-cols-{{ $section->extra['columns'] }}">
 
 
                 @foreach($section->extra['cards'] as $card)
@@ -19,7 +19,7 @@
                         </div>
                         @endif
 
-                        <div class="max-w-xl px-4">
+                        <div class="max-w-xl px-2">
                             <div class="group relative py-4">
                                 <h3 class="lg:mt-3 text-lg font-semibold leading-6 group-hover:text-gray-600">
 
