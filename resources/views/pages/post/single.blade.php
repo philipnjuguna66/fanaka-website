@@ -31,7 +31,7 @@
             </div>
             <div class="col-span-1">
 
-                <div class="shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600 px-8">
+                <div class="bg-white shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600 px-8">
                     <livewire:contact.book-site-visit/>
                 </div>
 
