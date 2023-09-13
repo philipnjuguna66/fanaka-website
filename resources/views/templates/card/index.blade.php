@@ -13,7 +13,7 @@
                     <article class="flex flex-col items-start justify-between shadow-xl lg:shadow-gray-900/50 rounded-xl mt-0 py-0">
 
                         @if( isset($card['image']) && ! empty($card['image']))
-                        <div class="relative w-full">
+                        <div class="relative w-full justify-center text-center">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($card['image']) }}" loading="lazy" alt="{{ $card['title'] }}"
                                  class="object-cover">
                         </div>
