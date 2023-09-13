@@ -113,7 +113,7 @@ class BookSiteVisit extends Component implements HasForms
             $lead = Lead::create([
                 'name' => $data['name'],
                 'phone_number' => $data['phone_number'],
-                'date' => Carbon::parse($data['date']),
+                'date' => new Carbon(),
                 'page' => $this->page,
             ]);
 
