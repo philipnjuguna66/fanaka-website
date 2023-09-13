@@ -114,7 +114,7 @@ class BookSiteVisit extends Component implements HasForms
                 'name' => $data['name'],
                 'phone_number' => $data['phone_number'],
                 'date' => new Carbon(),
-                'page' => $this->page,
+                'page' => isset( $this->page->title) ?  $this->page->title : $branch,
             ]);
 
 
