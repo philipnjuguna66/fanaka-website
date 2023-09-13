@@ -33,7 +33,7 @@ class BookSiteVisit extends Component implements HasForms
     public $branch;
     public $phone_number;
 
-    public $page = null;
+    public Project|null $page = null;
 
     protected function getFormSchema(): array
     {
@@ -70,13 +70,19 @@ class BookSiteVisit extends Component implements HasForms
 
         $branch = "";
         if (!is_null($this->page)) {
-            $message .= " to view {$this->page}";
+            $message .= " to view {$this->page->title}";
+
+            $branch = $this->page
+                ->branches()
+                ->implode('name',',');
 
 
         }
-        if (isset($data['project'])) {
+        if (isset($data['branch'])) {
 
-            $message .= " to view {$data['project']}";
+            $message .= " to view {$data['branch']} projects";
+
+            $branch =  $data['branch'];
         }
 
         try {
@@ -85,7 +91,7 @@ class BookSiteVisit extends Component implements HasForms
             Http::baseUrl('https://mis.fanaka.co.ke/api')
                 ->get('/notification', [
                     'tel' => $phone,
-                    'branch' => $this->branch
+                    'branch' => $branch
                 ]);
 /*
             (new SendSms())
