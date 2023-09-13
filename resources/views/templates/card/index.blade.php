@@ -15,7 +15,7 @@
                         @if( isset($card['image']) && ! empty($card['image']))
                         <div class="relative w-full">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($card['image']) }}" loading="lazy" alt="{{ $card['title'] }}"
-                                 class="aspect-[16/9] w-full  bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+                                 class="object-cover">
                             <div class="absolute inset-0  ring-1 ring-inset ring-gray-900/10"></div>
                         </div>
                         @endif
