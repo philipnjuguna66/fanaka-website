@@ -35,15 +35,11 @@
 
             </div>
 
-            <div class="py-12 max-w-4xl">
+            <div class="mx-auto py-12 max-w-4xl">
 
               <div>
-                  <div class="px-8 py-4 prose">
+
                       {{ str($page->body)->toHtmlString() }}
-                  </div>
-              </div>
-
-
 
 
             </div>

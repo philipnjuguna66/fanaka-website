@@ -1,4 +1,4 @@
-<div class="">
+<div class="font-extrabold">
     <form
         method="post"
         class="filament-form font-extrabold"
