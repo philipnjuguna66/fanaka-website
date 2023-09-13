@@ -30,34 +30,32 @@ class BookSiteVisit extends Component implements HasForms
 
     public $project;
 
+    public $branch;
     public $phone_number;
 
-    public ?string $page = null;
+    public $page = null;
 
     protected function getFormSchema(): array
     {
 
         return [
             Grid::make(1)
-            ->schema([
-                TextInput::make('name')->required(),
-                TextInput::make('phone_number')->required(),
-                DatePicker::make('date')
-                    ->minDate(Carbon::today())
-                    ->reactive()
-                    ->default(now()->addDays(1))
-                    ->required()->columnSpanFull(),
-                Select::make('project')
-                    ->placeholder("Select a Project")
-                ->options(Project::query()
-                    ->where('status', ProjectStatusEnum::FOR_SALE)
-                    ->when(filled($this->page), fn($query) => $query->where('name', 'like', "%{$this->page}%"))
-                    ->pluck('name','name'))
-                ->searchable()
-                ->preload()
-                ->required(fn() : bool =>  ! filled($this->page))
-                ->hidden(fn() : bool =>   filled($this->page))
-            ])->inlineLabel(),
+                ->schema([
+                    TextInput::make('name')->required(),
+                    TextInput::make('phone_number')->required(),
+                    Select::make('Branch')
+                        ->label('Location')
+                        ->placeholder("Select a location Interested")
+                        ->options([
+                            'kangundo_road' => "Along Kangundo Road",
+                            'mombasa_road' => "Along Kangundo Road",
+                            'thika_road' => "Along Kangundo Road",
+                        ])
+                        ->searchable()
+                        ->preload()
+                        ->required(fn(): bool => !filled($this->page))
+                        ->hidden(fn(): bool => filled($this->page))
+                ])->inlineLabel(),
         ];
     }
 
@@ -67,45 +65,53 @@ class BookSiteVisit extends Component implements HasForms
 
         $phone = $data['phone_number'];
 
-       $message = $data['name'] . " Booked a visit on : [" .  Carbon::parse($data['date'])->format('Y-m-d') ."] Phone Number:  {$phone}";
+        $message = $data['name'] . " Booked a visit on : [" . Carbon::parse($data['date'])->format('Y-m-d') . "] Phone Number:  {$phone}";
 
-       if (! is_null($this->page))
-       {
-           $message .= " to view {$this->page}";
-       }
-       if( isset($data['project'])){
 
-           $message .= " to view {$data['project']}";
-       }
+        $branch = "";
+        if (!is_null($this->page)) {
+            $message .= " to view {$this->page}";
+
+
+        }
+        if (isset($data['project'])) {
+
+            $message .= " to view {$data['project']}";
+        }
 
         try {
 
 
+            Http::baseUrl('https://mis.fanaka.co.ke/api')
+                ->get('/notification', [
+                    'tel' => $phone,
+                    'branch' => $this->branch
+                ]);
 
-           (new SendSms())
+            (new SendSms())
                 ->send(
                     to: 254714686511,
                     text: $message
                 );
-           (new SendSms())
+            (new SendSms())
                 ->send(
                     to: 254714686511,
                     text: $message
                 );
-           (new SendSms())
+            (new SendSms())
                 ->send(
                     to: $phone,
                     text: "We have received your request and one of our agents will call you shortly"
                 );
 
-           $lead =  Lead::create([
+            $lead = Lead::create([
                 'name' => $data['name'],
                 'phone_number' => $data['phone_number'],
                 'date' => Carbon::parse($data['date']),
                 'page' => $this->page,
             ]);
 
-            event( new LeadCreatedEvent(lead:  $lead ,  message: $message));
+            event(new LeadCreatedEvent(lead: $lead, message: $message));
 
 
             $this->form->fill([
@@ -115,22 +121,19 @@ class BookSiteVisit extends Component implements HasForms
             ]);
 
 
-
             return Notification::make()
                 ->success()
                 ->body("We have received your request")
                 ->send();
 
+        } catch (\Exception $e) {
+            return Notification::make()
+                ->danger()
+                ->title('Something went wrong')
+                ->body($e->getMessage())
+                ->send();
         }
-       catch (\Exception $e)
-       {
-           return Notification::make()
-               ->danger()
-               ->title('Something went wrong')
-               ->body($e->getMessage())
-               ->send();
-       }
-      //  dd($response->json());
+        //  dd($response->json());
 
     }
 

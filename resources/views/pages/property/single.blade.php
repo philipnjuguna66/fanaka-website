@@ -28,9 +28,9 @@
                 </article>
 
                 <div class="bg-white shadow-2xl rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
-                    <p class="text-center"> BOOK A FREE SITE  </p>
+                    <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2"> Book A Free Site Visit </h3>
 
-                    <livewire:contact.book-site-visit :page="$page->title"/>
+                    <livewire:contact.book-site-visit :page="$page"/>
                 </div>
 
             </div>
@@ -100,8 +100,8 @@
 
 
                 <div class="bg-white shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
-                    <p> BOOK A FREE SITE  </p>
-                    <livewire:contact.book-site-visit :page="$page->title"/>
+                    <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2"> Book A Free Site Visit </h3>
+                    <livewire:contact.book-site-visit :page="$page"/>
                 </div>
 
                 <div class="">
