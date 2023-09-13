@@ -6,7 +6,7 @@
                 <p class="mt-2 text-lg leading-8 text-gray-600">{{ $section->extra['subheading'] }}</p>
             </div>
             <div
-                class="md:mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-4 lg:gap-y-20  lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                class="md:mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-4 lg:gap-y-20  lg:mx-0 lg:max-w-none lg:grid-cols-{{ $section->extra['columns'] }}">
 
 
                 @foreach($section->extra['cards'] as $card)
@@ -16,7 +16,6 @@
                         <div class="relative w-full">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($card['image']) }}" loading="lazy" alt="{{ $card['title'] }}"
                                  class="object-cover">
-                            <div class="absolute inset-0  ring-1 ring-inset ring-gray-900/10"></div>
                         </div>
                         @endif
 

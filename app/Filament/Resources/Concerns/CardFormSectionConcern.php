@@ -16,6 +16,7 @@ trait CardFormSectionConcern
         return Block::make('card_section')->schema([
 
             TextInput::make('heading')->nullable(),
+            TextInput::make('columns')->numeric()->default(3),
             TextInput::make('subheading')->nullable(),
             TextInput::make('view_more_link')->nullable(),
             Checkbox::make('bg_white')->label('White Background')->nullable(),
