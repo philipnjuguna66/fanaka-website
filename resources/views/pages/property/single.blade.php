@@ -9,10 +9,10 @@
     <div class="bg-white">
 
 
-        <div class="mx-auto md:w-4/5 lg:max-w-7xl py-12 md:mt-20 md:py-16 px-8">
+        <div class="mx-auto md:w-4/5 max-w-7xl py-12 md:mt-20 md:py-16 px-8">
             <h1 class="py-12 md:py-4 font-extrabold text-2xl lg:text-4xl text-center uppercase px-8 md:px-0">{{ $page->name }}</h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-8 max-w-7xl">
 
                 <article class=" ">
                     @if(! is_null($page->video_path))
@@ -46,7 +46,7 @@
 
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12 max-w-7xl">
 
                 <div>
 
