@@ -65,7 +65,7 @@ class BookSiteVisit extends Component implements HasForms
 
         $phone = $data['phone_number'];
 
-        $message = $data['name'] . " Booked a visit on : [" . Carbon::parse($data['date'])->format('Y-m-d') . "] Phone Number:  {$phone}";
+        $message = $data['name'] . " Booked a visit, Phone Number:  {$phone}";
 
 
         $branch = "";
@@ -116,6 +116,7 @@ class BookSiteVisit extends Component implements HasForms
                 'date' => new Carbon(),
                 'page' => $this->page,
             ]);
+
 
             event(new LeadCreatedEvent(lead: $lead, message: $message));
 
