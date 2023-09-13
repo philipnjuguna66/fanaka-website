@@ -2,7 +2,7 @@
     <div class="  lg:py-24 py-4 md:mx-auto md:w-4/5">
         <div {{ $animationEffect }}  class="lg:mx-auto max-w-7xl px-6 lg:px-8">
             <div class="lg:mx-auto max-w-2xl text-center">
-                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] }}</h2>
+                <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">{{ $section->extra['heading'] }}</h2>
                 <p class="mt-2 text-lg leading-8 text-gray-600">{{ $section->extra['subheading'] }}</p>
             </div>
             <div
