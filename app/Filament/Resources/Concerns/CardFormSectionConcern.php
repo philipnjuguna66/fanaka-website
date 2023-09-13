@@ -21,9 +21,9 @@ trait CardFormSectionConcern
             Checkbox::make('bg_white')->label('White Background')->nullable(),
             Repeater::make('cards')
             ->schema([
-                TextInput::make('title')->required(),
+                TextInput::make('title')->nullable(),
                 FileUpload::make('image')->preserveFilenames()->nullable(),
-                Textarea::make('description')->required(),
+                Textarea::make('description')->nullable(),
                 Checkbox::make('has_modal')->label('View Description on a Modal')
                 ->default(false),
             ])
