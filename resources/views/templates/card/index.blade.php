@@ -10,7 +10,7 @@
 
 
                 @foreach($section->extra['cards'] as $card)
-                    <article class="flex flex-col items-start justify-between shadow-xl lg:shadow-gray-900/50 rounded-xl mt-0 py-0">
+                    <article class="flex flex-col items-center justify-between shadow-xl lg:shadow-gray-900/50 rounded-xl mt-0 py-0">
 
                         @if( isset($card['image']) && ! empty($card['image']))
                         <div class="relative w-full justify-center text-center">
