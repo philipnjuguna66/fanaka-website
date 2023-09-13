@@ -41,8 +41,7 @@
 
                       {{ str($page->body)->toHtmlString() }}
 
-
-            </div>
+              </div>
             </div>
 
 
