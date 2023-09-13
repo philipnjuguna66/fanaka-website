@@ -13,6 +13,9 @@
     p{
         @apply prose-lg;
     }
+    span{
+        @apply font-bold;
+    }
     h1 , h2, h3, h4,h5,h6{
         @apply text-primary-500  font-bold uppercase
     }
