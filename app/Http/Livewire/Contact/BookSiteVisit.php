@@ -85,6 +85,8 @@ class BookSiteVisit extends Component implements HasForms
             $branch =  $data['branch'];
         }
 
+        $message .=" Branch $branch";
+
         try {
 
 
