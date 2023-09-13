@@ -28,7 +28,7 @@
                 </article>
 
                 <div class="bg-white shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
-                    <p> BOOK A FREE SITE  </p>
+                    <p class="text-center"> BOOK A FREE SITE  </p>
 
                     <livewire:contact.book-site-visit :page="$page->title"/>
                 </div>
