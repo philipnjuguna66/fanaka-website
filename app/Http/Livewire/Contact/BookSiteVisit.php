@@ -89,12 +89,36 @@ class BookSiteVisit extends Component implements HasForms
 
         try {
 
+            $lead = Lead::create([
+                'name' => $data['name'],
+                'phone_number' => $data['phone_number'],
+                'date' => new Carbon(),
+                'page' => isset( $this->page->title) ?  $this->page->title : $branch,
+            ]);
 
-            Http::baseUrl('https://mis.fanaka.co.ke/api')
-                ->get('/notification', [
+
+            event(new LeadCreatedEvent(lead: $lead, message: $message));
+
+            $response  = Http::post('https://mis.fanaka.co.ke/api/notification', [
                     'tel' => $phone,
                     'branch' => $branch
                 ]);
+
+
+            if ($response->successful())
+            {
+                return Notification::make()
+                    ->success()
+                    ->body("We have received your request")
+                    ->send();
+            }
+            else
+            {
+                dd($response->json());
+
+
+                throw new \Exception("Could not submit");
+            }
 /*
             (new SendSms())
                 ->send(
@@ -112,15 +136,7 @@ class BookSiteVisit extends Component implements HasForms
                     text: "We have received your request and one of our agents will call you shortly"
                 );*/
 
-            $lead = Lead::create([
-                'name' => $data['name'],
-                'phone_number' => $data['phone_number'],
-                'date' => new Carbon(),
-                'page' => isset( $this->page->title) ?  $this->page->title : $branch,
-            ]);
 
-
-            event(new LeadCreatedEvent(lead: $lead, message: $message));
 
 
             $this->form->fill([
