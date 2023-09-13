@@ -10,7 +10,7 @@
 
 
                 @foreach($section->extra['cards'] as $card)
-                    <article class="">
+                    <article class="shadow rounded-md px-4 py-4 mx-auto">
 
                         @if( isset($card['image']) && ! empty($card['image']))
                         <div class="relative w-full justify-center text-center">
