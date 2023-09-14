@@ -50,7 +50,7 @@ class BookSiteVisit extends Component implements HasForms
                         ->options([
                             'kangundo_road' => "Along Kangundo Road",
                             'mombasa_road' => "Along Kangundo Road",
-                            'thika_road' => "Along Kangundo Road",
+                            'thika_road' => "Along Thika Road",
                         ])
                         ->searchable()
                         ->preload()
