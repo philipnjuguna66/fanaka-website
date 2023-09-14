@@ -1,6 +1,6 @@
-<div class="font-extrabold">
+<div class="font-extrabold bg-white shadow-md rounded-md px-4 mt-5 bg-gray-100 py-8 border-b-4 border-primary-600 border-b-primary-600">
 
-    <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2 text-red-600"> Book A Free Site Visit </h3>
+    <h3 class="py-8 font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2 text-red-600"> Book A Free Site Visit </h3>
 
 
     <form
