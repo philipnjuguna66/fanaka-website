@@ -14,6 +14,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('posts', function () {
 
 
-    (new \App\Utils\TelegramBot())
+   return  (new \App\Utils\TelegramBot())
         ->sendMessage("new Lead from Website");
 });

@@ -5,6 +5,7 @@ namespace Appsorigin\Blog\Filament\Resources\BlogResource\Pages;
 use Appsorigin\Blog\Filament\Resources\BlogResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Illuminate\Database\Eloquent\Builder;
 
 class ListBlogs extends ListRecords
 {
@@ -15,5 +16,10 @@ class ListBlogs extends ListRecords
         return [
             Actions\CreateAction::make(),
         ];
+    }
+
+    protected function getTableQuery(): Builder
+    {
+        return parent::getTableQuery()->latest();
     }
 }

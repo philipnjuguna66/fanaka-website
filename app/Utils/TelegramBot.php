@@ -27,7 +27,6 @@ class TelegramBot
     public function sendMessage($message)
     {
 
-
         if (filled($this->botAccessToken) && filled($this->chatId)) {
             $response = $this->http
                 ->get('sendMessage', [
