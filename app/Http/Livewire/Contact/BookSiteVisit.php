@@ -103,7 +103,9 @@ class BookSiteVisit extends Component implements HasForms
             $response = Http::post('https://mis.fanaka.co.ke/api/notification', [
                 'tel' => $phone,
                 'branch' => $branch,
-                'message' => $message
+                'name' => $data['name'],
+                'message' => $message,
+                'title' => $this->page?->title
             ]);
 
 
