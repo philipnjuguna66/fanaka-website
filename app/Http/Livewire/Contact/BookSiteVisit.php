@@ -75,7 +75,7 @@ class BookSiteVisit extends Component implements HasForms
 
             $branch = $this->page
                 ->branches()
-                ->implode('name',',');
+                ->implode('name', ',');
 
 
         }
@@ -83,10 +83,10 @@ class BookSiteVisit extends Component implements HasForms
 
             $message .= " to view {$data['branch']} projects";
 
-            $branch =  $data['branch'];
+            $branch = $data['branch'];
         }
 
-        $message .=" Branch $branch";
+        $message .= " Branch $branch";
 
         try {
 
@@ -94,56 +94,40 @@ class BookSiteVisit extends Component implements HasForms
                 'name' => $data['name'],
                 'phone_number' => $data['phone_number'],
                 'date' => new Carbon(),
-                'page' => isset( $this->page->title) ?  $this->page->title : $branch,
+                'page' => isset($this->page->title) ? $this->page->title : $branch,
             ]);
 
 
             event(new LeadCreatedEvent(lead: $lead, message: $message));
 
-            $response  = Http::post('https://mis.fanaka.co.ke/api/notification', [
-                    'tel' => $phone,
-                    'branch' => $branch
-                ]);
+            $response = Http::post('https://mis.fanaka.co.ke/api/notification', [
+                'tel' => $phone,
+                'branch' => $branch,
+                'message' => $message
+            ]);
 
 
-            if ($response->successful())
-            {
-                return Notification::make()
-                    ->success()
-                    ->body("We have received your request")
-                    ->send();
-            }
-            else
-            {
+            if (!$response->successful()) {
 
 
                 throw new \Exception("Could not submit");
             }
-/*
-            (new SendSms())
-                ->send(
-                    to: 254714686511,
-                    text: $message
-                );
-            (new SendSms())
-                ->send(
-                    to: 254714686511,
-                    text: $message
-                );
-            (new SendSms())
-                ->send(
-                    to: $phone,
-                    text: "We have received your request and one of our agents will call you shortly"
-                );*/
-
-
-
-
-            $this->form->fill([
-                'name' => '',
-                'phone_number' => '',
-                'date' => '',
-            ]);
+            /*
+                        (new SendSms())
+                            ->send(
+                                to: 254714686511,
+                                text: $message
+                            );
+                        (new SendSms())
+                            ->send(
+                                to: 254714686511,
+                                text: $message
+                            );
+                        (new SendSms())
+                            ->send(
+                                to: $phone,
+                                text: "We have received your request and one of our agents will call you shortly"
+                            );*/
 
 
             return Notification::make()
