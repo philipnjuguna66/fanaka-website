@@ -21,6 +21,8 @@ use Spatie\Sitemap\SitemapGenerator;
 |
 */
 
+
+
 Route::get('/', function () {
 
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
