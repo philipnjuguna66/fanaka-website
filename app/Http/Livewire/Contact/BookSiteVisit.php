@@ -42,7 +42,8 @@ class BookSiteVisit extends Component implements HasForms
             Grid::make(1)
                 ->schema([
                     TextInput::make('name')->required(),
-                    TextInput::make('phone_number')->required()->tel()->numeric(),
+                    TextInput::make('phone_number')
+                        ->placeholder('07xx xxx xxx')->required()->tel()->numeric(),
                     Select::make('Branch')
                         ->label('Location')
                         ->placeholder("Select a location Interested")
