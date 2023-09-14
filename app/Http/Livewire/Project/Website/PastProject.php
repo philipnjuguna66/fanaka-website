@@ -36,7 +36,7 @@ class PastProject extends Component
 
         return view('livewire.project.website.list-project')
             ->with([
-                'projects' => $projects->paginate($this->take ?? 10)
+                'projects' => $projects->paginate($this->take ?? 6)
             ]);
     }
 }
