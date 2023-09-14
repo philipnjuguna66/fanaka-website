@@ -6,7 +6,7 @@
         @meta("title", $page->meta_title)
         @meta("description", $page->meta_description)
     @endpush
-    <div class="bg-white">
+    <div class="bg-gray-50">
 
 
         <div class="mx-auto md:w-4/5 max-w-7xl py-12 md:mt-20 md:py-16 px-8">
