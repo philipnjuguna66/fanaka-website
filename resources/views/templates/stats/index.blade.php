@@ -1,5 +1,5 @@
 <div class="relative bg-gray-950">
-    <section  class="bg-opacity-90  bg-gray-950 bg-cover bg-center bg-norepeat" style=" background-image: url('{{ url(Storage::url($section->extra['bg_image'])) }}'); background-attachment: scroll; background-position: center center; background-size: contain; background-repeat: no-repeat ">
+    <section  class="bg-opacity-90  bg-gray-950 bg-cover bg-center bg-norepeat" style=" background-image: url('{{ url(Storage::url($section->extra['bg_image'])) }}'); background-attachment: fixed; background-position: center center; background-size: cover; background-repeat: no-repeat ">
 
 
         <div class="" >
