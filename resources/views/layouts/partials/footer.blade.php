@@ -64,9 +64,9 @@
 
     </div>
 
-    <div class="relative" x-data="{ isOpenWhatsapp : false} ">
-        <button
-            @click="isOpenWhatsapp = true"
+    <div class="relative" >
+        <a
+           href="https://api.whatsapp.com/send?phone=254799001133&text=Hi tell me more about {{ url()->current() }}."
             class="open-button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-16 w-16" fill-rule="evenodd"
                  clip-rule="evenodd">
@@ -82,62 +82,8 @@
                       d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
                       clip-rule="evenodd"/>
             </svg>
-        </button>
+        </a>
 
-        <div x-cloak class="chat-popup " id="myForm" x-show="isOpenWhatsapp">
-            <div class="bg-green-600">
-                <h5 class="px-4 py-4 text-white"> Our customer support team is here to answer your questions. Ask us
-                    anything</h5>
-            </div>
-
-            <div class="form-container   mx-auto">
-
-
-                <ul class="px-2 py-2 text-gray-700 ">
-
-
-                    <li class="border-y border-y-primary-400/50 py-0.5">
-                        <div class="flex flex-row gap-2 justify-between text-gray-700">
-                            <div class="mt-0.5">
-                                <div class="flex justify-between gap-2">
-                                    <img
-                                        class="rounded-full bg-secondary-700 w-8 h-8"
-                                        src="https://picsum.photos/200/?grayscale&gender=female" loading="lazy"
-                                        alt="WhatsApp">
-
-                                    <div class="flex flex-col">
-                                        <a target="_blank"
-                                           class="mt-1 text-lg font-semibold"
-                                           href="https://api.whatsapp.com/send?phone=254799001133&text=Hi tel me more about {{ url()->current() }}.">
-                                            <span class="text-xs font-bold"> Online </span>
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <a target="_blank"
-                               class="mt-1  font-semibold"
-                               href="tel:+254799001133">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="bg-green-600" viewBox="0 0 24 24"
-                                     stroke-width="1.5" stroke="bg-green-600" class="w-5 h-5 rotate-180">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
-                                </svg>
-
-                            </a>
-                        </div>
-                    </li>
-
-
-                </ul>
-                <div class="flex justify-end gap-2 py-2">
-                    <button type="button" class="font-normal text-lg rounded-md"
-                            @click="isOpenWhatsapp=false">
-                        <span class="text-primary-600">Close</span>
-                    </button>
-                </div>
-            </div>
-        </div>
 
 
     </div>
