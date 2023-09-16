@@ -43,8 +43,6 @@ class ShowPageController extends Controller
                 ->pluck('phone_number')
                 ->first();
 
-            Log::info('whats', [$whatsApp, $locationIds, $ids]);
-
         }
 
 
