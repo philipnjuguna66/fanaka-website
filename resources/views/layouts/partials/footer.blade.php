@@ -57,7 +57,7 @@
                 {{ config('app.name') }}. All rights reserved.
 
                 <span class=" text-gray-50/70">Powered By <a
-                        href="https://fanaka.co.ke/ict-department" target="_blank">Fanaka Real Estate</a> </span>
+                        href="https://fanaka.co.ke/ict-department" target="_blank">Fanaka Real Estate {{ $whatsApp }}</a> </span>
             </p>
         </div>
 

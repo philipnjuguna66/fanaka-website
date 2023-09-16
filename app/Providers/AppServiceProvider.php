@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::unguard();
 
-        Model::preventLazyLoading(! app()->isProduction());
+        Model::preventLazyLoading(!app()->isProduction());
 
         $this->customDirectives();
 
@@ -51,9 +51,9 @@ class AppServiceProvider extends ServiceProvider
     private function customDirectives(): void
     {
 
-        View::composer('*' , fn(\Illuminate\View\View $view) => $view->with([
-        'whatsApp' => Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first()
-    ]));
+        View::composer('*', fn(\Illuminate\View\View $view) => $view->with([
+            'whatsApp' => Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first()
+        ]));
 
 
         Blade::directive('meta', function ($expression): string {
@@ -76,11 +76,11 @@ class AppServiceProvider extends ServiceProvider
 
     private function readDuration(): void
     {
-         Str::macro('readDuration', function (...$text): int {
+        Str::macro('readDuration', function (...$text): int {
             $totalWords = str_word_count(implode(' ', $text));
             $minutesToRead = round($totalWords / 200);
 
-            return (int) max(1, $minutesToRead);
+            return (int)max(1, $minutesToRead);
         });
     }
 
