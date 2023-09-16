@@ -57,7 +57,7 @@
                 {{ config('app.name') }}. All rights reserved.
 
                 <span class=" text-gray-50/70">Powered By <a
-                        href="https://fanaka.co.ke/ict-department" target="_blank">Fanaka Real Estate {{ $whatsApp }}</a> </span>
+                        href="https://fanaka.co.ke/ict-department" target="_blank">Fanaka Real Estate </a> </span>
             </p>
         </div>
 
@@ -67,7 +67,7 @@
     <div class="relative" >
         <a
             target="_blank"
-           href="https://api.whatsapp.com/send?phone={{$whatsApp}}&text=Hi tell me more about {{ url()->current() }}."
+           href="https://api.whatsapp.com/send?phone=@yield('whatsApp',  str($whatsApp)->trim()->toString() )&text=Hi tell me more about {{ url()->current() }}."
             class="open-button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-16 w-16" fill-rule="evenodd"
                  clip-rule="evenodd">
