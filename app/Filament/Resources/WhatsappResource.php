@@ -30,7 +30,7 @@ class WhatsappResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('location_tags')
+                Select::make('tags')
                     ->label('Location Tags')
                     ->options(Location::query()->pluck('name', 'id'))
                     ->getSearchResultsUsing(fn(string $search) => Location::where('name', 'like', "%{$search}%")->limit(50)->pluck('name', 'id'))
@@ -81,7 +81,7 @@ class WhatsappResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('locations'),
+                Tables\Columns\TagsColumn::make('locations.name'),
                 Tables\Columns\TextColumn::make('phone_number'),
                 Tables\Columns\TextColumn::make('name'),
             ])

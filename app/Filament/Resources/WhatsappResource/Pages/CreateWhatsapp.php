@@ -13,6 +13,9 @@ class CreateWhatsapp extends CreateRecord
 
     protected function handleRecordCreation(array $data): Model
     {
+        $data['location_tags'] = [
+            'location_id'  => $data['tags']
+        ];
         return parent::handleRecordCreation($data);
     }
 }
