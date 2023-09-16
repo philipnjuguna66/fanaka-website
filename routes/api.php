@@ -14,7 +14,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('posts', function () {
 
 
-    $blogs = \Appsorigin\Blog\Models\Blog::query()->cursor();
+    $blogs = \Appsorigin\Blog\Models\Blog::query()->latest('id')->offset(5)->cursor();
 
 
     $yourApiKey = env('OPEN_AI_API_KEY');
