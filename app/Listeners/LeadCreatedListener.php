@@ -30,7 +30,7 @@ class LeadCreatedListener implements ShouldQueue
     {
         $lead  = $event->lead;
 
-        Log::info($event->message , ['lead' => $event->lead->toArray()]);
+        Log::info($event->message);
 
         (new TelegramBot())->sendMessage($event->message);
 
