@@ -69,8 +69,7 @@ class WhatsappResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('phone_number')
                     ->tel()
-                    ->required()
-                    ->maxLength(255),
+                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
