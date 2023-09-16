@@ -29,10 +29,10 @@ class ShowPageController extends Controller
 
         if ($page instanceof Project) {
 
-            $locationIds =  $page->branches()?->implode('location_id',',');
+            $locationIds =  $page->branches()?->pluck('location_id');
 
             $whatsApp = Whatsapp::query()
-                ->whereJsonContains('location_tags', [$locationIds])
+                ->whereJsonContains('location_tags', $locationIds)
                 ->pluck('phone_number')
                 ->first();
 
