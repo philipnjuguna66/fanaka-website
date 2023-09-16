@@ -32,7 +32,7 @@ class ShowPageController extends Controller
             $locationIds =  $page->branches()?->pluck('location_id');
 
             $whatsApp = Whatsapp::query()
-                ->whereJsonContains('location_tags', $locationIds)
+                ->whereIn('location_tags', $locationIds)
                 ->pluck('phone_number')
                 ->first();
 
