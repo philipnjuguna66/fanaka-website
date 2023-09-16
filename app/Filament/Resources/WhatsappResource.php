@@ -82,7 +82,8 @@ class WhatsappResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TagsColumn::make('location_name')
-                ->default(fn(Whatsapp $record) => Location::query()->whereIn('id', $record->location_tags)->implode('name',', ')),
+                ->default(fn(Whatsapp $record) => Location::query()
+                    ->whereIn('id', $record->location_tags)->get()->implode('name',', ')),
                 Tables\Columns\TextColumn::make('phone_number'),
                 Tables\Columns\TextColumn::make('name'),
             ])
