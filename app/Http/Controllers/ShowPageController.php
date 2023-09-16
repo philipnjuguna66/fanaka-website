@@ -25,12 +25,18 @@ class ShowPageController extends Controller
 
         $page = Cache::get($key);
 
-        if ($page instanceof Project) {
-            $whatsApp = Whatsapp::query()
-                ->whereJsonContains('location_tags', $page?->branches()?->pluck('location_id')->toArray())
-                ->get();
+        $whatsApp = Whatsapp::query()->pluck('phone_number')->first();
 
-            Log::info("whas", [$whatsApp,]);
+        if ($page instanceof Project) {
+
+            $locationIds =  $page->branches()?->implode('location_id',',');
+
+            $whatsApp = Whatsapp::query()
+                ->whereJsonContains('location_tags', [$locationIds])
+                ->pluck('phone_number')
+                ->first();
+
+            Log::info('whats', [$whatsApp, $locationIds]);
 
         }
 
@@ -38,6 +44,7 @@ class ShowPageController extends Controller
         return view($permalink->type->template(), [
             'page' => $page,
             'post' => $page,
+            'whatsApp' => $whatsApp,
         ]);
 
     }
