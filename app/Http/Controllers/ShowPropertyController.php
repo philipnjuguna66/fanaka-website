@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Permalink;
+use App\Models\Whatsapp;
 use Illuminate\Support\Facades\Cache;
 
 class ShowPropertyController extends Controller
@@ -22,9 +23,16 @@ class ShowPropertyController extends Controller
         $views = Cache::get($previewKey, 1);
 
 
+        $whatsApp = Whatsapp::query()
+            ->whereIn('location_tags', $permalink->linkable?->branches->pluck('id'))
+            ->pluck('phone_number')
+            ->first();
+
+
         return view('pages.property.single', [
             'page' => $permalink->linkable,
-            'views'  => $views
+            'views'  => $views,
+            'whatsApp' => $whatsApp
         ]);
     }
 }
