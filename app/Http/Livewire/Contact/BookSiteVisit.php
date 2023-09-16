@@ -101,6 +101,10 @@ class BookSiteVisit extends Component implements HasForms
             event(new LeadCreatedEvent(lead: $lead, branch:  $branch , message: $message));
 
 
+            $this->fill([
+                'phone_number' => "",
+                'name' => null,
+            ]);
 
 
             return Notification::make()
