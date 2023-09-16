@@ -30,7 +30,7 @@ class ShowPageController extends Controller
                 ->whereJsonContains('location_tags', $page?->branches()?->pluck('location_id')->toArray())
                 ->get();
 
-            Log::info("whas", [$whatsApp, $page?->branches()?->pluck('location_id')->toArray()]);
+            Log::info("whas", [$whatsApp,]);
 
         }
 
