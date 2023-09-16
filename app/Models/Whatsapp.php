@@ -12,14 +12,18 @@ class Whatsapp extends Model
     use HasFactory;
     use HasJsonRelationships;
 
+
     protected $casts = [
         'location_tags' => 'json'
     ];
 
-    public function locations(): \Staudenmeir\EloquentJsonRelations\Relations\HasManyJson
+    public function locations()
     {
         return  $this
-            ->hasManyJson(\Appsorigin\Plots\Models\Location::class,'location_tags');
+            ->hasManyJson(\Appsorigin\Plots\Models\Location::class,
+                'id',
+            'location_tags'
+            );
     }
 
 }
