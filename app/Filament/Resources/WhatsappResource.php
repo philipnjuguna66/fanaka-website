@@ -68,7 +68,7 @@ class WhatsappResource extends Resource
                     ->preload()
                     ->required(),
                 Forms\Components\TextInput::make('phone_number')
-                    ->tel()
+                    ->placeholder("254799001133")
                     ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
