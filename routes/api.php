@@ -14,6 +14,28 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('posts', function () {
 
 
-   return  (new \App\Utils\TelegramBot())
-        ->sendMessage("New Lead from Facebook:in which area are you interested in making your investment? : kikuyu full name : sona by when do you plan to make your investment? : soon phone number : +254722721111 email : shahson@hotmail.com what budget are you working with? : a few million");
+    $blogs = \Appsorigin\Blog\Models\Blog::query()->cursor();
+
+
+    $yourApiKey = env('OPEN_AI_API_KEY');
+
+
+    foreach ($blogs as $blog) {
+        $client = OpenAI::client($yourApiKey);
+
+        $result = $client->completions()->create([
+            'model' => 'text-davinci-003',
+            'prompt' => 'correct errors and typos '. $blog->body,
+        ]);
+
+        $blog->body = $result['choices'][0]['text'];
+
+
+        $blog->save();
+
+
+    }
+
+
+
 });
