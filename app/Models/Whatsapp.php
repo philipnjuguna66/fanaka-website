@@ -21,7 +21,6 @@ class Whatsapp extends Model
     {
         return  $this
             ->hasManyJson(\Appsorigin\Plots\Models\Location::class,
-                'id',
             'location_tags'
             );
     }
