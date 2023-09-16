@@ -24,14 +24,7 @@ class ShowPropertyController extends Controller
         $views = Cache::get($previewKey, 1);
 
 
-        $whatsApp = Whatsapp::query()
-            ->whereIn('location_tags', $permalink->linkable?->branches->pluck('id')->toArray())
-            ->pluck('phone_number')
-            ->first();
 
-        Log::info("whas", [$whatsApp]);
-
-        dd($whatsApp);
 
 
         return view('pages.property.single', [
