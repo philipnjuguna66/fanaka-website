@@ -21,7 +21,7 @@ class Whatsapp extends Model
     public function locations() : HasMany
     {
         return  $this
-            ->hasMany(\Appsorigin\Plots\Models\Location::class,'location_tags');
+            ->hasMany(\Appsorigin\Plots\Models\Location::class,'id','location_tags');
     }
 
 }
