@@ -12,7 +12,6 @@ class Whatsapp extends Model
     use HasFactory;
     use HasJsonRelationships;
 
-
     protected $casts = [
         'location_tags' => 'json'
     ];
