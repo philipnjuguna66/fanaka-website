@@ -26,7 +26,7 @@ class ShowPageController extends Controller
         $page = Cache::get($key);
 
         $whatsApp = Whatsapp::query()
-            ->whereIn('location_tags', $page?->branches()?->pluck('location_id')->toArray())
+            ->whereJsonContains('location_tags', $page?->branches()?->pluck('location_id')->toArray())
             ->first();
 
         Log::info("whas", [$whatsApp, $page?->branches()?->pluck('location_id')->toArray() ]);
