@@ -30,7 +30,6 @@ class ShowPropertyController extends Controller
         return view('pages.property.single', [
             'page' => $permalink->linkable,
             'views'  => $views,
-            'whatsApp' => $whatsApp
         ]);
     }
 }
