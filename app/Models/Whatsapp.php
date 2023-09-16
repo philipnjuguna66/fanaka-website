@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -18,7 +17,7 @@ class Whatsapp extends Model
         'location_tags' => 'json'
     ];
 
-    public function locations() : HasMany
+    public function locations()
     {
         return  $this
             ->hasMany(\Appsorigin\Plots\Models\Location::class,'location_tags');
