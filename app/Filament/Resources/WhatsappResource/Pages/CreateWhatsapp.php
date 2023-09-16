@@ -16,6 +16,10 @@ class CreateWhatsapp extends CreateRecord
         $data['location_tags'] = [
             'location_id'  => $data['tags']
         ];
+
+
+        dd($data);
+
         return parent::handleRecordCreation($data);
     }
 }
