@@ -15,29 +15,24 @@ class ShowPageController extends Controller
     public function __invoke(Permalink $permalink)
     {
 
-        $key = $permalink->linkable::CACHE_KEY.".{$permalink->linkable_id}";
+        $key = $permalink->linkable::CACHE_KEY . ".{$permalink->linkable_id}";
 
 
-        if (! Cache::has($key))
-        {
-            return  redirect('/');
+        if (!Cache::has($key)) {
+            return redirect('/');
         }
-
 
 
         $page = Cache::get($key);
 
-        if ($page instanceof Project)
-        {
+        if ($page instanceof Project) {
             $whatsApp = Whatsapp::query()
-      ->whereJsonContains('location_tags', $page?->branches()?->pluck('location_id')->toArray())
-      ->first();
+                ->whereJsonContains('location_tags', $page?->branches()?->pluck('location_id')->toArray())
+                ->first();
 
-  Log::info("whas", [$whatsApp, $page?->branches()?->pluck('location_id')->toArray() ]);
+            Log::info("whas", [$whatsApp, $page?->branches()?->pluck('location_id')->toArray()]);
 
         }
-
-
 
 
         return view($permalink->type->template(), [
