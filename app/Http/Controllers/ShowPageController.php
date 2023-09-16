@@ -31,12 +31,19 @@ class ShowPageController extends Controller
 
             $locationIds =  $page->branches()?->pluck('location_id')->toArray();
 
+            $ids = [];
+
+            foreach ($locationIds as $locationId) {
+
+                $ids[] = "$locationId";
+            }
+
             $whatsApp = Whatsapp::query()
-                ->whereJsonContains('location_tags', ['5','6'])
+                ->whereJsonContains('location_tags', $ids)
                 ->pluck('phone_number')
                 ->first();
 
-            Log::info('whats', [$whatsApp, $locationIds]);
+            Log::info('whats', [$whatsApp, $locationIds, $ids]);
 
         }
 

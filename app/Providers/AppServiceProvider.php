@@ -51,7 +51,7 @@ class AppServiceProvider extends ServiceProvider
     private function customDirectives(): void
     {
 
-        View::composer('*', fn(\Illuminate\View\View $view) => $view->with([
+        View::composer('layouts.partials.footer', fn(\Illuminate\View\View $view) => $view->with([
             'whatsApp' => Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first()
         ]));
 
