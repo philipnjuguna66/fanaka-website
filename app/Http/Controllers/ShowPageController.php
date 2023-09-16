@@ -27,10 +27,9 @@ class ShowPageController extends Controller
 
         $whatsApp = Whatsapp::query()
             ->whereIn('location_tags', $page?->branches()?->pluck('location_id')->toArray())
-            ->pluck('phone_number')
             ->first();
 
-        Log::info("whas", [$whatsApp]);
+        Log::info("whas", [$whatsApp, $page?->branches()?->pluck('location_id')->toArray() ]);
 
 
 
