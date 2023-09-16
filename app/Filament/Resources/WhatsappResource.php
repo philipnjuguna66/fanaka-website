@@ -81,7 +81,7 @@ class WhatsappResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TagsColumn::make('location_tags'),
+                Tables\Columns\TagsColumn::make('locations.name'),
                 Tables\Columns\TextColumn::make('phone_number'),
                 Tables\Columns\TextColumn::make('name'),
             ])
