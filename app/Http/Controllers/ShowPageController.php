@@ -26,7 +26,7 @@ class ShowPageController extends Controller
         $page = Cache::get($key);
 
         $whatsApp = Whatsapp::query()
-            ->whereIn('location_tags', $permalink->linkable?->branches->pluck('id')->toArray())
+            ->whereIn('location_tags', $page?->branches()?->pluck('location_id')->toArray())
             ->pluck('phone_number')
             ->first();
 
