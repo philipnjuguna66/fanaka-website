@@ -25,18 +25,18 @@ class ShowPageController extends Controller
 
         $page = Cache::get($key);
 
-        $whatsApp = Whatsapp::query()->pluck('phone_number')->first();
+        $whatsApp = Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first();
 
         if ($page instanceof Project) {
 
-            $locationIds =  $page->branches()?->pluck('location_id');
+            $locationIds =  $page->branches()?->pluck('location_id')->toArray();
 
             $whatsApp = Whatsapp::query()
                 ->whereIn('location_tags', $locationIds)
                 ->pluck('phone_number')
                 ->first();
 
-            Log::info('whats', [$whatsApp, $locationIds]);
+            Log::info('whats', [$locationIds]);
 
         }
 
