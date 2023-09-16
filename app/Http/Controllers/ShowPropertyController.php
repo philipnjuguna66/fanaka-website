@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Permalink;
 use App\Models\Whatsapp;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class ShowPropertyController extends Controller
 {
@@ -27,6 +28,8 @@ class ShowPropertyController extends Controller
             ->whereIn('location_tags', $permalink->linkable?->branches->pluck('id')->toArray())
             ->pluck('phone_number')
             ->first();
+
+        Log::info("whas", [$whatsApp]);
 
 
         return view('pages.property.single', [
