@@ -24,7 +24,7 @@ class ShowPropertyController extends Controller
 
 
         $whatsApp = Whatsapp::query()
-            ->whereIn('location_tags', $permalink->linkable?->branches->pluck('id'))
+            ->whereIn('location_tags', $permalink->linkable?->branches->pluck('id')->toArray())
             ->pluck('phone_number')
             ->first();
 
