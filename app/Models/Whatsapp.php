@@ -17,7 +17,7 @@ class Whatsapp extends Model
         'location_tags' => 'json'
     ];
 
-    public function locations()
+    public function locations(): \Staudenmeir\EloquentJsonRelations\Relations\HasManyJson
     {
         return  $this
             ->hasManyJson(\Appsorigin\Plots\Models\Location::class,'location_tags');
