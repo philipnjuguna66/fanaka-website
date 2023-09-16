@@ -31,6 +31,8 @@ class ShowPropertyController extends Controller
 
         Log::info("whas", [$whatsApp]);
 
+        dd($whatsApp);
+
 
         return view('pages.property.single', [
             'page' => $permalink->linkable,
