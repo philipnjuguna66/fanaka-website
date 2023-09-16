@@ -74,8 +74,6 @@ class WhatsappResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('avatar')
-                    ->required()
             ]);
     }
 
@@ -83,14 +81,9 @@ class WhatsappResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('branch_id'),
+                Tables\Columns\TagsColumn::make('location_tags'),
                 Tables\Columns\TextColumn::make('phone_number'),
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('avator'),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
             ])
             ->filters([
                 //

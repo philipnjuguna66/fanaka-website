@@ -16,9 +16,8 @@ return new class extends Migration
             Schema::disableForeignKeyConstraints();
 
 
-           // $table->dropConstrainedForeignIdFor(\Appsorigin\Plots\Models\Location::class);
 
-           // $table->dropColumn('location_id');
+            $table->dropColumn('location_id');
 
             $table->string('phone_number')->nullable()->change();
 

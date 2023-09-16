@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('whatsapps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("location_id")
-                ->constrained()
-                ->cascadeOnDelete();
+            $table->foreignId('location_id')->nullable();
 
             $table->string('phone_number');
 
