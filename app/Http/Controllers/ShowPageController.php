@@ -25,11 +25,11 @@ class ShowPageController extends Controller
 
         $page = Cache::get($key);
 
-        $whatsApp = Whatsapp::query()
+      /*  $whatsApp = Whatsapp::query()
             ->whereJsonContains('location_tags', $page?->has('branches')?->branches()?->pluck('location_id')->toArray())
             ->first();
 
-        Log::info("whas", [$whatsApp, $page?->has('branches')?->branches()?->pluck('location_id')->toArray() ]);
+        Log::info("whas", [$whatsApp, $page?->has('branches')?->branches()?->pluck('location_id')->toArray() ]);*/
 
 
 
