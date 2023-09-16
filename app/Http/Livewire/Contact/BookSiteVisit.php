@@ -98,38 +98,9 @@ class BookSiteVisit extends Component implements HasForms
             ]);
 
 
-            event(new LeadCreatedEvent(lead: $lead, message: $message));
-
-            $response = Http::post('https://mis.fanaka.co.ke/api/notification', [
-                'tel' => $phone,
-                'branch' => $branch,
-                'name' => $data['name'],
-                'message' => $message,
-                'title' => $this->page?->title
-            ]);
+            event(new LeadCreatedEvent(lead: $lead, branch:  $branch , message: $message));
 
 
-            if (!$response->successful()) {
-
-
-                throw new \Exception("Could not submit");
-            }
-            /*
-                        (new SendSms())
-                            ->send(
-                                to: 254714686511,
-                                text: $message
-                            );
-                        (new SendSms())
-                            ->send(
-                                to: 254714686511,
-                                text: $message
-                            );
-                        (new SendSms())
-                            ->send(
-                                to: $phone,
-                                text: "We have received your request and one of our agents will call you shortly"
-                            );*/
 
 
             return Notification::make()
