@@ -2,15 +2,8 @@
 
 namespace App\Utils\Concerns;
 
-use Appsorigin\Plots\Models\Location;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
 trait InteractsWithPermerlinks
 {
-    public function branches(): BelongsToMany
-    {
-        return $this->belongsToMany(Location::class,'project_branches','project_id','location_id');
-    }
 
     public function getTitle(): string
     {
