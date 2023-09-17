@@ -97,7 +97,7 @@ class BlogResource extends Resource
                 ReplicateAction::make()->excludeAttributes(['slug'])
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+              //  Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
