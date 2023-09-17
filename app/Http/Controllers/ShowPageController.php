@@ -14,47 +14,48 @@ class ShowPageController extends Controller
 {
     public function __invoke(Permalink $permalink)
     {
-        if (! isset($permalink->linkable::CACHE_KEY))
+        try {
+            $key = $permalink->linkable::CACHE_KEY . ".{$permalink->linkable_id}";
+
+
+            if (!Cache::has($key)) {
+                return redirect('/');
+            }
+
+
+            $page = Cache::get($key);
+
+            $whatsApp = Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first();
+
+            if ($page instanceof Project) {
+
+                $locationIds =  $page->branches()?->pluck('location_id')->toArray();
+
+                $ids = [];
+
+                foreach ($locationIds as $locationId) {
+
+                    $ids[] = "$locationId";
+                }
+
+                $whatsApp = Whatsapp::query()
+                    ->whereJsonContains('location_tags', $ids)
+                    ->pluck('phone_number')
+                    ->first();
+
+            }
+
+
+            return view($permalink->type->template(), [
+                'page' => $page,
+                'post' => $page,
+                'whatsApp' => $whatsApp,
+            ]);
+
+        }
+        catch (\Exception $e)
         {
             return redirect('/');
         }
-
-        $key = $permalink->linkable::CACHE_KEY . ".{$permalink->linkable_id}";
-
-
-        if (!Cache::has($key)) {
-            return redirect('/');
-        }
-
-
-        $page = Cache::get($key);
-
-        $whatsApp = Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first();
-
-        if ($page instanceof Project) {
-
-            $locationIds =  $page->branches()?->pluck('location_id')->toArray();
-
-            $ids = [];
-
-            foreach ($locationIds as $locationId) {
-
-                $ids[] = "$locationId";
-            }
-
-            $whatsApp = Whatsapp::query()
-                ->whereJsonContains('location_tags', $ids)
-                ->pluck('phone_number')
-                ->first();
-
-        }
-
-
-        return view($permalink->type->template(), [
-            'page' => $page,
-            'post' => $page,
-            'whatsApp' => $whatsApp,
-        ]);
-
     }
 }
