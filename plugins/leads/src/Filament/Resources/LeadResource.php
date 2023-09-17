@@ -31,10 +31,9 @@ class LeadResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('created_at')->date(),
+                Tables\Columns\TextColumn::make('created_at')->dateTime(),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('phone_number'),
-                Tables\Columns\TextColumn::make('date')->label('time to visit'),
                 Tables\Columns\TextColumn::make('page'),
             ])
             ->filters([
