@@ -14,6 +14,10 @@ class ShowPageController extends Controller
 {
     public function __invoke(Permalink $permalink)
     {
+        if (! isset($permalink->linkable::CACHE_KEY))
+        {
+            return redirect('/');
+        }
 
         $key = $permalink->linkable::CACHE_KEY . ".{$permalink->linkable_id}";
 
