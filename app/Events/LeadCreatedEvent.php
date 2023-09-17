@@ -14,7 +14,7 @@ class LeadCreatedEvent
      *
      * @return void
      */
-    public function __construct(public Lead $lead , public string $branch , public string $phone, public ?string $message = null)
+    public function __construct(public Lead $lead , public string $branch , public string $phone, public string $name, public ?string $message = null, )
     {
 
 

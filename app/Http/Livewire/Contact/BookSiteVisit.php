@@ -102,7 +102,8 @@ class BookSiteVisit extends Component implements HasForms
                 lead: $lead,
                 branch: $branch,
                 phone: $data['phone_number'],
-                message: $message
+                name: $data['name'],
+                message: $message,
             ));
 
 
