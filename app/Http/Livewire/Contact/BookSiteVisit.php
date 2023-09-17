@@ -98,9 +98,12 @@ class BookSiteVisit extends Component implements HasForms
             ]);
 
 
-            event(new LeadCreatedEvent(lead: $lead, branch:  $branch , message: $message));
-
-
+            event(new LeadCreatedEvent(
+                lead: $lead,
+                branch: $branch,
+                phone: $data['phone_number'],
+                message: $message
+            ));
 
 
             $this->fill([
