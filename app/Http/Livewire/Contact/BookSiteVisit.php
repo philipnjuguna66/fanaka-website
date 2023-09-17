@@ -101,6 +101,14 @@ class BookSiteVisit extends Component implements HasForms
             event(new LeadCreatedEvent(lead: $lead, branch:  $branch , message: $message));
 
 
+            Http::post('https://mis.fanaka.co.ke/api/notification', [
+                'tel' => $lead->phone_number,
+                'branch' => $branch,
+                'name' => $lead->name,
+                'message' => $message,
+                'title' => $lead->page
+            ]);
+
             $this->fill([
                 'phone_number' => "",
                 'name' => null,
