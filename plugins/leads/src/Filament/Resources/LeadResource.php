@@ -56,6 +56,8 @@ class LeadResource extends Resource
                     })
             ])
             ->actions([
+                Tables\Actions\DeleteAction::make()
+                ->requiresConfirmation()
             ])
             ->bulkActions([
 
