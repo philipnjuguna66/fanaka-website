@@ -35,7 +35,13 @@ class LeadCreatedListener implements ShouldQueue
 
         (new TelegramBot())->sendMessage($event->message);
 
-
+        Http::post('https://mis.fanaka.co.ke/api/notification', [
+            'tel' => $lead->phone_number,
+            'branch' => $event->branch,
+            'name' => $lead->name,
+            'message' => $event->message,
+            'title' => $lead->page
+        ]);
 
     }
 
