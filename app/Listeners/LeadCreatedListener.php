@@ -34,13 +34,19 @@ class LeadCreatedListener implements ShouldQueue
 
 
 
-        Http::post('https://mis.fanaka.co.ke/api/notification', [
+        $response = Http::post('https://mis.fanaka.co.ke/api/notification', [
             'tel' => $lead->phone_number,
             'branch' => $event->branch,
             'name' => $lead->name,
             'message' => $event->message,
             'title' => $lead->page
         ]);
+
+
+        if(! $response->successful())
+        {
+            Log::info("error" , [$response->json()]);
+        }
 
 
 
