@@ -18,7 +18,8 @@ trait CardFormSectionConcern
             TextInput::make('heading')->nullable(),
             TextInput::make('columns')->numeric()->default(3),
             TextInput::make('subheading')->nullable(),
-            TextInput::make('view_more_link')->nullable(),
+            TextInput::make('view_more_link')->url()->nullable(),
+            TextInput::make('view_more_link_label')->nullable(),
             Checkbox::make('bg_white')->label('White Background')->nullable(),
             Repeater::make('cards')
             ->schema([
