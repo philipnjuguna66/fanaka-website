@@ -86,7 +86,7 @@ class BookSiteVisit extends Component implements HasForms
             $branch = $data['branch'];
         }
 
-        $message .= " Branch $branch";
+        $message .= " -: $branch";
 
         try {
 
@@ -95,6 +95,14 @@ class BookSiteVisit extends Component implements HasForms
                 'phone_number' => $data['phone_number'],
                 'date' => new Carbon(),
                 'page' => isset($this->page->title) ? $this->page->title : $branch,
+            ]);
+
+
+            $response = Http::post('https://mis.fanaka.co.ke/api/notification', [
+                'tel' => $phone,
+                'branch' => $branch,
+                'name' => $data['name'],
+                'message' => $message,
             ]);
 
 
