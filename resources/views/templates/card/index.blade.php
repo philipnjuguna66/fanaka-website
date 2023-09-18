@@ -71,7 +71,8 @@
 
                             @if($section->extra['view_more_link'])
                                 <a href="{{ $section->extra['view_more_link'] }}"
-                                   class="text-sm font-semibold leading-6 text-gray-900">View more <span
+                                   wire:navigate
+                                   class="text-sm font-semibold leading-6 button">{{ $section->extra['view_more_link_label'] }} <span
                                         aria-hidden="true">→</span></a>
                             @endif
                         </div>
