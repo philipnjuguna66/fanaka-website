@@ -4,15 +4,13 @@ namespace App\Listeners;
 
 
 use App\Events\LeadCreatedEvent;
-use App\Utils\Services\SMS\SendSms;
-use App\Utils\Services\Telegram\TelegramBoot;
+
 use App\Utils\TelegramBot;
-use Appsorigin\Leads\Models\Lead;
-use Carbon\Carbon;
+
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
+
 
 
 class LeadCreatedListener implements ShouldQueue
@@ -35,8 +33,6 @@ class LeadCreatedListener implements ShouldQueue
             'name' => $event->name,
             'message' => $event->message,
         ]);
-
-
 
 
 
