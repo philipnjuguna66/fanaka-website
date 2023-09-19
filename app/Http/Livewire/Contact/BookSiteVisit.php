@@ -16,6 +16,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 use function PHPUnit\Framework\isFalse;
 
@@ -62,6 +63,8 @@ class BookSiteVisit extends Component implements HasForms
 
     public function bookVisit()
     {
+
+
         $data = $this->form->getState();
 
         $phone = $data['phone_number'];
@@ -89,6 +92,18 @@ class BookSiteVisit extends Component implements HasForms
         $message .= " -: $branch";
 
         try {
+
+
+
+            if (str($this->phone_number)->length() < 10)
+            {
+                throw  new \Exception("Phone Number no valid");
+            }
+            if (str($this->phone_number)->length() > 10)
+            {
+                throw  new \Exception("Phone Number no valid");
+            }
+
 
             $lead = Lead::create([
                 'name' => $data['name'],
