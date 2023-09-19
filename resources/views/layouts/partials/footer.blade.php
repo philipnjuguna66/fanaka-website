@@ -64,7 +64,7 @@
 
     </div>
 
-    <div class="relative" >
+    <div class="relative flex flex-col" >
         <a
             target="_blank"
            href="https://api.whatsapp.com/send?phone=@yield('whatsApp',  str($whatsApp)->trim()->toString() )&text=Hi tell me more about {{ url()->current() }}."
@@ -87,9 +87,9 @@
         <a
             target="_blank"
            href="tel:@yield('whatsApp',  str($whatsApp)->trim()->toString() )."
-            class="open-button button mx-auto max-w-4xl block md:hidden">
+            class="open-button  button  bg-red-600 mx-auto max-w-4xl block md:hidden">
 
-            @yield('whatsApp',  str($whatsApp)->trim()->toString() )
+            Call: @yield('whatsApp',  str($whatsApp)->trim()->toString() )
         </a>
 
 
