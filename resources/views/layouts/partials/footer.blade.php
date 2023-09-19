@@ -33,7 +33,7 @@
                                             <ul role="list" class="mt-6">
 
                                                 @foreach($footerSection['data']['links'] as $link)
-                                                    <li class="">
+                                                    <li class="md:py-2">
                                                         <a href="{{ $link['link'] }}"
                                                            class=" leading-6 text-gray-50 hover:text-white">{{ $link['label'] }}</a>
                                                     </li>
