@@ -38,6 +38,10 @@
         @apply fixed cursor-pointer border-none  bottom-10 left-12
         text-white font-extrabold opacity-100 z-50
     }
+    .call-button{
+        @apply fixed cursor-pointer border-none  bottom-10 left-50
+        text-white font-extrabold opacity-100 z-50
+    }
     .chat-popup{
         @apply fixed bottom-8 left-10 z-50 bg-white rounded-md shadow-2xl max-w-[260px]
     }
