@@ -84,7 +84,13 @@
                       clip-rule="evenodd"/>
             </svg>
         </a>
+        <a
+            target="_blank"
+           href="tel:@yield('whatsApp',  str($whatsApp)->trim()->toString() )."
+            class="open-button button mx-auto max-w-4xl block md:hidden">
 
+            @yield('whatsApp',  str($whatsApp)->trim()->toString() )
+        </a>
 
 
     </div>
