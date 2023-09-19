@@ -39,7 +39,7 @@
         text-white font-extrabold opacity-100 z-50
     }
     .call-button{
-        @apply fixed cursor-pointer border-none  bottom-10 left-50
+        @apply fixed cursor-pointer border-none  bottom-10 left-8
         text-white font-extrabold opacity-100 z-50
     }
     .chat-popup{
