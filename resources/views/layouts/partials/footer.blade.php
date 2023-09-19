@@ -87,7 +87,7 @@
         <a
             target="_blank"
            href="tel:@yield('whatsApp',  str($whatsApp)->trim()->toString() )."
-            class="call-button button  bg-red-600 mx-auto max-w-4xl fixed left-[calc(30%)] z-50 hover:bg-red-600 py-2">
+            class="call-button button  bg-red-600 mx-auto max-w-4xl fixed left-[calc(30%) ] md:left-[calc(50%) z-50 hover:bg-red-600 py-2">
 
            <span class="font-semibold">
                 Call: @yield('whatsApp',  str($whatsApp)->trim()->toString() )
