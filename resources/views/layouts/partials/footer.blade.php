@@ -64,7 +64,7 @@
 
     </div>
 
-    <div class="relative flex flex-row" >
+    <div class="relative" >
         <a
             target="_blank"
            href="https://api.whatsapp.com/send?phone=@yield('whatsApp',  str($whatsApp)->trim()->toString() )&text=Hi tell me more about {{ url()->current() }}."
