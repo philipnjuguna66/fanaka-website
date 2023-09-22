@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Page;
 use App\Models\Permalink;
 use App\Models\Whatsapp;
+use Filament\Facades\Filament;
 use Filament\Forms\Components\Select;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use RyanChandler\FilamentNavigation\Facades\FilamentNavigation;
+use RyanChandler\FilamentNavigation\FilamentNavigation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -39,7 +40,8 @@ class AppServiceProvider extends ServiceProvider
 
         $this->morphsSchemas();
 
-        FilamentNavigation::addItemType('Internal Page', [
+
+        FilamentNavigation::make()->itemType('Internal Page', [
             Select::make('url')
                 ->searchable()
                 ->options(function () {

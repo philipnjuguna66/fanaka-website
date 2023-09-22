@@ -3,11 +3,11 @@
 namespace Appsorigin\Leads;
 
 use Appsorigin\Leads\Filament\Resources\LeadResource;
-use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 use Spatie\LaravelPackageTools\Package;
 
-class LeadsServiceProvider extends PluginServiceProvider
+class LeadsServiceProvider extends PackageServiceProvider
 {
 
     public function configurePackage(Package $package): void

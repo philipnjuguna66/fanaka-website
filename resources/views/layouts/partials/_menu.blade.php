@@ -1,7 +1,7 @@
 <?php
-use RyanChandler\FilamentNavigation\Facades\FilamentNavigation;
+use RyanChandler\FilamentNavigation\Models\Navigation;
 
-$menu = FilamentNavigation::get('header');
+$menu = Navigation::fromHandle('header');
 
 
 ?>

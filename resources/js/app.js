@@ -6,11 +6,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 import Alpine from 'alpinejs'
 import intersect from '@alpinejs/intersect'
-import FormsAlpinePlugin from '../../vendor/filament/forms/dist/module.esm'
-import NotificationsAlpinePlugin from '../../vendor/filament/notifications/dist/module.esm'
 
-Alpine.plugin(FormsAlpinePlugin)
-Alpine.plugin(NotificationsAlpinePlugin)
 Alpine.plugin(intersect)
 
 window.Alpine = Alpine

@@ -1,9 +1,9 @@
-<x-filament::page>
+<x-filament-panels::page>
     <div class="">
         <form
             method="post"
             class="filament-form font-extrabold"
-            wire:submit.prevent="save"
+            wire:submit="save"
         >
             {{ $this->form }}
 
@@ -27,4 +27,4 @@
 
     </div>
 
-</x-filament::page>
+</x-filament-panels::page>

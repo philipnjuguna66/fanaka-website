@@ -3,13 +3,11 @@
 namespace Appsorigin\Blog;
 
 use Appsorigin\Blog\Filament\Resources\BlogResource;
-use Appsorigin\Plots\Filament\Resources\LocationResource;
-use Appsorigin\Plots\Filament\Resources\ProjectResource;
-use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 use Spatie\LaravelPackageTools\Package;
 
-class BlogServiceProvider extends PluginServiceProvider
+class BlogServiceProvider extends PackageServiceProvider
 {
 
     public function configurePackage(Package $package): void

@@ -16,10 +16,10 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ReplicateAction;
@@ -31,7 +31,6 @@ class TeamResource extends Resource
 {
     protected static ?string $model = CompanyTeam::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user-add';
 
     protected static ?string $navigationLabel = "Teams";
 

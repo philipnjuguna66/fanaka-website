@@ -8,16 +8,15 @@ use Appsorigin\Plots\Filament\Resources\LocationResource\Pages\EditLocation;
 use Appsorigin\Plots\Filament\Resources\LocationResource\Pages\ListLocations;
 use Appsorigin\Plots\Models\Location;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 class LocationResource extends Resource
 {
     protected static ?string $model = Location::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     protected static ?string $label  = "Location";
 

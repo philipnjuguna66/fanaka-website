@@ -9,9 +9,9 @@ use Appsorigin\Blog\Filament\Resources\BlogResource\Pages\ListBlogs;
 use Appsorigin\Blog\Filament\Resources\BlogResource\RelationManagers\TagsRelationManager;
 use Appsorigin\Blog\Models\Blog;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 use Filament\Tables\Actions\ReplicateAction;
 
@@ -19,7 +19,7 @@ class BlogResource extends Resource
 {
     protected static ?string $model = Blog::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {

@@ -3,11 +3,11 @@
 namespace Appsorigin\Teams;
 
 use Appsorigin\Teams\Filament\Resources\TeamResource;
-use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 use Spatie\LaravelPackageTools\Package;
 
-class TeamsServiceProvider extends PluginServiceProvider
+class TeamsServiceProvider extends PackageServiceProvider
 {
 
     public function configurePackage(Package $package): void

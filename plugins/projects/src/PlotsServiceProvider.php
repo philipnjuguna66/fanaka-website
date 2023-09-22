@@ -4,11 +4,11 @@ namespace Appsorigin\Plots;
 
 use Appsorigin\Plots\Filament\Resources\LocationResource;
 use Appsorigin\Plots\Filament\Resources\ProjectResource;
-use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 use Spatie\LaravelPackageTools\Package;
 
-class PlotsServiceProvider extends PluginServiceProvider
+class PlotsServiceProvider extends PackageServiceProvider
 {
 
     public function configurePackage(Package $package): void

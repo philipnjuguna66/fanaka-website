@@ -6,7 +6,7 @@
     <form
         method="post"
         class="filament-form font-extrabold"
-        wire:submit.prevent="bookVisit"
+        wire:submit="bookVisit"
     >
         {{ $this->form }}
 

@@ -5,11 +5,11 @@ namespace Appsorigin\Testimonial;
 use Appsorigin\Plots\Filament\Resources\LocationResource;
 use Appsorigin\Plots\Filament\Resources\ProjectResource;
 use Appsorigin\Testimonial\Filament\Resources\TestimonialResource;
-use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 use Spatie\LaravelPackageTools\Package;
 
-class TestimonialServiceProvider extends PluginServiceProvider
+class TestimonialServiceProvider extends PackageServiceProvider
 {
 
     public function configurePackage(Package $package): void

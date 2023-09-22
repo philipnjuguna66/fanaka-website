@@ -31,6 +31,9 @@ Route::get('/', function () {
 })->name('home.page');
 
 
+Route::post('logout', fn() => auth()->logout())->name('filament.wp-admin.auth.logout');
+
+
 Route::redirect('/property','/properties-for-sale');
 
 Route::get('location/{branch:slug}', ShowLocationPageController::class)->name('permalink.location.show');

@@ -11,13 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
+            $table->id();
 
-
-            $table->mediumText('location')->fulltext();
-            $table->string('purpose')->fulltext();
-
+            $table->string('name')->fulltext();
+            $table->string('status')->default('for sale');
+            $table->string('price');
+            $table->text('body')->nullable();
+            $table->text('amenities');
+            $table->string('featured_image');
+            $table->string('video_path')->nullable();
+            $table->json('gallery')->nullable();
+            $table->string('meta_title');
+            $table->text('map')->nullable();
+            $table->string('mutation')->nullable();
+            $table->string('meta_description');
+            $table->timestamps();
         });
+
     }
 
     /**
@@ -25,12 +36,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::dropIfExists('projects');
 
 
-            $table->dropColumn('location')->fulltext();
-            $table->dropColumn('purpose')->fulltext();
-
-        });
     }
 };
