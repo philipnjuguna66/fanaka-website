@@ -24,6 +24,8 @@ trait SliderSectionConcern
                   ->preload()
                   ->lazy(),
               ])
+                ->collapsible()
+                ->collapsed()
               ->defaultItems(1),
 
         ]);
