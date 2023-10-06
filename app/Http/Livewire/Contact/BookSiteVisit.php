@@ -55,7 +55,7 @@ class BookSiteVisit extends Component implements HasForms
                         ->placeholder("Select a location Interested")
                         ->options([
                             'kangundo_road' => "Along Kangundo Road",
-                            'mombasa_road' => "Along Kangundo Road",
+                            'mombasa_road' => "Along Mombasa Road",
                             'thika_road' => "Along Thika Road",
                         ])
                         ->searchable()
