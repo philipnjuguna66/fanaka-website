@@ -23,7 +23,7 @@
                      loading="lazy"
                 >
                 <article class="prose mt-12 max-w-7xl justify-center align-middle">
-
+                    <div class="sharethis-inline-share-buttons"></div>
 
                         {{ str($post?->body)->toHtmlString() }}
 

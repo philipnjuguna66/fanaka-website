@@ -15,7 +15,7 @@
                      $animationEffect = new \Illuminate\Support\HtmlString('data-aos="fade-left" set="200" data-aos-easing="ease-in-sine" data-aos-duration="600"');
                 }
             @endphp
-            <div class="sharethis-inline-share-buttons"></div>
+
             @include($section->type->sectionPath() ,['section' => $section ,'animationEffect' => $animationEffect])
         @endforeach
 
