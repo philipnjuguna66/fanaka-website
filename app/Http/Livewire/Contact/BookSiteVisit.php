@@ -50,7 +50,7 @@ class BookSiteVisit extends Component implements HasForms
                         ->maxLength(10)
                         ->tel()
                         ->numeric(),
-                    Select::make('Branch')
+                    Select::make('branch')
                         ->label('Location')
                         ->placeholder("Select a location Interested")
                         ->options([
