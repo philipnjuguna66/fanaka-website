@@ -35,7 +35,7 @@
 
             </div>
 
-            <div class="mx-auto py-12 max-w-4xl">
+            <div class="mx-auto py-12 max-w-7xl">
 
               <div class="prose">
 
