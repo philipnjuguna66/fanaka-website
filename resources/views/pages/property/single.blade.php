@@ -37,7 +37,7 @@
 
             <div class="mx-auto py-12 max-w-4xl">
 
-              <div>
+              <div class="prose">
 
                       {{ str($page->body)->toHtmlString() }}
 
