@@ -71,7 +71,7 @@
 
             </div>
 
-            <div class=" py-12">
+            <div class="">
 
                 @if(is_array($page->gallery))
 
