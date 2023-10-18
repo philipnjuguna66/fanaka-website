@@ -35,7 +35,7 @@
 
             </div>
 
-            <div class="mx-auto py-12 max-w-7xl prose">
+            <div class="mx-auto py-12 max-w-7xl prose text-justify">
 
               <div class="prose">
 
