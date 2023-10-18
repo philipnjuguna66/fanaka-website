@@ -37,11 +37,11 @@
 
             <div class="mx-auto py-12 max-w-7xl prose">
 
-              <article class="prose">
+              <div class="prose">
 
                       {{ str($page->body)->toHtmlString() }}
 
-              </article>
+              </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12 max-w-7xl">
@@ -93,6 +93,7 @@
 
             </div>
 
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
 
 
@@ -130,6 +131,7 @@
 
                 <livewire:project.website.similar-project :project="$page"/>
             </div>
+
 
         </div>
     </div>
