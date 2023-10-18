@@ -35,13 +35,13 @@
 
             </div>
 
-            <div class="mx-auto py-12 max-w-7xl">
+            <div class="mx-auto py-12 max-w-7xl prose">
 
-              <div class="prose">
+              <article class="prose">
 
                       {{ str($page->body)->toHtmlString() }}
 
-              </div>
+              </article>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-12 max-w-7xl">
@@ -124,7 +124,6 @@
                 </div>
 
             </div>
-
 
                 <div class="">
 
