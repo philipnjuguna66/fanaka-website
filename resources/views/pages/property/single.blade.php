@@ -81,9 +81,9 @@
 
                             <div class="md:text-center align-middle">
 
-                                <div class="flex flex-col">
+                                <div class="flex flex-row gap-1">
 
-                                    <span> Interested in this Project:?</span>
+                                    <span class="text-sm"> Interested in this Project:?</span>
 
                                     <a
                                         target="_blank"
