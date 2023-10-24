@@ -16,7 +16,7 @@
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 py-8 max-w-7xl">
 
 
-                <div class="md:grid-cols-4">
+                <div class="md:cols-span-4">
 
                     <article class=" ">
                         @if(! is_null($page->video_path))
