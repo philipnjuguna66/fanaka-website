@@ -80,7 +80,7 @@
                             >
 
                             <div class="md:text-center align-middle">
-                                <a
+                                Interested in this Project: <a
                                     target="_blank"
                                     class="button mt-4 mx-4 px-8 text-center"
                                     wire:navigate
