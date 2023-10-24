@@ -16,7 +16,7 @@
             <div class="grid grid-cols-1 md:grid-cols-7 gap-4 py-8 max-w-7xl">
 
 
-                <div class="md:col-span-5">
+                <div class="md:col-span-4">
 
                     <article class=" ">
                         @if(! is_null($page->video_path))
@@ -63,7 +63,7 @@
 
                 </div>
 
-                <div class="md:col-span-2">
+                <div class="md:col-span-3">
 
                     <livewire:contact.book-site-visit :page="$page"/>
 
