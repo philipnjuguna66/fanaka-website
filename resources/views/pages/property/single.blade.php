@@ -68,7 +68,7 @@
                     <livewire:contact.book-site-visit :page="$page"/>
 
 
-                    <div class="mt-4">
+                    {{--<div class="mt-4">
 
                         <div class="rounded-md shadow-sm">
                             <h3 class="py-2 px-4 text-center capitalize">{{ $whatsApp->name }}</h3>
@@ -84,7 +84,7 @@
                                 >
                                 WhatsApp Me
                             </a>
-                        </div>
+                        </div>--}}
 
 
                     </div>
