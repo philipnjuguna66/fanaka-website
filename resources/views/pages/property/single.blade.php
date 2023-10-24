@@ -79,7 +79,7 @@
                                 src="{{ \Illuminate\Support\Facades\Storage::url($whatsApp->avatar) }}"
                             >
 
-                            <div class="md:text-center align-middle">
+                            <div class="md:text-center align-middle mt-4">
 
                                 <div class="flex flex-row gap-1">
 
