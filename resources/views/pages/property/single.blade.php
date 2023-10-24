@@ -67,6 +67,28 @@
 
                     <livewire:contact.book-site-visit :page="$page"/>
 
+
+                    <div class="mt-4">
+
+                        <div class="rounded-md shadow-sm">
+                            <h3 class="py-2 px-4 text-center capitalize">{{ $whatsApp->name }}</h3>
+                            <img
+                                loading="lazy"
+                                alt="{{ $whatsApp->name }}"
+                                src="{{ \Illuminate\Support\Facades\Storage::url($whatsApp->avatar) }}"
+                            >
+                            <a
+                                class="text-teal-600"
+                                wire:navigate
+                                href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
+                                >
+                                WhatsApp Me
+                            </a>
+                        </div>
+
+
+                    </div>
+
                     <div class="">
                         <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2"> Amenities and
                             Features</h3>
