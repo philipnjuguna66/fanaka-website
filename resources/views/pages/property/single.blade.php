@@ -73,7 +73,7 @@
                         <div class=" px-4">
                             <h3 class="py-2 px-4 text-center capitalize">{{ $whatsApp->name }}</h3>
                             <img
-                                class="object-cover rounded-md shadow-sm"
+                                class="  mx-4 px-8 object-cover rounded-md shadow-sm"
                                 loading="lazy"
                                 alt="{{ $whatsApp->name }}"
                                 src="{{ \Illuminate\Support\Facades\Storage::url($whatsApp->avatar) }}"
