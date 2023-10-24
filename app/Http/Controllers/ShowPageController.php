@@ -25,7 +25,7 @@ class ShowPageController extends Controller
 
             $page = Cache::get($key);
 
-            $whatsApp = Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first();
+            $whatsApp = Whatsapp::query()->inRandomOrder()->first();
 
             if ($page instanceof Project) {
 
