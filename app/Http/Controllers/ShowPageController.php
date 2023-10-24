@@ -40,7 +40,6 @@ class ShowPageController extends Controller
 
                 $whatsApp = Whatsapp::query()
                     ->whereJsonContains('location_tags', $ids)
-                    ->pluck('phone_number')
                     ->first();
 
             }
