@@ -71,7 +71,7 @@
                     <div class="mt-4 py-3 md:mx-auto md:max-w-2xl md:w-4/5">
 
                         <div class=" px-4">
-                            <h3 class="py-2 px-4 capitalize">{{ $whatsApp->name }}</h3>
+                            <h3 class="py-2 px-4 text-center capitalize">{{ $whatsApp->name }}</h3>
                             <img
                                 class="  mx-4 px-8 object-cover rounded-md shadow-sm"
                                 loading="lazy"
@@ -80,7 +80,7 @@
                             >
                             <a
                                 target="_blank"
-                                class="button mt-4 "
+                                class="button mt-4   mx-4 px-8 "
                                 wire:navigate
                                 href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
                                 >
