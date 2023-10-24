@@ -70,16 +70,17 @@
 
                     <div class="mt-4 py-3 md:mx-auto md:max-w-2xl md:w-4/5">
 
-                        <div class="rounded-md shadow-sm px-4">
+                        <div class=" px-4">
                             <h3 class="py-2 px-4 text-center capitalize">{{ $whatsApp->name }}</h3>
                             <img
+                                class="object-cover rounded-md shadow-sm"
                                 loading="lazy"
                                 alt="{{ $whatsApp->name }}"
                                 src="{{ \Illuminate\Support\Facades\Storage::url($whatsApp->avatar) }}"
                             >
                             <a
                                 target="_blank"
-                                class="text-teal-600"
+                                class="button bg-white shadow-sm text-teal-600"
                                 wire:navigate
                                 href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
                                 >
