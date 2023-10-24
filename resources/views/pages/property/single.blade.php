@@ -80,7 +80,7 @@
                             >
                             <a
                                 target="_blank"
-                                class="button bg-white shadow-sm text-teal-600"
+                                class="button mt-4 "
                                 wire:navigate
                                 href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
                                 >
