@@ -81,7 +81,7 @@
 
                             <div class="md:text-center align-middle">
 
-                                <div class="flex flex-col">
+                                <div class="">
 
                                     <span> Interested in this Project:?</span>
 
