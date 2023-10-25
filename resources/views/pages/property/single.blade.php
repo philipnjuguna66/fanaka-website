@@ -85,19 +85,20 @@
 
                                     <span class="text-lg"> Interested in this Project:?</span>
 
-                                    <a
-                                        target="_blank"
-                                        class="button bg-red-600 hover:bg-red-500"
-                                        wire:navigate
-                                        href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
-                                    >
-                                        WhatsApp Me
-                                    </a>
+
 
 
                                 </div>
 
                             </div>
+                            <a
+                                target="_blank"
+                                class="button bg-red-600 hover:bg-red-500"
+                                wire:navigate
+                                href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
+                            >
+                                WhatsApp Me
+                            </a>
 
 
                         </div>
