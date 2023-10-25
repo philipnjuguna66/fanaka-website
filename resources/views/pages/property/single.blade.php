@@ -81,9 +81,9 @@
 
                             <div class="md:text-center align-middle mt-4">
 
-                                <div class="flex flex-row gap-1">
+                                <div class="flex flex-col gap-1">
 
-                                    <span class="text-sm"> Interested in this Project:?</span>
+                                    <span class="text-lg"> Interested in this Project:?</span>
 
                                     <a
                                         target="_blank"
