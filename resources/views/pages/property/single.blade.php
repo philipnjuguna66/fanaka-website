@@ -1,7 +1,9 @@
 <x-guest-layout>
     @section('title', str($page->meta_title)->headline()->title())
     @section('description', $page->meta_description)
-    @section('whatsApp', $whatsApp->phone_number)
+    @if(isset($whatsApp->phone_number))
+        @section('whatsApp', $whatsApp->phone_number)
+    @endif
     @push('metas')
 
         @meta("title", $page->meta_title)
@@ -67,7 +69,7 @@
 
                     <livewire:contact.book-site-visit :page="$page"/>
 
-                    @if(isset($whatsApp->id))
+                    @if(isset($whatsApp->phone_number))
                         <div class="mt-4 py-3 md:mx-auto md:max-w-2xl md:w-4/5">
 
                             <div class=" px-4">
