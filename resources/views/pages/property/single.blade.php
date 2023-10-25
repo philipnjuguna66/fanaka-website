@@ -67,42 +67,45 @@
 
                     <livewire:contact.book-site-visit :page="$page"/>
 
+                    @if(isset($whatsApp->id))
+                        <div class="mt-4 py-3 md:mx-auto md:max-w-2xl md:w-4/5">
 
-                    <div class="mt-4 py-3 md:mx-auto md:max-w-2xl md:w-4/5">
+                            <div class=" px-4">
+                                <h3 class="py-2 px-4 text-center capitalize">{{ $whatsApp->name }}</h3>
+                                <img
+                                    class="  mx-4 px-8 object-cover rounded-md shadow-sm"
+                                    loading="lazy"
+                                    alt="{{ $whatsApp->name }}"
+                                    src="{{ \Illuminate\Support\Facades\Storage::url($whatsApp->avatar) }}"
+                                >
 
-                        <div class=" px-4">
-                            <h3 class="py-2 px-4 text-center capitalize">{{ $whatsApp->name }}</h3>
-                            <img
-                                class="  mx-4 px-8 object-cover rounded-md shadow-sm"
-                                loading="lazy"
-                                alt="{{ $whatsApp->name }}"
-                                src="{{ \Illuminate\Support\Facades\Storage::url($whatsApp->avatar) }}"
-                            >
+                                <div class="md:text-center align-middle mt-4">
 
-                            <div class="md:text-center align-middle mt-4">
+                                    <div class="flex flex-col gap-1">
 
-                                <div class="flex flex-col gap-1">
+                                        <span class="text-lg"> Interested in this Project:?</span>
+                                    </div>
 
-                                    <span class="text-lg"> Interested in this Project:?</span>
+
+                                    <a
+                                        target="_blank"
+                                        class="button bg-red-600 hover:bg-red-500"
+                                        wire:navigate
+                                        href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
+                                    >
+                                        WhatsApp Me
+                                    </a>
                                 </div>
 
 
-                                <a
-                                    target="_blank"
-                                    class="button bg-red-600 hover:bg-red-500"
-                                    wire:navigate
-                                    href="https://wa.me/{{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
-                                >
-                                    WhatsApp Me
-                                </a>
+
                             </div>
 
 
-
                         </div>
+                    @endif
 
 
-                    </div>
 
                     <div class="">
                         <h3 class="font-semibold text-xl md:text-3xl md:font-extrabold text-center px-2"> Amenities and
