@@ -32,7 +32,7 @@
                     </article>
 
 
-                    <div class="mx-auto py-12 max-w-7xl prose text-justify">
+                    <div class="mx-auto py-12 max-w-7xl prose md:text-justify">
 
                         <div class="">
 
