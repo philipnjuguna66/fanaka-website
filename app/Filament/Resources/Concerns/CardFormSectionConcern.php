@@ -24,6 +24,7 @@ trait CardFormSectionConcern
             Repeater::make('cards')
             ->schema([
                 TextInput::make('title')->nullable(),
+                TextInput::make('image_name')->nullable(),
                 FileUpload::make('image')->preserveFilenames()->nullable(),
                 Textarea::make('description')->nullable(),
                 Checkbox::make('has_modal')->label('View Description on a Modal')

@@ -16,6 +16,7 @@
                         <div class="relative w-full justify-center text-center">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($card['image']) }}" loading="lazy" alt="{{ $card['title'] }}"
                                  class="object-cover">
+                            <span class="text-center">{{ isset($card['image_name']) ? $card['image_name'] : ""}}</span>
                         </div>
                         @endif
 
