@@ -29,7 +29,7 @@ class SimilarProject extends Component
 
         $projects = Project::query()
             ->whereNot('id', $this->project?->id)
-            ->where('status', ProjectStatusEnum::FOR_SALE)
+          //  ->where('status', ProjectStatusEnum::FOR_SALE)
             ->inRandomOrder()
             ->with('link')
             ->take(3)
