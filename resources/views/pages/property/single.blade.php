@@ -65,7 +65,7 @@
 
                 </div>
 
-                <div class="md:col-span-3 md:mt-4">
+                <div class="md:col-span-3">
 
                     <livewire:contact.book-site-visit :page="$page"/>
 
