@@ -30,7 +30,7 @@ trait CardFormSectionConcern
                 Checkbox::make('has_modal')->label('View Description on a Modal')
                 ->default(false),
             ])
-                ->columns()
+                ->columns(2)
                 ->collapsible(),
 
         ]);
