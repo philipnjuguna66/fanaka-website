@@ -22,23 +22,41 @@ class CreateProject extends CreateRecord
 
             $data = $this->form->getState();
 
-            $project = Project::create([
+            $projectData = [
+                'use_page_builder' => $data['use_page_builder'],
                 'name' => $data['name'],
                 'status' => $data['status'],
                 'price' => $data['price'],
-                'body' => $data['body'],
-                'cta' => $data['cta'],
-                'location' => $data['location'],
-                'purpose' => $data['purpose'],
-                'amenities' => $data['amenities'],
-                'featured_image' => $data['featured_image'],
-                'video_path' => $data['video_path'],
-                'gallery' => $data['gallery'],
-                'map' => $data['map'],
-                'mutation' => $data['mutation'],
                 'meta_title' => $data['meta_title'],
                 'meta_description' => $data['meta_description'],
-            ]);
+                'location' => $data['location'],
+                'purpose' => $data['purpose'],
+                'featured_image' => $data['featured_image'],
+            ];
+
+            if (! $data['use_page_builder'])
+            {
+               $projectData["body"] = $data['body'];
+               $projectData["mutation"] = $data['body'];
+               $projectData["amenities"] = $data['mutation'];
+               $projectData["gallery"] = $data['gallery'];
+               $projectData["video_path"] = $data['video_path'];
+               $projectData["map"] = $data['map'];
+               $projectData["cta"] = $data['cta'];
+            }
+            else{
+
+                foreach ($data['sections'] as $section) {
+
+                    $projectData['extra'][] = [
+                        'type' => $section['type'],
+                        'extra' => $section['data'],
+                    ];
+
+                }
+            }
+
+            $project = Project::create($projectData);
 
             $project->link()->create([
                 'slug' => $data['slug'],
@@ -54,9 +72,11 @@ class CreateProject extends CreateRecord
                 ]);
             }
 
+            event(new BlogCreatedEvent($project));
+
+
             DB::commit();
 
-            event(new BlogCreatedEvent($project));
             return $project;
 
 

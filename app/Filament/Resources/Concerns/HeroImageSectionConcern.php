@@ -13,6 +13,8 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Toggle;
+
 trait HeroImageSectionConcern
 {
     protected function heroLeftImage(): Block
@@ -66,6 +68,7 @@ trait HeroImageSectionConcern
     public function heroPageBuilder(): Block
     {
         return Block::make('hero_page_builder_section')
+
             ->schema([
                 TextInput::make('columns')->numeric()->default(2)->maxValue(4)->reactive(),
                 Checkbox::make('bg_white'),
@@ -80,21 +83,24 @@ trait HeroImageSectionConcern
                                 ->description("add details to this section")
                                 ->schema([
                                     Builder::make('columns_sections.'.$i)->label('Page Sections')
+                                        ->collapsible()
                                         ->blocks([
                                             Block::make('header')
                                                 ->schema([
                                                     TextInput::make('heading')->label("Heading")->reactive(),
-                                                    Textarea::make('subheading')->label("Sub Heading")->reactive(),
+                                                    TextInput::make('subheading')->label("Sub Heading")->reactive(),
                                                 ])
                                                 ->columns(2),
                                             Block::make('image')
                                                 ->schema([
                                                     FileUpload::make('image')->preserveFilenames(),
                                                     TextInput::make('title')->helperText("image title"),
-                                                ]),
+                                                ])
+                                            ,
                                             Block::make('video')
                                                 ->schema([
                                                     TextInput::make('video_path'),
+                                                    Toggle::make('autoplay'),
                                                 ]),
                                             Block::make('sliders')
                                                 ->schema([
@@ -115,9 +121,10 @@ trait HeroImageSectionConcern
                     }
 
                     return  $sections;
-                }),
+                })
 
 
             ]);
+
     }
 }

@@ -20,6 +20,7 @@ class Project extends Model
         'status' => ProjectStatusEnum::class,
         'gallery' => 'json',
         'amenities' => 'json',
+        'extra' => 'json'
     ];
 
     public function branches(): BelongsToMany

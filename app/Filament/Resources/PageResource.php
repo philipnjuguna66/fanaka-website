@@ -84,6 +84,7 @@ class PageResource extends Resource
                         static::build()->gallerySection(),
                         static::build()->pastProjectSection(),
                         static::build()->heroWithService(),
+                        static::build()->heroPageBuilder(),
 
                     ])
                     ->columns(3)

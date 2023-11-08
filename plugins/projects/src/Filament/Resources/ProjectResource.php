@@ -3,6 +3,7 @@
 namespace Appsorigin\Plots\Filament\Resources;
 
 
+use App\Filament\Resources\Concerns\HeroImageSectionConcern;
 use App\Utils\Enums\ProjectStatusEnum;
 use Appsorigin\Plots\Filament\Resources\ProjectResource\Pages\CreateProject;
 use Appsorigin\Plots\Filament\Resources\ProjectResource\Pages\EditProject;
@@ -28,6 +29,8 @@ use Filament\Tables\Actions\ReplicateAction;
 
 class ProjectResource extends Resource
 {
+    use HeroImageSectionConcern;
+
     protected static ?string $model = Project::class;
 
     protected static ?string $navigationIcon = 'heroicon-s-folder-open';
@@ -41,17 +44,24 @@ class ProjectResource extends Resource
                 Group::make()->schema([
                     Section::make('PROJECT DETAILS')
                         ->schema([
+                            Forms\Components\Checkbox::make('use_page_builder')
+                                ->default(fn(?Project $record = null) => $record?->use_page_builder)->reactive(),
+
+
                             Grid::make()->schema([
                                 TextInput::make('cta')
                                     ->label('cta')
+                                    ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->required()
-                                    ->reactive()->helperText("Send the word katani to 12334"),
+                                    ->reactive()
+                                    ->helperText("Send the word katani to 12334"),
 
                                 TextInput::make('name')
                                     ->label('Title')
                                     ->required()
                                     ->reactive()
-                                    ->afterStateUpdated(fn(\Closure $set, $state,Page $livewire) => $livewire instanceof  CreateProject ?? $set('slug', str($state)->slug()))
+                                    ->afterStateUpdated(fn(\Closure $set, $state,Page $livewire , ?Project $record = null) =>
+                                    $livewire instanceof  CreateProject ? $set('slug', str($state)->slug()) : $record->link?->slug)
                                     ->maxLength(255),
                                 Select::make('status')
                                     ->options(function (): array {
@@ -72,12 +82,18 @@ class ProjectResource extends Resource
                                     ->helperText("e.g: 1.3M")
                                     ->required(),
                                 TextInput::make('video_path')
+                                    ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->maxLength(255),
                                 RichEditor::make('amenities')
+
+                                    ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->columnSpanFull()
                                     ->required(),
-                                TextInput::make('map')->label('embedded_google_map'),
+                                TextInput::make('map')
+                                    ->hidden(fn($get) :bool =>  $get('use_page_builder'))->label('embedded_google_map'),
                                 Forms\Components\FileUpload::make('mutation')
+
+                                    ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->preserveFilenames()
                                     ->label('mutation'),
                                 Select::make('location_id')
@@ -129,16 +145,24 @@ class ProjectResource extends Resource
 
 
                                 RichEditor::make('body')
+                                    ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->required()
                                     ->maxLength(65535)
                                     ->columnSpanFull(),
                                 Forms\Components\FileUpload::make('gallery')
+
+                                    ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->multiple()
                                     ->maxSize('1024')
                                     ->maxWidth('800px')
                                     ->preserveFilenames()
                                     ->columnSpanFull(),
                             ]),
+                            Forms\Components\Builder::make('sections')
+                                ->schema([
+                                    (new self())->heroPageBuilder()
+                                ])
+                                ->visible(fn($get) :bool =>  $get('use_page_builder')),
                         ]),
                 ])->columnSpan([
                     12,
@@ -147,7 +171,8 @@ class ProjectResource extends Resource
                 Group::make()->label('SEO SETTINGS')->schema([
                     Section::make('SEO SETTINGS')->schema([
                         TextInput::make('meta_title'),
-                        TextInput::make('slug'),
+                        TextInput::make('slug')
+                            ->disabled(fn($livewire) => $livewire instanceof EditProject),
                         Textarea::make('meta_description'),
                         Forms\Components\DateTimePicker::make('created_at')
                             ->visible(fn($livewire) => $livewire instanceof EditProject)

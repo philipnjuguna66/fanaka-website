@@ -35,6 +35,16 @@ class EditProject extends EditRecord
 
         }
 
+
+        foreach ($data['extra'] as $extra)
+        {
+            $data['sections'][] = [
+                'type' => $extra['type'],
+                'data' => $extra['extra']
+            ];
+        }
+
+
         return $data;
     }
 
@@ -49,23 +59,45 @@ class EditProject extends EditRecord
              */
             $project = $record;
 
-            $project->update([
+            $projectData = [
+                'use_page_builder' => $data['use_page_builder'],
                 'name' => $data['name'],
                 'status' => $data['status'],
                 'price' => $data['price'],
-                'cta' => $data['cta'],
-                'body' => $data['body'],
-                'amenities' => $data['amenities'],
-                'featured_image' => $data['featured_image'],
-                'video_path' => $data['video_path'],
-                'gallery' => $data['gallery'],
-                'map' => $data['map'],
-                'mutation' => $data['mutation'],
                 'meta_title' => $data['meta_title'],
+                'meta_description' => $data['meta_description'],
                 'location' => $data['location'],
                 'purpose' => $data['purpose'],
-                'meta_description' => $data['meta_description'],
-            ]);
+                'featured_image' => $data['featured_image'],
+            ];
+
+            if (! $data['use_page_builder'])
+            {
+                $projectData["body"] = $data['body'];
+                $projectData["mutation"] = $data['body'];
+                $projectData["amenities"] = $data['mutation'];
+                $projectData["gallery"] = $data['gallery'];
+                $projectData["video_path"] = $data['video_path'];
+                $projectData["map"] = $data['map'];
+                $projectData["cta"] = $data['cta'];
+            }
+            else{
+
+
+
+                foreach ($data['sections'] as $section) {
+
+                    $projectData['extra'][] = [
+                        'type' => $section['type'],
+                        'extra' => $section['data'],
+                    ];
+
+                }
+
+            }
+
+
+            $project->update($projectData);
 
             $record->setCreatedAt(Carbon::parse($data['created_at']));
 

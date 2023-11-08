@@ -1,4 +1,4 @@
-<div class="py-2 dark:text-white">
+<div class="">
     <div class="bg-white relative">
         <div class="w-full md:pt-[4.9rem] -mb-[4rem] md:-mb-[6rem]"  data-carousel="slide">
 
