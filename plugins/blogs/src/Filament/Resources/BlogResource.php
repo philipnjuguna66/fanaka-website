@@ -34,7 +34,7 @@ class BlogResource extends Resource
                             ->afterStateUpdated(fn (\Closure $set, $state): string => $set('slug', str($state)->slug()))
                             ->required()
                             ->maxLength(255),
-                        Forms\Components\MarkdownEditor::make('body')
+                        Forms\Components\RichEditor::make('body')
                             ->required(),
                         Forms\Components\Toggle::make('is_published')
                             ->required(),
