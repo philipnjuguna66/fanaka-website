@@ -109,36 +109,37 @@ class BookSiteVisit extends Component implements HasForms
                 throw  new \Exception("Phone Number no valid");
             }
 
+            if (! Lead::query()->whereDate('created_at', Carbon::today())->where('phone_number', $data['phone_number'])->exists())
+            {
+                $lead = Lead::create([
+                    'name' => $data['name'],
+                    'phone_number' => $data['phone_number'],
+                    'date' => new Carbon(),
+                    'page' => isset($this->page->title) ? $this->page->title : $branch,
+                ]);
 
-            $lead = Lead::create([
-                'name' => $data['name'],
-                'phone_number' => $data['phone_number'],
-                'date' => new Carbon(),
-                'page' => isset($this->page->title) ? $this->page->title : $branch,
-            ]);
-
-
-            $response = Http::post('https://mis.fanaka.co.ke/api/notification', [
-                'tel' => $phone,
-                'branch' => $branch,
-                'name' => $data['name'],
-                'message' => $message,
-            ]);
-
-
-            event(new LeadCreatedEvent(
-                lead: $lead,
-                branch: $branch,
-                phone: $data['phone_number'],
-                name: $data['name'],
-                message: $message,
-            ));
+                Http::post('https://mis.fanaka.co.ke/api/notification', [
+                    'tel' => $phone,
+                    'branch' => $branch,
+                    'name' => $data['name'],
+                    'message' => $message,
+                ]);
 
 
-            $this->fill([
-                'phone_number' => "",
-                'name' => null,
-            ]);
+                event(new LeadCreatedEvent(
+                    lead: $lead,
+                    branch: $branch,
+                    phone: $data['phone_number'],
+                    name: $data['name'],
+                    message: $message,
+                ));
+
+
+                $this->fill([
+                    'phone_number' => "",
+                    'name' => null,
+                ]);
+            }
 
 
             return Notification::make()
