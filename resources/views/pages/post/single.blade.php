@@ -1,6 +1,7 @@
 <x-guest-layout>
     @section('title', str($post?->meta_title)->headline()->title())
     @section('description', $post?->meta_description)
+    @section('cononical', $post?->cononical)
     @push('metas')
 
 

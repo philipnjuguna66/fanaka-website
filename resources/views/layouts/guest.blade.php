@@ -8,6 +8,8 @@
         <link rel="shortcut icon" href="{{\Illuminate\Support\Facades\Storage::url($options?->favicon) }}">
         <title class="capitalize">@yield('title',config('app.name')) - {{ $options?->name  }}</title>
         <meta name="description" content="@yield('description', $options?->meta_description)">
+        <link rel="canonical" href="@yield('cononical', url()->current())" />
+
         @stack('metas')
 
         <!-- Fonts -->
