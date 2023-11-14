@@ -31,7 +31,7 @@ class Blog extends Model implements Sitemapable
     public function toSitemapTag(): Url | string | array
     {
         // Return with fine-grained control:
-        return Url::create(route('permalink.show', $this))
+        return Url::create(route('permalink.show', $this->link?->slug))
             ->setLastModificationDate(Carbon::create($this->updated_at))
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
             ->setPriority(0.1);
