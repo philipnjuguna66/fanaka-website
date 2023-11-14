@@ -55,6 +55,10 @@ class BlogResource extends Resource
                           Forms\Components\TextInput::make('meta_title')
                               ->required()
                               ->maxLength(153),
+                          Forms\Components\TextInput::make('canonical')->url()
+                              ->label("canonical URL")
+                              ->nullable()
+                              ->maxLength(153),
                           Forms\Components\Textarea::make('meta_description')
                               ->required()
                               ->maxLength(200),
