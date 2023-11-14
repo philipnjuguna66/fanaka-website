@@ -3,8 +3,6 @@
     @section('description', $post?->meta_description)
     @section('cononical', $post?->cononical)
     @push('metas')
-
-
         @meta("title", $post?->meta_title)
         @meta("description", $post?->meta_description)
     @endpush
