@@ -52,11 +52,12 @@ class BookSiteVisit extends Component implements HasForms
                         ->numeric(),
                     Select::make('branch')
                         ->label('Location')
-                        ->placeholder("Select a location Interested")
+                        ->placeholder("Location Interested")
                         ->options([
                             'kangundo_road' => "Along Kangundo Road",
-                            'mombasa_road' => "Along Mombasa Road",
                             'thika_road' => "Along Thika Road",
+                            'mombasa_road' => "Along Mombasa Road",
+
                         ])
                         ->searchable()
                         ->preload()
