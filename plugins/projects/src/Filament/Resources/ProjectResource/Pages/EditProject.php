@@ -30,7 +30,6 @@ class EditProject extends EditRecord
 
         foreach (ProjectLocation::query()->where('project_id', $this->record->id)->get() as $location) {
 
-
             $data['location_id'][] = $location->location_id;
 
         }
