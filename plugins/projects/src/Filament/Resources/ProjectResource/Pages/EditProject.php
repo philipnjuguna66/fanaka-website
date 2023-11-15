@@ -35,13 +35,15 @@ class EditProject extends EditRecord
 
         }
 
-
-        foreach ($data['extra'] as $extra)
+        if (sizeof($data['extra']))
         {
-            $data['sections'][] = [
-                'type' => $extra['type'],
-                'data' => $extra['extra']
-            ];
+            foreach ($data['extra'] as $extra)
+            {
+                $data['sections'][] = [
+                    'type' => $extra['type'],
+                    'data' => $extra['extra']
+                ];
+            }
         }
 
 
