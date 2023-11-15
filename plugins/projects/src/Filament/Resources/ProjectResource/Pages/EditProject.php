@@ -34,7 +34,7 @@ class EditProject extends EditRecord
 
         }
 
-        if (sizeof($data['extra']) > 0)
+        if ( isset($data['extra']) && (sizeof($data['extra']) > 0))
         {
             foreach ($data['extra'] as $extra)
             {
