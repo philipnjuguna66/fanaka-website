@@ -172,7 +172,7 @@ class ProjectResource extends Resource
                     Section::make('SEO SETTINGS')->schema([
                         TextInput::make('meta_title'),
                         TextInput::make('slug')
-                            ->disabled(fn($livewire) => $livewire instanceof EditProject),
+                            ->disabled(fn($livewire , ?Project $record =null) => ($livewire instanceof EditProject) && $record->status != ProjectStatusEnum::DRAFT),
                         Textarea::make('meta_description'),
                         Forms\Components\DateTimePicker::make('created_at')
                             ->visible(fn($livewire) => $livewire instanceof EditProject)
