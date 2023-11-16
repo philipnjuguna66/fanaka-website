@@ -75,8 +75,8 @@ class EditProject extends EditRecord
             if (! $data['use_page_builder'])
             {
                 $projectData["body"] = $data['body'];
-                $projectData["mutation"] = $data['body'];
-                $projectData["amenities"] = $data['mutation'];
+                $projectData["mutation"] = $data['mutation'];
+                $projectData["amenities"] = $data['amenities'];
                 $projectData["gallery"] = $data['gallery'];
                 $projectData["video_path"] = $data['video_path'];
                 $projectData["map"] = $data['map'];

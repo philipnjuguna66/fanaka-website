@@ -177,7 +177,6 @@ class ProjectResource extends Resource
                         Forms\Components\DateTimePicker::make('created_at')
                             ->visible(fn($livewire) => $livewire instanceof EditProject)
 
-
                     ]),
                     Section::make('Featured Image')->schema([
                         Forms\Components\FileUpload::make('featured_image')
