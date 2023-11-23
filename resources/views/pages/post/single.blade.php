@@ -3,9 +3,13 @@
     @section('description', $post?->meta_description)
     @section('cononical', $post?->cononical)
     @push('metas')
+        @meta("url",  route('permalink.show', $post->link->slug))
+        @meta("type", "Article")
         @meta("title", $post?->meta_title)
         @meta("description", $post?->meta_description)
+        @meta("image", Illuminate\Support\Facades\Storage::url($post?->featured_image))
     @endpush
+
 
     <section class="mt-28 py-4 md:mx-auto max-w-7xl md:w-4/5 px-8 prose-md ">
         <div class="mt-4">
