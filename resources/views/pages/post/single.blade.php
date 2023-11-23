@@ -7,7 +7,7 @@
         @meta("type", "Article")
         @meta("title", $post?->meta_title)
         @meta("description", $post?->meta_description)
-        @meta("image", Illuminate\Support\Facades\Storage::url($post?->featured_image))
+        @meta("image", asset(Illuminate\Support\Facades\Storage::url($post?->featured_image)))
     @endpush
 
 
