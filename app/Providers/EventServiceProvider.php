@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Events\BlogCreatedEvent;
 use App\Events\LeadCreatedEvent;
 use App\Events\PageCreatedEvent;
+use App\Listeners\BackupSuccessfulListener;
 use App\Listeners\BlackListLoginAttempt;
 use App\Listeners\LeadCreatedListener;
 use App\Listeners\PageCreatedListener;
@@ -13,6 +14,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Spatie\Backup\Events\BackupWasSuccessful;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -36,7 +38,11 @@ class EventServiceProvider extends ServiceProvider
         ],
         LeadCreatedEvent::class => [
             LeadCreatedListener::class
-        ]
+        ],
+
+        BackupWasSuccessful::class => [
+            BackupSuccessfulListener::class,
+        ],
 
     ];
 
