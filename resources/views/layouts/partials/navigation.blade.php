@@ -72,7 +72,7 @@
 
 
 
-    <nav class="py-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50  fixed top-0 left-0 right-0 z-50">
+    <nav class="py-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-md shadow-primary-950/50  sticky top-0 left-0 right-0 z-50">
         <div class="flex flex-row justify-between mx-auto max-w-7xl items-center  sm:w-4/5 overflow-hidden flex-wrap">
             <a href="/" class="flex items-center">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($options?->logo ) }}" class="h-12 md:h-20 mr-3" alt="{{ $options?->name }}" />
