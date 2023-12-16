@@ -24,7 +24,7 @@
             </div>
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 mx-auto w-4/5 max-w-7xl gap-x-4 gap-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-3 mx-auto w-4/5 max-w-7xl gap-x-4 gap-y-3">
 
                 @foreach($reviews as $places)
                     @php
@@ -54,8 +54,8 @@
                             @endfor
                         </div>
                         <p class="mb-2 dark:text-gray-400">
-                            {{  str($review['text'])->limit(100, "...") ?? null }}
-                        </p>
+                            {{  str($review['text'])->limit(100, "<span>Read More</span>")->toHtmlString() ?? null }}
+                        </span>
                     </article>
 
                 @endforeach
