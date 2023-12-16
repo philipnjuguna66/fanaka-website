@@ -23,15 +23,14 @@
 
             </div>
 
-
-            <div class="grid grid-cols-1 md:grid-cols-3 mx-auto w-4/5 max-w-7xl gap-x-4 gap-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-3">
 
                 @foreach($reviews as $places)
                     @php
                         $review = $places->review
 
                     @endphp
-                    <article class="px-4 py-2 bg-gray-800 rounded-md shadow-inner ">
+                    <article class="py-2 bg-gray-800 rounded-md shadow-inner ">
                         <div class="flex items-center mb-4">
 
                             @if(isset($review['profile_photo_url']))
@@ -54,7 +53,7 @@
                             @endfor
                         </div>
                         <p class="mb-2 dark:text-gray-400">
-                            {{  str($review['text'])->limit(100, "<span>Read More</span>")->toHtmlString() ?? null }}
+                            {{  str($review['text'])->limit(100, "<span classs='text-sm px-8 text-green-600'>Read More</span>")->toHtmlString() ?? null }}
                         </span>
                     </article>
 
