@@ -53,7 +53,7 @@
                             @endfor
                         </div>
                         <p class="mb-2 dark:text-gray-400">
-                            {{  str($review['text'])->limit(100, "<span classs='text-sm px-8 text-green-600'>Read More</span>")->toHtmlString() ?? null }}
+                            {{  str($review['text'])->limit(100, "<span classs='text-sm px-8 text-green-600 mx-4'>Read More</span>")->toHtmlString() ?? null }}
                         </span>
                     </article>
 
