@@ -21,6 +21,8 @@
 
                 </p>
 
+                <a href="https://g.page/r/CaCbaPHmrGpbEB0/review" target="_blank" class="button">Leave Review</a>
+
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-3">
