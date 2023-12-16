@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('sitemap:generate')->daily();
         $schedule->command('app:google-reviews')->daily();
         $schedule->command('backup:clean')->weekly();
-        $schedule->command('backup:run --only-db')->weekly();
+        $schedule->command('backup:run')->weekly();
     }
 
     /**
