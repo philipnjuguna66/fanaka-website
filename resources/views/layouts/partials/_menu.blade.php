@@ -26,7 +26,7 @@ $menu = FilamentNavigation::get('header');
                                 }
                             @endphp
                 <li class="py-2 border-b-1 border-primary-300/50 md:border-b-0">
-                    <a href="{{ $url }}" class="block py-1 text-center {{ activeLink($item['data']['url'])  ? "border-b-2 border-primary-900 text-primary-600 font-bold  " : "    text-gray-800  " }} rounded md:bg-transparent dark:bg-blue-600 md:dark:bg-transparent"  @if(activeLink($item['data']['url']) ) aria-current="page" @endif>{{ str($item['label'])->toString() }}</a>
+                    <a href="{{ $url }}" class="block py-1 text-center {{ activeLink($item['data']['url'])  ? "border-b-2 border-primary-900 text-secondary-600 font-bold  " : "    text-gray-800  " }} rounded md:bg-transparent dark:bg-blue-600 md:dark:bg-transparent"  @if(activeLink($item['data']['url']) ) aria-current="page" @endif>{{ str($item['label'])->toString() }}</a>
                 </li>
 
                         @else
