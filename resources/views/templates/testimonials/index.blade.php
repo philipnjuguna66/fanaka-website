@@ -1,5 +1,5 @@
-<section  class="bg-gray-950 py-8 md:py-12  px-8 text-gray-50 ">
-    <div class=" py-24 sm:py-12 md:mx-auto md:w-4/5 max-w-7xl ">
+<section  class="bg-gray-950 py-8 md:py-8  px-8 text-gray-50 ">
+    <div class=" py-24 sm:py-8 md:mx-auto md:w-4/5 max-w-7xl ">
         <div {{ $animationEffect }}   class="md:mx-auto px-6 lg:px-8">
             <div class="md:mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gray-50"> {{ str($section->extra['heading'])->toHtmlString() }}</h2>
@@ -12,7 +12,7 @@
             $place = \App\Models\ReviewSetting::query()->first();
 
             ?>
-            <div class="flex items-center mt-20 py-12  mx-auto max-w-3xl justify-between">
+            <div class="flex items-center py-8  mx-auto max-w-3xl justify-between">
 
                 <div class="flex  items-center ">
                     <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
