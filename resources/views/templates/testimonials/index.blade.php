@@ -1,9 +1,9 @@
-<section  class="@if($section->extra['bg_white']  ) bg-white @endif py-8 md:py-12  px-8 ">
+<section  class="bg-gray-950 py-8 md:py-12  px-8 ">
     <div class=" py-24 sm:py-12 md:mx-auto md:w-4/5 max-w-7xl ">
         <div {{ $animationEffect }}   class="md:mx-auto px-6 lg:px-8">
             <div class="md:mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight sm:text-4xl"> {{ str($section->extra['heading'])->toHtmlString() }}</h2>
-                <p class="mt-2 text-lg leading-8 text-gray-600"> {{ str($section->extra['subheading'])->toHtmlString() }}</p>
+                <p class="mt-2 text-lg leading-8 "> {{ str($section->extra['subheading'])->toHtmlString() }}</p>
             </div>
 
             <?php
@@ -39,7 +39,7 @@
                             @endif
                             <div class="font-medium dark:text-white">
                                 <p>{{ $review['author_name'] }}
-                                    <time datetime=" {{ \Carbon\Carbon::parse($review['time'])->format('Y-m-d') }}" class="block text-sm text-gray-500 dark:text-gray-400">
+                                    <time datetime=" {{ \Carbon\Carbon::parse($review['time'])->format('Y-m-d') }}" class="block text-sm dark:text-gray-400">
                                         {{ \Carbon\Carbon::parse($review['time'])->format('Y-m-d') }} -  {{ $review['relative_time_description'] }}
                                     </time>
 
@@ -53,8 +53,8 @@
                                 </svg>
                             @endfor
                         </div>
-                        <p class="mb-2 text-gray-500 dark:text-gray-400">
-                            {{ $review['text'] ?? null }}
+                        <p class="mb-2 dark:text-gray-400">
+                            {{  str($review['text'])->limit(200, "...") ?? null }}
                         </p>
                     </article>
 
@@ -62,9 +62,9 @@
             </div>
 
 
-            <livewire:testimonial.testimonials :take="$section->extra['count']"/>
+           {{-- <livewire:testimonial.testimonials :take="$section->extra['count']"/>--}}
 
-            @if( ! is_null($section->extra['link'] ))
+           {{-- @if( ! is_null($section->extra['link'] ))
 
                 <div class=" ">
                     <div class="px-6 py-2 sm:px-6 sm:py-1 lg:px-8">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-            @endif
+            @endif--}}
         </div>
     </div>
 </section>
