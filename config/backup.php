@@ -169,7 +169,7 @@ return [
             'to' => 'philnjugunah+fanaka_website_backup_db@gmail.com',
 
             'from' => [
-                'address' => "fanakarealestates+fanakabakup@gmail.com",
+                'address' => "fanakarealestates+fanakabakupwebsite@gmail.com",
                 'name' => env('MAIL_FROM_NAME', 'Example'),
             ],
         ],
