@@ -30,7 +30,7 @@
                         $review = $places->review
 
                     @endphp
-                    <article class="py-2 bg-gray-800 rounded-md shadow-inner ">
+                    <article class="py-2 bg-gray-800 rounded-md shadow-inner px-2">
                         <div class="flex items-center mb-4">
 
                             @if(isset($review['profile_photo_url']))
