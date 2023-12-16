@@ -1,8 +1,8 @@
-<section  class="bg-gray-950 py-8 md:py-12  px-8 ">
+<section  class="bg-gray-950 py-8 md:py-12  px-8 text-gray-50 ">
     <div class=" py-24 sm:py-12 md:mx-auto md:w-4/5 max-w-7xl ">
         <div {{ $animationEffect }}   class="md:mx-auto px-6 lg:px-8">
             <div class="md:mx-auto max-w-2xl text-center">
-                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl"> {{ str($section->extra['heading'])->toHtmlString() }}</h2>
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gray-50"> {{ str($section->extra['heading'])->toHtmlString() }}</h2>
                 <p class="mt-2 text-lg leading-8 "> {{ str($section->extra['subheading'])->toHtmlString() }}</p>
             </div>
 
@@ -54,7 +54,7 @@
                             @endfor
                         </div>
                         <p class="mb-2 dark:text-gray-400">
-                            {{  str($review['text'])->limit(200, "...") ?? null }}
+                            {{  str($review['text'])->limit(100, "...") ?? null }}
                         </p>
                     </article>
 
