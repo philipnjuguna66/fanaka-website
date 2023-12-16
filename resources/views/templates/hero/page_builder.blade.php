@@ -13,6 +13,7 @@
                                 "booking_form" => view('templates.hero._site')->render(),
                                 "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
                                 "slider" => view('templates.hero._slider', ['sliders' => $column['data']['body'],'page' => $page])->render(),
+                                "masonary_block" => view('templates.hero.masionary', ['masonrySections' => $column['data'], 'page' => $page])->render(),
                                 "default" => null,
                             };
                             ?>

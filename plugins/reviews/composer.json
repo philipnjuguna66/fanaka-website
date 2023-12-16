@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PNjuguna\\Reviews\\ReviewsServiceProvider"
+                "PNjuguna\\Reviews\\src\\ReviewsServiceProvider"
             ]
         }
     }

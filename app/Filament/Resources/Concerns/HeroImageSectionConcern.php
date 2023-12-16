@@ -40,10 +40,11 @@ trait HeroImageSectionConcern
 
         ]);
     }
+
     public function heroWithService(): Block
     {
-        return Block::make('hero_with_service_section')->reactive()->label(function(\Closure $get ) : string {
-            return  $get('heading') ?? "Hero with Sections";
+        return Block::make('hero_with_service_section')->reactive()->label(function (\Closure $get): string {
+            return $get('heading') ?? "Hero with Sections";
         })
             ->schema([
                 TextInput::make('heading')->reactive(),
@@ -56,33 +57,33 @@ trait HeroImageSectionConcern
                 Checkbox::make('has_contact_form'),
             ]);
     }
+
     public function htmlSection(): Block
     {
         return Block::make('html_section')
             ->schema([
-               Textarea::make('html')
-                ->helperText('paste html code here, use tailwind css')
+                Textarea::make('html')
+                    ->helperText('paste html code here, use tailwind css')
             ]);
     }
 
     public function heroPageBuilder(): Block
     {
         return Block::make('hero_page_builder_section')
-
             ->schema([
                 TextInput::make('columns')->numeric()->default(2)->maxValue(4)->reactive(),
                 Checkbox::make('bg_white'),
 
-                Grid::make(1)->schema(function ($get) : array{
+                Grid::make(1)->schema(function ($get): array {
 
                     $sections = [];
 
-                    for ($i= 1; $i <= $get('columns'); $i++){
+                    for ($i = 1; $i <= $get('columns'); $i++) {
                         $sections[] =
                             Section::make("Column {$i}")
                                 ->description("add details to this section")
                                 ->schema([
-                                    Builder::make('columns_sections.'.$i)->label('Page Sections')
+                                    Builder::make('columns_sections.' . $i)->label('Page Sections')
                                         ->collapsible()
                                         ->blocks([
                                             Block::make('header')
@@ -104,7 +105,7 @@ trait HeroImageSectionConcern
                                                 ]),
                                             Block::make('sliders')
                                                 ->schema([
-                                                   FileUpload::make('image')->preserveFilenames()
+                                                    FileUpload::make('image')->preserveFilenames()
                                                 ]),
                                             Block::make('booking_form')
                                                 ->schema([
@@ -114,17 +115,31 @@ trait HeroImageSectionConcern
                                                 ->schema([
                                                     RichEditor::make('body'),
                                                 ]),
+                                            $this->masonaryBlocks(),
                                         ])
                                         ->disableItemDeletion(false)
+                                        ->createItemButtonLabel("Hero Section")
                                         ->collapsible(),
                                 ]);
                     }
 
-                    return  $sections;
+                    return $sections;
                 })
 
 
             ]);
 
+    }
+
+
+    private function masonaryBlocks()
+    {
+        return Block::make('masonary_block')
+            ->schema([
+                TextInput::make('heading')->label("Heading")->reactive(),
+                FileUpload::make('image')->preserveFilenames(),
+                TextInput::make('title')->helperText("image title"),
+                Textarea::make('description'),
+            ]);
     }
 }
