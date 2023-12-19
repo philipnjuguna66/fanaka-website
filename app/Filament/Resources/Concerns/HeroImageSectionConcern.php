@@ -84,7 +84,7 @@ trait HeroImageSectionConcern
                                 ->description("add details to this section")
                                 ->schema([
                                     TextInput::make('heading')->nullable(),
-                                    RichEditor::make('sub_heading'),
+                                    RichEditor::make('sub_heading')->nullable(),
                                     Builder::make('columns_sections.' . $i)->label('Page Sections')
                                         ->collapsible()
                                         ->blocks([
