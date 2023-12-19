@@ -10,7 +10,7 @@
         @meta("description", $page->meta_description)
     @endpush
 
-    <div class="" style="">
+    <div class="bg-white" style="">
 
 
         <div class="mx-auto md:w-4/5 max-w-full	 py-8  md:py-12 px-8">
@@ -20,7 +20,7 @@
     </div>
 
         @if(! $page->use_page_builder)
-        <div class="bg-white">
+        <div class="">
 
 
             <div class="mx-auto md:w-4/5 max-w-full px-8">
