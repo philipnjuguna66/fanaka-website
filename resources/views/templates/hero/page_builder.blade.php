@@ -5,7 +5,7 @@
             <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] ?? null }}</h1>
 
         </div>
-        <div class="md:mx-auto md:max-w-5xl md:text-center md:text-justify">
+        <div class="md:mx-auto md:max-w-5xl md:text-center text-start">
             <p class="mt-6 text-lg leading-8 prose text">
                 {!!  $section->extra['sub_heading'] ?? null!!}
             </p>
