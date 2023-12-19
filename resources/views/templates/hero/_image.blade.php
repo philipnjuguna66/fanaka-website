@@ -5,4 +5,8 @@
         class="object-cover"
         alt="{{ $title }}"
         src="{{ \Illuminate\Support\Facades\Storage::url($image) }}">
+
+    <div class="flex justify-center items-center">
+        <span>{{ $title }}</span>
+    </div>
 </div>
