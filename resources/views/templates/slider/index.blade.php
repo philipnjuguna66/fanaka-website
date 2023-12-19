@@ -1,5 +1,5 @@
 <div class="bg-white relative" id="">
-    <div class="w-full -mb-[4rem] md:-mb-[6rem]"  data-carousel="slide"  id="controls-carousel">
+    <div class="w-full"  data-carousel="slide"  id="controls-carousel">
 
         <div class="relative h-56 overflow-hidden lg:h-[500px]">
             @foreach($section->extra['sliders'] as $slider)
