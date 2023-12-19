@@ -87,8 +87,8 @@ trait HeroImageSectionConcern
                                     Builder::make('columns_sections.' . $i)->label('Page Sections')
                                         ->collapsible()
                                         ->blocks([
-                                            TextInput::make('heading')->nullable(),
-                                            RichEditor::make('sub_heading'),
+                                          //  TextInput::make('heading')->nullable(),
+                                           // RichEditor::make('sub_heading'),
                                             Block::make('header')
                                                 ->schema([
                                                     TextInput::make('heading')->label("Heading")->reactive(),
