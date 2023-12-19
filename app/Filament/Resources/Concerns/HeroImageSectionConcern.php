@@ -71,6 +71,8 @@ trait HeroImageSectionConcern
     {
         return Block::make('hero_page_builder_section')
             ->schema([
+                TextInput::make('heading')->nullable(),
+                RichEditor::make('sub_heading')->nullable(),
                 TextInput::make('columns')->numeric()->default(2)->maxValue(4)->reactive(),
                 Checkbox::make('bg_white'),
 
@@ -83,8 +85,7 @@ trait HeroImageSectionConcern
                             Section::make("Section {$i}")
                                 ->description("add details to this section")
                                 ->schema([
-                                    TextInput::make('heading')->nullable(),
-                                    RichEditor::make('sub_heading')->nullable(),
+
                                     Builder::make('columns_sections.' . $i)->label('Page Sections')
                                         ->collapsible()
                                         ->blocks([
