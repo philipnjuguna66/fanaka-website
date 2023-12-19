@@ -118,7 +118,7 @@ trait HeroImageSectionConcern
                                                 ->schema([
                                                     RichEditor::make('body'),
                                                 ]),
-                                            $this->masonaryBlocks(),
+                                           // $this->masonaryBlocks(),
                                         ])
                                         ->disableItemDeletion(false)
                                         ->createItemButtonLabel("Hero Section")
