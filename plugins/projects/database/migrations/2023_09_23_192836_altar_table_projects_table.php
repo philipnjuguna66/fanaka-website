@@ -15,7 +15,7 @@ return new class extends Migration
 
 
             $table->string('price')->change();
-            $table->string('cta')->fulltext();
+            $table->string('cta')->fulltext()->change();
 
         });
     }

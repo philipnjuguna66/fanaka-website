@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
 
 
-            $table->mediumText('location')->fulltext();
-            $table->string('purpose')->fulltext();
+            $table->mediumText('location')->fulltext()->change();
+            $table->string('purpose')->fulltext()->change();
 
         });
     }
