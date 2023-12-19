@@ -1,5 +1,5 @@
-<div class="bg-gray-50 md:py-12 md:mt-3 @if($section->extra['bg_white'] )  bg-white @endif">
-    <div class="mx-auto w-4/5 max-w-7xl  lg:px-8">
+<div class="bg-gray-50 md:py-12 @if($section->extra['bg_white'] )  bg-white @endif">
+    <div class="md:mx-auto md:w-4/5 max-w-7xl  lg:px-8">
 
         <div class="mx-auto max-w-5xl text-center">
             <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] ?? null }}</h1>
