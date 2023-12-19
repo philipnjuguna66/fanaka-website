@@ -1,11 +1,15 @@
 <div class="bg-gray-50 md:py-12 @if($section->extra['bg_white'] )  bg-white @endif">
     <div class="md:mx-auto md:w-4/5 max-w-7xl px-2 lg:px-8">
 
-        <div class="md:mx-auto md:max-w-5xl md:text-center">
+        <div class="mx-auto max-w-5xl text-center">
             <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] ?? null }}</h1>
-            <p class="mt-6 text-lg leading-8 prose">
+
+        </div>
+        <div class="md:mx-auto md:max-w-5xl md:text-center text-justify">
+            <p class="mt-6 text-lg leading-8 prose text">
                 {!!  $section->extra['sub_heading'] ?? null!!}
             </p>
+
         </div>
 
         <div class="mt-4 py-4">
