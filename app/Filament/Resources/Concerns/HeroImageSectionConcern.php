@@ -83,12 +83,12 @@ trait HeroImageSectionConcern
                             Section::make("Section {$i}")
                                 ->description("add details to this section")
                                 ->schema([
-
+                                    TextInput::make('heading')->nullable(),
+                                    RichEditor::make('sub_heading'),
                                     Builder::make('columns_sections.' . $i)->label('Page Sections')
                                         ->collapsible()
                                         ->blocks([
-                                          //  TextInput::make('heading')->nullable(),
-                                           // RichEditor::make('sub_heading'),
+
                                             Block::make('header')
                                                 ->schema([
                                                     TextInput::make('heading')->label("Heading")->reactive(),
