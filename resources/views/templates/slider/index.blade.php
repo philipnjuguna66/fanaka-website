@@ -1,7 +1,7 @@
 <div class="bg-white relative" id="">
     <div class="w-full"  data-carousel="slide"  id="controls-carousel">
 
-        <div class="relative h-40 overflow-hidden lg:h-[500px]">
+        <div class="relative h-36 overflow-hidden lg:h-[500px]">
             @foreach($section->extra['sliders'] as $slider)
                 <a href="{{ url($slider['url'] ?? "#") }}">
 
