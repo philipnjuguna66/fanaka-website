@@ -92,8 +92,8 @@ trait HeroImageSectionConcern
 
                                             Block::make('header')
                                                 ->schema([
-                                                    TextInput::make('heading')->label("Heading")->reactive(),
-                                                    TextInput::make('subheading')->label("Sub Heading")->reactive(),
+                                                    TextInput::make('subheading')->label("Heading")->reactive(),
+                                                    TextInput::make('description')->label("Sub Heading")->reactive(),
                                                 ])
                                                 ->columns(2),
                                             Block::make('image')
