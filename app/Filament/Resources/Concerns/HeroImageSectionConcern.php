@@ -80,12 +80,15 @@ trait HeroImageSectionConcern
 
                     for ($i = 1; $i <= $get('columns'); $i++) {
                         $sections[] =
-                            Section::make("Column {$i}")
+                            Section::make("Section {$i}")
                                 ->description("add details to this section")
                                 ->schema([
+
                                     Builder::make('columns_sections.' . $i)->label('Page Sections')
                                         ->collapsible()
                                         ->blocks([
+                                            TextInput::make('heading')->nullable(),
+                                            RichEditor::make('sub_heading'),
                                             Block::make('header')
                                                 ->schema([
                                                     TextInput::make('heading')->label("Heading")->reactive(),
@@ -136,10 +139,13 @@ trait HeroImageSectionConcern
     {
         return Block::make('masonary_block')
             ->schema([
-                TextInput::make('heading')->label("Heading")->reactive(),
-                FileUpload::make('image')->preserveFilenames(),
-                TextInput::make('title')->helperText("image title"),
-                Textarea::make('description'),
+                Repeater::make('masonary_block')
+                    ->schema([
+                        TextInput::make('heading')->label("Heading")->reactive(),
+                        FileUpload::make('image')->preserveFilenames(),
+                        TextInput::make('title')->helperText("image title"),
+                        Textarea::make('description'),
+                    ])
             ]);
     }
 }

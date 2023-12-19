@@ -1,5 +1,13 @@
 <div class="bg-gray-50 md:py-12 md:mt-3 @if($section->extra['bg_white'] )  bg-white @endif">
     <div class="mx-auto w-4/5 max-w-7xl  lg:px-8">
+
+        <div class="mx-auto max-w-5xl text-center">
+            <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] ?? null }}</h1>
+            <p class="mt-6 text-lg leading-8 prose">
+                {!!  $section->extra['sub_heading'] ?? null!!}
+            </p>
+        </div>
+
         <div class="  grid grid-cols-1 md:grid-cols-{{ $section->extra['columns'] }}  gap-x-1 space-y-4 mt-4 py-4">
             @foreach($section->extra['columns_sections'] as $index => $columns)
                 <div class="md:text-justify max-w-7xl">
@@ -13,7 +21,7 @@
                                 "booking_form" => view('templates.hero._site')->render(),
                                 "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
                                 "slider" => view('templates.hero._slider', ['sliders' => $column['data']['body'],'page' => $page])->render(),
-                                "masonary_block" => view('templates.hero.masionary', ['masonrySections' => $column['data'], 'page' => $page])->render(),
+                                "masonary_block" => view('templates.hero.masionary', ['masonrySections' => $column['data']['masonary_block'], 'page' => $page])->render(),
                                 "default" => null,
                             };
                             ?>

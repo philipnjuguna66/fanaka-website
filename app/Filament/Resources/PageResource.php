@@ -52,7 +52,9 @@ class PageResource extends Resource
                         ->required()->unique(
                             ignoreRecord: true
                         ),
-                    TextInput::make('slug')->required()->unique('permalinks', ignorable: fn (?Page $record) => ($record?->link)),
+                    TextInput::make('slug')
+                        ->required()
+                        ->unique('permalinks', ignorable: fn (?Page $record) => ($record?->link)),
                     Checkbox::make('is_front_page')
                         ->default(false)
                         ->label(fn (): string => Page::query()->where('is_front_page', true)->count() ? 'Front Page defined' : 'Is front Page')
