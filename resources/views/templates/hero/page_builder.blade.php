@@ -24,7 +24,7 @@
                                 "default" => null,
                             };
                             ?>
-                        <div class="mx-auto md:px-8">
+                        <div class="mx-auto md:px-2">
 
                             {{ str($html)->toHtmlString() }}
                         </div>
