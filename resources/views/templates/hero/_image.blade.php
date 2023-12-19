@@ -1,4 +1,4 @@
-<div class=" dark:text-white">
+<div class="dark:text-white">
 
     <img
         loading="lazy"
@@ -6,7 +6,7 @@
         alt="{{ $title }}"
         src="{{ \Illuminate\Support\Facades\Storage::url($image) }}">
 
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center py-2">
         <span>{{ $title }}</span>
     </div>
 </div>
