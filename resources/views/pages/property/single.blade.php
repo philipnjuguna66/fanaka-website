@@ -23,11 +23,11 @@
         <div class="bg-white pb-8">
 
 
-            <div class="mx-auto md:w-4/5 max-w-full px-8">
-                <div class="grid grid-cols-1 md:grid-cols-7 gap-4 py-8">
+            <div class="mx-auto md:w-[85%] max-w-full px-8">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 py-8">
 
 
-                    <div class="md:col-span-4">
+                    <div class="md:col-span-8">
 
                         <article class=" ">
                             @if(! is_null($page->video_path))
@@ -74,7 +74,7 @@
 
                     </div>
 
-                    <div class="md:col-span-3">
+                    <div class="md:col-span-4">
 
                         <livewire:contact.book-site-visit :page="$page"/>
 
