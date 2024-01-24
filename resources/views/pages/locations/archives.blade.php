@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', $branch->name . " projects for Sale")
+    @section('title', $branch->name . " Plots for Sale | Fanaka Real Estate")
     <section class="mt-8  mt-4 py-8     bg-white">
         <div class="mx-auto md:w-4/5">
             <div class="md:mx-auto max-w-7xl">
