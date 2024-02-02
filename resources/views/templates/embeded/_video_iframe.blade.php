@@ -4,7 +4,7 @@
 
     if (str($videoUri)->contains('shorts'))
         {
-            $styles = 'width=315 height=560';
+            $styles = 'width=415 height=560';
         }
 
         $videoUri = str($videoUri)
@@ -21,8 +21,8 @@
 <iframe
     {{ $styles }}
     src="{{ $videoUri }}?rel=0&&mute=0&controls=0&autoplay={{ isset($autoplay) ?? 0 }}"
-    class="aspect-ratio object-cover"
-
+    class="aspect-ratio object-cover border-0"
+    frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;web-share"
 
     allowfullscreen>
