@@ -22,7 +22,7 @@ return new class extends Migration
             $table->longText('body')->nullable()->change();
             $table->longText('amenities')->nullable()->change();
             $table->boolean('use_page_builder')->default(false);
-            $table->string('cta')->nullable()->change();
+           // $table->string('cta')->nullable()->change();
 
 
         });

@@ -15,7 +15,7 @@ return new class extends Migration
 
 
             $table->string('price')->change();
-            $table->string('cta')->fulltext()->change();
+           // $table->string('cta')->fulltext()->change();
 
         });
     }
@@ -28,7 +28,7 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
 
 
-            $table->dropColumn('cta')->fulltext();
+            //$table->dropColumn('cta')->fulltext();
 
         });
     }
