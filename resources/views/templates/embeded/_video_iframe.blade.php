@@ -5,7 +5,7 @@
     ->replace("https://www.youtube.com/", "https://www.youtube.com/embed/")
     ->replace("https://youtu.be/", "https://www.youtube.com/embed/")
     ->replace("https://www.youtube.com/embed/embed/", "https://www.youtube.com/embed/")
-    ->replace("https://www.youtube.com/shorts/", "https://www.youtube.com/shorts/")
+    ->replace("https://www.youtube.com/shorts/", "https://www.youtube.com/embed/")
     ->value();
 
 @endphp
