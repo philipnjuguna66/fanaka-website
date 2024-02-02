@@ -71,6 +71,11 @@ trait HeroImageSectionConcern
     {
         return Block::make('hero_page_builder_section')
             ->schema([
+                Select::make('hide_on')
+                    ->options([
+                        'desktop' => 'Desktop',
+                        'mobile' => 'Mobile',
+                    ])->nullable(),
                 TextInput::make('heading')->nullable(),
                 RichEditor::make('sub_heading')->nullable(),
                 TextInput::make('columns')->numeric()->default(2)->maxValue(4)->reactive(),

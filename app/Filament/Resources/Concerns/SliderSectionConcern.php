@@ -14,7 +14,11 @@ trait SliderSectionConcern
     protected function sliderSection(): Block
     {
         return Block::make('slider_section')->schema([
-            Checkbox::make('hide_on_mobile'),
+            Select::make('hide_on')
+                ->options([
+                    'desktop' => 'Desktop',
+                    'mobile' => 'Mobile',
+                ])->nullable(),
             Repeater::make('sliders')
               ->schema([
                   FileUpload::make('image')->preserveFilenames()->required(),
