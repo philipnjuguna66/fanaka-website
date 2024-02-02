@@ -5,11 +5,14 @@ namespace App\Providers;
 use App\Models\Page;
 use App\Models\Permalink;
 use App\Models\Whatsapp;
+use Appsorigin\Plots\Models\Location;
 use Filament\Forms\Components\Select;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -59,7 +62,17 @@ class AppServiceProvider extends ServiceProvider
 
 
         View::composer('layouts.partials.footer', fn(\Illuminate\View\View $view) => $view->with([
-            'whatsApp' => Whatsapp::query()->inRandomOrder()->pluck('phone_number')->first(),
+
+            'whatsApp' => Whatsapp::query()
+                ->when(Route::currentRouteName() === "home.page", fn(Builder $builder) => $builder
+                    ->whereJsonContains('location_tags',[
+                        Location::query()->whereIn('name', [
+                            'katani','mombasa road'
+                        ])
+                        ->pluck('id')
+                        ->toArray()
+                    ] ))
+                ->inRandomOrder()->pluck('phone_number')->first(),
 
         ]));
 
