@@ -1,4 +1,4 @@
-<div class="bg-white relative" id="">
+<div class="bg-white relative  @if(filled($section->extra['hide_on_mobile'])) hidden mb:block @endif" id="">
     <div class="w-full"  data-carousel="slide"  id="controls-carousel">
 
         <div class="relative h-32 overflow-hidden lg:h-[500px]">
