@@ -23,7 +23,7 @@
                                 <?php
                                 $html = match ($column['type']) {
                                     "header" => view('templates.hero._header', ['heading' => $column['data']['heading'], "subheading" => $column['data']['subheading']])->render(),
-                                    "video" => view('templates.embeded._video_iframe', ["autoplay" => 0, 'videoUri' => $column['data']['video_path']])->render(),
+                                    "video" => view('templates.embeded._video_iframe', ["autoplay" => $column['data']['autoplay'], 'videoUri' => $column['data']['video_path']])->render(),
                                     "image" => view('templates.hero._image', ['image' => $column['data']['image'], "title" => $column['data']['title'], 'section' => $section])->render(),
                                     "booking_form" => view('templates.hero._site')->render(),
                                     "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
