@@ -1,6 +1,6 @@
 @php
 
-    $styles  = " width=420 height=240";
+    $styles  = "";
 
     if (str($videoUri)->contains('shorts'))
         {
