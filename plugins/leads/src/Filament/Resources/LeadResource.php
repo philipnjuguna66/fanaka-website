@@ -55,13 +55,12 @@ class LeadResource extends Resource
                     })
             ])
             ->actions([
-                Tables\Actions\DeleteAction::make()
-                ->requiresConfirmation()
+                // Tables\Actions\DeleteAction::make() ->requiresConfirmation()
             ])
             ->bulkActions([
 
-                Tables\Actions\DeleteBulkAction::make()
-                ->requiresConfirmation()
+               // Tables\Actions\DeleteBulkAction::make()  ->requiresConfirmation()
+            
             ]);
     }
 
