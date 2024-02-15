@@ -20,7 +20,7 @@
 
 <iframe
     {{ $styles }}
-    src="{{ $videoUri }}?rel=0&&mute=0&controls=0&autoplay={{ isset($autoplay) ?? 0 }}"
+    src="{{ $videoUri }}?rel=0&&mute=0&controls=0&autoplay=0"
     class="w-full aspect-video"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;web-share"
