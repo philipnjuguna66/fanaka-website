@@ -1,4 +1,4 @@
-<section class="mt-2 py-4">
+<section class="">
     <img
         loading="lazy"
         class="w-full object-cover"
