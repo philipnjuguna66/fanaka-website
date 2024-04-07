@@ -47,7 +47,7 @@ class BookSiteVisit extends Component implements HasForms
             Grid::make(1)
                 ->schema([
                     TextInput::make('name')->required(),
-                    Hidden::make('_honey_pot')->hidden(),
+                    TextInput::make('_honey_pot')->hidden(),
                     TextInput::make('phone_number')
                         ->placeholder('07xx xxx xxx')
                         ->required()
