@@ -58,6 +58,18 @@ class AppServiceProvider extends ServiceProvider
     private function customDirectives(): void
     {
 
+        if ( ! $this->app->runningInConsole()){
+            Cache::forever('styles', view('layouts.partials.styles')->render());
+
+
+
+
+            View::composer('layouts.guest', fn(\Illuminate\View\View $view) => $view->with([
+                'styles' =>  Cache::get('styles')
+
+            ]));
+        }
+
 
 
 
@@ -69,15 +81,7 @@ class AppServiceProvider extends ServiceProvider
         ]));
 
 
-        Cache::forever('styles', view('layouts.partials.styles')->render());
 
-
-
-
-        View::composer('layouts.guest', fn(\Illuminate\View\View $view) => $view->with([
-            'styles' =>  Cache::get('styles')
-
-        ]));
 
 
         Blade::directive('meta', function ($expression): string {

@@ -10,6 +10,7 @@ use Appsorigin\Plots\Models\Project;
 use Carbon\Carbon;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -31,8 +32,11 @@ class BookSiteVisit extends Component implements HasForms
 
     public $project;
 
+    public $_honey_pot;
     public $branch;
     public $phone_number;
+
+
 
     public Project|null $page = null;
 
@@ -43,6 +47,7 @@ class BookSiteVisit extends Component implements HasForms
             Grid::make(1)
                 ->schema([
                     TextInput::make('name')->required(),
+                    Hidden::make('_honey_pot')->hidden(),
                     TextInput::make('phone_number')
                         ->placeholder('07xx xxx xxx')
                         ->required()
@@ -70,91 +75,100 @@ class BookSiteVisit extends Component implements HasForms
     public function bookVisit()
     {
 
-
         $data = $this->form->getState();
 
-        $phone = $data['phone_number'];
+        if ( ! blank($data['_honey_pot']))
+        {
+            $phone = $data['phone_number'];
 
-        $message = $data['name'] . " Booked a visit, Phone Number:  {$phone}";
-
-
-        $branch = "";
-        if (!is_null($this->page)) {
-            $message .= " to view {$this->page->title}";
-
-            $branch = $this->page
-                ->branches()
-                ->implode('name', ',');
+            $message = $data['name'] . " Booked a visit, Phone Number:  {$phone}";
 
 
-        }
-        if (isset($data['branch'])) {
+            $branch = "";
+            if (!is_null($this->page)) {
+                $message .= " to view {$this->page->title}";
 
-            $message .= " to view {$data['branch']} projects";
-
-            $branch = $data['branch'];
-        }
-
-        $message .= " -: $branch";
-
-        try {
+                $branch = $this->page
+                    ->branches()
+                    ->implode('name', ',');
 
 
-
-            if (str($this->phone_number)->length() < 10)
-            {
-                throw  new \Exception("Phone Number no valid");
             }
-            if (str($this->phone_number)->length() > 10)
-            {
-                throw  new \Exception("Phone Number no valid");
+            if (isset($data['branch'])) {
+
+                $message .= " to view {$data['branch']} projects";
+
+                $branch = $data['branch'];
             }
 
-            if (! Lead::query()->whereDate('created_at', Carbon::today())->where('phone_number', $data['phone_number'])->exists())
-            {
-                $lead = Lead::create([
-                    'name' => $data['name'],
-                    'phone_number' => $data['phone_number'],
-                    'date' => new Carbon(),
-                    'page' => isset($this->page->title) ? $this->page->title : $branch,
-                ]);
+            $message .= " -: $branch";
 
-                Http::post('https://mis.fanaka.co.ke/api/notification', [
-                    'tel' => $phone,
-                    'branch' => $branch,
-                    'name' => $data['name'],
-                    'message' => $message,
-                ]);
+            try {
 
 
-                event(new LeadCreatedEvent(
-                    lead: $lead,
-                    branch: $branch,
-                    phone: $data['phone_number'],
-                    name: $data['name'],
-                    message: $message,
-                ));
+
+                if (str($this->phone_number)->length() < 10)
+                {
+                    throw  new \Exception("Phone Number no valid");
+                }
+                if (str($this->phone_number)->length() > 10)
+                {
+                    throw  new \Exception("Phone Number no valid");
+                }
+
+                if (! Lead::query()->whereDate('created_at', Carbon::today())->where('phone_number', $data['phone_number'])->exists())
+                {
+                    $lead = Lead::create([
+                        'name' => $data['name'],
+                        'phone_number' => $data['phone_number'],
+                        'date' => new Carbon(),
+                        'page' => isset($this->page->title) ? $this->page->title : $branch,
+                    ]);
+
+                    Http::post('https://mis.fanaka.co.ke/api/notification', [
+                        'tel' => $phone,
+                        'branch' => $branch,
+                        'name' => $data['name'],
+                        'message' => $message,
+                    ]);
 
 
-                $this->fill([
-                    'phone_number' => "",
-                    'name' => null,
-                ]);
+                    event(new LeadCreatedEvent(
+                        lead: $lead,
+                        branch: $branch,
+                        phone: $data['phone_number'],
+                        name: $data['name'],
+                        message: $message,
+                    ));
+
+
+                    $this->fill([
+                        'phone_number' => "",
+                        'name' => null,
+                    ]);
+                }
+
+
+                return Notification::make()
+                    ->success()
+                    ->body("We have received your request")
+                    ->send();
+
+            } catch (\Exception $e) {
+                return Notification::make()
+                    ->danger()
+                    ->title('Something went wrong')
+                    ->body($e->getMessage())
+                    ->send();
             }
-
 
             return Notification::make()
                 ->success()
                 ->body("We have received your request")
                 ->send();
-
-        } catch (\Exception $e) {
-            return Notification::make()
-                ->danger()
-                ->title('Something went wrong')
-                ->body($e->getMessage())
-                ->send();
         }
+
+
         //  dd($response->json());
 
     }
