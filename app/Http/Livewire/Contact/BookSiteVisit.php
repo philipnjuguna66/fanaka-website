@@ -77,7 +77,7 @@ class BookSiteVisit extends Component implements HasForms
 
         $data = $this->form->getState();
 
-        if ( ! blank($data['_honey_pot']))
+        if ( blank($data['_honey_pot']))
         {
             $phone = $data['phone_number'];
 
