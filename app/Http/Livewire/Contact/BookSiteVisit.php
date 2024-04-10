@@ -77,8 +77,6 @@ class BookSiteVisit extends Component implements HasForms
 
         $data = $this->form->getState();
 
-        if ( blank($data['_honey_pot']))
-        {
             $phone = $data['phone_number'];
 
             $message = $data['name'] . " Booked a visit, Phone Number:  {$phone}";
@@ -162,11 +160,7 @@ class BookSiteVisit extends Component implements HasForms
                     ->send();
             }
 
-            return Notification::make()
-                ->success()
-                ->body("We have received your request")
-                ->send();
-        }
+
 
 
         //  dd($response->json());
