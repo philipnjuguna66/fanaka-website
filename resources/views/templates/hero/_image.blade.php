@@ -6,7 +6,7 @@
         alt="{{ $title }}"
         src="{{ \Illuminate\Support\Facades\Storage::url($image) }}">
 
-    <div class="flex flex-wrap w-50 justify-center items-center py-2 leading-1">
+    <div class="flex flex-wrap w-50 justify-center py-2 leading-1">
         <span>{{ $title }}</span>
     </div>
 </div>
