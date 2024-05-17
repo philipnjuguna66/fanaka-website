@@ -19,7 +19,8 @@ class EditProject extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\Action::make('view')
+                ->url(route('permalink.property.show',  $this->getRecord()->link )),
         ];
     }
 
