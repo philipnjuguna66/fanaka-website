@@ -26,6 +26,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Actions\ReplicateAction;
+use FilamentTiptapEditor\TiptapEditor;
 
 class ProjectResource extends Resource
 {
@@ -144,10 +145,9 @@ class ProjectResource extends Resource
                                     ]),
 
 
-                                RichEditor::make('body')
+                                TiptapEditor::make('body')
                                     ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->required()
-                                    ->maxLength(65535)
                                     ->columnSpanFull(),
                                 Forms\Components\FileUpload::make('gallery')
 
