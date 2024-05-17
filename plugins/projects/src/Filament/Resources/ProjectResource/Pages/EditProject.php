@@ -21,7 +21,7 @@ class EditProject extends EditRecord
         return [
             Actions\Action::make('Save')
             ->action(function (array $data){
-                dd($data);
+                dd($data , $this->form->getState());
             }),
             Actions\Action::make('view')
                 ->url(route('permalink.property.show',  $this->getRecord()->link ))
