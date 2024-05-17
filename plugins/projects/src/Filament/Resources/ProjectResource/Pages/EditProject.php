@@ -19,6 +19,10 @@ class EditProject extends EditRecord
     protected function getActions(): array
     {
         return [
+            Actions\Action::make('Save')
+            ->action(function (array $data){
+                dd($data);
+            }),
             Actions\Action::make('view')
                 ->url(route('permalink.property.show',  $this->getRecord()->link ))
                 ->openUrlInNewTab(),
