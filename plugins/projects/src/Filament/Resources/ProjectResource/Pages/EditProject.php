@@ -20,6 +20,7 @@ class EditProject extends EditRecord
     {
         return [
             Actions\Action::make('view')
+                ->openUrlInNewTab()
                 ->url(route('permalink.property.show',  $this->getRecord()->link )),
         ];
     }
