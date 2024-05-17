@@ -3,6 +3,7 @@ import 'flowbite';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
+import HesGallery from "hes-gallery";
 
 import Alpine from 'alpinejs'
 import intersect from '@alpinejs/intersect'
@@ -41,3 +42,13 @@ AOS.init({
 
 });
 
+
+HesGallery.setOptions({
+    wrapAround: true,
+    disableScrolling: true,
+})
+
+HesGallery.init({
+    wrapAround: true,
+    disableScrolling: true,
+})
