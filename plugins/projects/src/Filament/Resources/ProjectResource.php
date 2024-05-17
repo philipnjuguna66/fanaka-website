@@ -163,7 +163,8 @@ class ProjectResource extends Resource
                                     (new self())->heroPageBuilder()
                                 ])
                                 ->visible(fn($get) :bool =>  $get('use_page_builder')),
-                        ]),
+                        ])
+                    ->collapsible(),
                 ])->columnSpan([
                     12,
                     'lg' => 8,
@@ -177,12 +178,14 @@ class ProjectResource extends Resource
                         Forms\Components\DateTimePicker::make('created_at')
                             ->visible(fn($livewire) => $livewire instanceof EditProject)
 
-                    ]),
+                    ])
+                    ->collapsible(),
                     Section::make('Featured Image')->schema([
                         Forms\Components\FileUpload::make('featured_image')
                             ->required()
                             ->preserveFilenames(),
-                    ]),
+                    ])
+                    ->collapsible(),
                 ])->columnSpan([
                     12,
                     'lg' => 4,
