@@ -40,6 +40,9 @@ class BookSiteVisit extends Component implements HasForms
 
     public Project|null $page = null;
 
+
+    public  $heading = "";
+
     protected function getFormSchema(): array
     {
 

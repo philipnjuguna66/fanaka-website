@@ -11,6 +11,7 @@
         "appsorigin/plots": "@dev",
         "appsorigin/teams": "@dev",
         "appsorigin/testimonial": "@dev",
+        "awcodes/filament-tiptap-editor": "2.0",
         "bezhansalleh/filament-google-analytics": "^2.0",
         "filament/filament": "^2.0",
         "filament/spatie-laravel-settings-plugin": "^2.0",
