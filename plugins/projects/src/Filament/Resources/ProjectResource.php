@@ -85,7 +85,7 @@ class ProjectResource extends Resource
                                 TextInput::make('video_path')
                                     ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->maxLength(255),
-                                RichEditor::make('amenities')
+                                TiptapEditor::make('amenities')
 
                                     ->hidden(fn($get) :bool =>  $get('use_page_builder'))
                                     ->columnSpanFull()
