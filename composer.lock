@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbea78534288518d4245423cefa5541a",
+    "content-hash": "6cec5164b01f0870d5d8dcb5bffda8ea",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -10540,6 +10540,65 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "ysfkaya/filament-phone-input",
+            "version": "v1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ysfkaya/filament-phone-input.git",
+                "reference": "a8f5b3c6ac8688fa0795ff7441e7b5e640cd5ead"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ysfkaya/filament-phone-input/zipball/a8f5b3c6ac8688fa0795ff7441e7b5e640cd5ead",
+                "reference": "a8f5b3c6ac8688fa0795ff7441e7b5e640cd5ead",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.12"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^7.0|^8.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "pestphp/pest-plugin-livewire": "^1.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "suggest": {
+                "propaganistas/laravel-phone": "It is required to use the validation phone rule."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ysfkaya\\FilamentPhoneInput\\FilamentPhoneInputServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ysfkaya\\FilamentPhoneInput\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A phone input component for Laravel Filament",
+            "support": {
+                "issues": "https://github.com/ysfkaya/filament-phone-input/issues",
+                "source": "https://github.com/ysfkaya/filament-phone-input/tree/v1.3.4"
+            },
+            "time": "2023-08-19T12:45:49+00:00"
         }
     ],
     "packages-dev": [

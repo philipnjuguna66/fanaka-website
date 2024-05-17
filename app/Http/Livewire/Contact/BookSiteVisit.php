@@ -19,6 +19,7 @@ use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use Ysfkaya\FilamentPhoneInput\PhoneInput;
 use function PHPUnit\Framework\isFalse;
 
 
@@ -51,13 +52,12 @@ class BookSiteVisit extends Component implements HasForms
                 ->schema([
                     TextInput::make('name')->required(),
                     TextInput::make('_honey_pot')->hidden(),
-                    TextInput::make('phone_number')
+                    PhoneInput::make('phone_number')
                         ->placeholder('07xx xxx xxx')
-                        ->required()
-                        ->minLength(10)
-                        ->maxLength(10)
-                        ->tel()
-                        ->numeric(),
+                        ->required()->initialCountry('ke')
+                        ->preferredCountries([
+                            'ke'
+                        ]),
                     Select::make('branch')
                         ->label('Location')
                         ->placeholder("Location Interested")
