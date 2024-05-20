@@ -51,12 +51,13 @@ class BookSiteVisit extends Component implements HasForms
                 ->schema([
                     TextInput::make('name')->required(),
                     TextInput::make('_honey_pot')->hidden(),
-                    PhoneInput::make('phone_number')
+                    TextInput::make('phone_number')
                         ->placeholder('07xx xxx xxx')
-                        ->required()->initialCountry('ke')
+                        ->required()/*
+                        ->initialCountry('ke')
                         ->preferredCountries([
                             'ke'
-                        ]),
+                        ])*/,
                     Select::make('branch')
                         ->label('Location')
                         ->placeholder("Location Interested")
