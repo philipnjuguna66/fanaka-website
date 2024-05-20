@@ -112,9 +112,15 @@ class BookSiteVisit extends Component implements HasForms
                 {
                     throw  new \Exception("Phone Number no valid");
                 }
+
+
                 if (str($this->phone_number)->length() > 10)
                 {
                     throw  new \Exception("Phone Number no valid");
+                }
+
+                if ( isset($data['_honey_pot']) && filled($data['_honey_pot'])) {
+                    throw  new \Exception("Spamming Detected");
                 }
 
                 if (! Lead::query()->whereDate('created_at', Carbon::today())->where('phone_number', $data['phone_number'])->exists())
