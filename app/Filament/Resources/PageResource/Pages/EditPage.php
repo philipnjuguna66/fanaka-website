@@ -16,6 +16,9 @@ class EditPage extends EditRecord
 {
     protected static string $resource = PageResource::class;
 
+
+
+
    public function mount($record): void
    {
        parent::mount($record);
@@ -114,7 +117,19 @@ class EditPage extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\Action::make('Save')
+                ->action(function (Actions\Action $action){
+
+                    $this->save();
+
+                    return $action->sendSuccessNotification();
+
+
+
+                }),
+            Actions\Action::make('view')
+                ->url(route('permalink.show',  $this->getRecord()?->link ))
+                ->openUrlInNewTab(),
         ];
     }
 }
