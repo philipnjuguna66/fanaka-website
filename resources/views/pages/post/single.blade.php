@@ -13,7 +13,7 @@
 
     <div class="mx-auto w-4/5 max-w-4xl">
         <div class="bg-transparent px-6 pt-4 sm:pt-12 lg:px-8 flex justify-center">
-            <h1 class="font-bold text-4xl text-center">{{ $post->title }}</h1>
+            <h1 class="font-bold text-lg  md:text-4xl text-center">{{ $post->title }}</h1>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
             <div class="col-span-2 ">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($post?->featured_image) }}"
-                     class="w-[800px] h-[500px] rounded-md object-contain aspect-ratio"
+                     class="w-auto [500px] rounded-md object-cover aspect-ratio"
                      alt="{{ $post?->meta_title }}"
                      loading="lazy"
                 >
