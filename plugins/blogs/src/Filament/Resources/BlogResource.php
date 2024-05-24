@@ -14,6 +14,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Actions\ReplicateAction;
+use FilamentTiptapEditor\TiptapEditor;
 use JKHarley\FilamentTrumbowyg\Trumbowyg;
 
 class BlogResource extends Resource
@@ -34,7 +35,7 @@ class BlogResource extends Resource
                             ->afterStateUpdated(fn (\Closure $set, $state): string => $set('slug', str($state)->slug()))
                             ->required()
                             ->maxLength(255),
-                        Forms\Components\RichEditor::make('body')
+                        TiptapEditor::make('body')
                             ->required(),
                         Forms\Components\Toggle::make('is_published')
                             ->required(),
