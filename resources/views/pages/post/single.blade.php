@@ -12,7 +12,7 @@
 
 
     <div class="mx-auto w-4/5 max-w-4xl">
-        <div class="bg-transparent px-6 pt-4 sm:pt-12 lg:px-8 flex justify-center max-w-2xl">
+        <div class="bg-transparent px-6 pt-4 sm:pt-12 lg:px-8 flex justify-center">
             <h1 class="font-bold text-4xl text-center">{{ $post->title }}</h1>
         </div>
     </div>
