@@ -11,12 +11,15 @@
     @endpush
 
 
-    <section class="py-4 md:mx-auto max-w-7xl md:w-4/5 px-8 prose-md ">
-        <div class="mt-4 max-w-4xl">
-            <div class="bg-transparent px-6 pt-4 sm:pt-12 lg:px-8 flex justify-center max-w-2xl">
-                <h1 class="font-bold text-4xl text-center">{{ $post->title }}</h1>
-            </div>
+    <div class="mx-auto w-4/5 max-w-4xl">
+        <div class="bg-transparent px-6 pt-4 sm:pt-12 lg:px-8 flex justify-center max-w-2xl">
+            <h1 class="font-bold text-4xl text-center">{{ $post->title }}</h1>
         </div>
+    </div>
+
+
+    <section class="py-4 md:mx-auto max-w-7xl md:w-4/5 px-8">
+
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
             <div class="col-span-2 ">
