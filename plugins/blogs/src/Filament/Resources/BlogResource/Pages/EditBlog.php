@@ -17,7 +17,19 @@ class EditBlog extends EditRecord
     protected function getActions(): array
     {
         return [
-           // Actions\DeleteAction::make(),
+            Actions\Action::make('Save')
+                ->action(function (Actions\Action $action){
+
+                    $this->save();
+
+                    return $action->sendSuccessNotification();
+
+
+
+                }),
+            Actions\Action::make('view')
+                ->url(route('permalink.show',  $this->getRecord()?->link ))
+                ->openUrlInNewTab(),
         ];
     }
 
