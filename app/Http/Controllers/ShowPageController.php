@@ -27,7 +27,7 @@ class ShowPageController extends Controller
 
 
 
-            if ($$permalink->linkable instanceof Project) {
+            if ($permalink->linkable instanceof Project) {
 
                 $locationIds =  $page->branches()?->pluck('location_id')->toArray();
 
