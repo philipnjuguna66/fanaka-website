@@ -1,6 +1,10 @@
 <x-guest-layout>
     @section('title', "TAG: " . $tag->name . ": projects for Sale")
-    <section class="mt-8  mt-4 py-8     bg-white">
+    @if(isset($whatsApp->phone_number))
+        @section('whatsApp', $whatsApp->phone_number)
+    @endif
+
+    <section class="mt-8 py-8     bg-white">
         <div class="mx-auto md:w-4/5">
             <div class="md:mx-auto max-w-7xl">
                 <div class="mx-auto max-w-2xl text-center">

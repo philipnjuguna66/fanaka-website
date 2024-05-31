@@ -1,5 +1,8 @@
 <x-guest-layout>
     @section('title', $branch->name . " Plots for Sale")
+    @if(isset($whatsApp->phone_number))
+        @section('whatsApp', $whatsApp->phone_number)
+    @endif
     <section class="py-8 bg-white">
         <div class="mx-auto md:w-4/5">
             <div class="md:mx-auto max-w-7xl">

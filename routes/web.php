@@ -27,7 +27,7 @@ Route::get('/', function () {
         $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
 
-    return view('welcome')->with(['page' => $page]);
+    return view('welcome')->with(['page' => $page,'whatsApp' => "254700111172"]);
 })->name('home.page');
 
 

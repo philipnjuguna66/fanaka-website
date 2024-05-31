@@ -1,6 +1,7 @@
 <x-guest-layout>
     @section('title', str($page->meta_title)->headline()->title())
     @section('description', $page->meta_description)
+    @section('whatsApp', $whatsApp)
     @push('metas')
         @meta("title", $page->meta_title)
         @meta("description", $page->meta_description)
