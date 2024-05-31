@@ -25,7 +25,7 @@ class ShowPageController extends Controller
 
             $page = $permalink->linkable;
 
-            $whatsApp = Whatsapp::query()->inRandomOrder()->first();
+
 
 
             Log::info("Page", ['class' => get_class($page)]);
@@ -45,6 +45,10 @@ class ShowPageController extends Controller
                     ->whereJsonContains('location_tags', $ids)
                     ->first();
 
+            }
+            else
+            {
+                $whatsApp = Whatsapp::query()->inRandomOrder()->first();
             }
 
 
