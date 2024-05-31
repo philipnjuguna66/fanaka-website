@@ -50,7 +50,7 @@ class ShowPageController extends Controller
             {
                 $whatsApp = Whatsapp::query()->inRandomOrder()->first();
             }
-            Log::info("Whatsapp", ['Whatsapp' => $whatsApp->phone_number]);
+            Log::info("Whatsapp", ['Whatsapp' => $whatsApp]);
 
 
             return view($permalink->type->template(), [
