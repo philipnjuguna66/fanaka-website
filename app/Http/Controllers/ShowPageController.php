@@ -23,11 +23,11 @@ class ShowPageController extends Controller
             }
 
 
-            $page = Cache::get($key);
+            $page = $permalink->linkable;
 
+            $whatsApp = Whatsapp::query()->inRandomOrder()->first();
 
-
-            if ($permalink->linkable instanceof Project) {
+            if ($page instanceof Project) {
 
                 $locationIds =  $page->branches()?->pluck('location_id')->toArray();
 
@@ -43,10 +43,7 @@ class ShowPageController extends Controller
                     ->first();
 
             }
-            else
-            {
-                $whatsApp = Whatsapp::query()->inRandomOrder()->first();
-            }
+
 
             return view($permalink->type->template(), [
                 'page' => $page,
