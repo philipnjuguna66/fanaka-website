@@ -27,6 +27,9 @@ class ShowPageController extends Controller
 
             $whatsApp = Whatsapp::query()->inRandomOrder()->first();
 
+
+            Log::info("Page", ['class' => get_class($page)]);
+
             if ($page instanceof Project) {
 
                 $locationIds =  $page->branches()?->pluck('location_id')->toArray();

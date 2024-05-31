@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permalink extends Model
 {
-    use HasFactory;
 
     protected $casts = [
         'type' => PermerlinkTypeEnums::class
