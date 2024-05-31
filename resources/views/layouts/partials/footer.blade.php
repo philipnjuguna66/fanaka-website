@@ -1,3 +1,12 @@
+@php
+    use App\Models\Whatsapp;if (blank($whatsApp))
+        {
+            $whatsApp =  Whatsapp::query()
+                    ->inRandomOrder()->pluck('phone_number')->first()?->phone_number;
+        }
+@endphp
+
+
 <footer class="bg-secondary-900 py-12" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="mx-auto md:w-4/5 max-w-8xl px-6 lg:px-8">
@@ -5,8 +14,8 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-x-2 justify-between gap-y-4">
             @if(isset(app(\App\Settings\FooterSettings::class)->sections  ) && is_array(app(\App\Settings\FooterSettings::class)->sections))
                 @foreach(app(\App\Settings\FooterSettings::class)->sections as $footerSection)
-                        <div class="">
-                            @if($footerSection['type'] == "text")
+                    <div class="">
+                        @if($footerSection['type'] == "text")
                             <div>
                                 @if(isset($footerSection['data']['logo']))
                                     <img class="h-auto"
@@ -15,36 +24,37 @@
                                 @endif
 
                                 <h3 class=" font-semibold leading-6 text-white">{{ $footerSection['data']['heading'] }}</h3>
-                                <span class=" leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
+                                <span
+                                    class=" leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
                                   {{ str($footerSection['data']['content'])->toHtmlString() }}
                                 </span>
                             </div>
-                            @endif
-                                @if($footerSection['type'] == "list")
-                                    <div class="">
+                        @endif
+                        @if($footerSection['type'] == "list")
+                            <div class="">
 
-                                        <div class="">
+                                <div class="">
 
-                                            <h3 class=" font-semibold leading-6 text-white ">{{ $footerSection['data']['heading'] }}</h3>
-                                            <p class=" leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
-                                                {!! $footerSection['data']['content'] !!}
-                                            </p>
+                                    <h3 class=" font-semibold leading-6 text-white ">{{ $footerSection['data']['heading'] }}</h3>
+                                    <p class=" leading-6 @if(isset($footerSection['data']['logo'])) mt-12 @endif prose text-white">
+                                        {!! $footerSection['data']['content'] !!}
+                                    </p>
 
-                                            <ul role="list" class="mt-6">
+                                    <ul role="list" class="mt-6">
 
-                                                @foreach($footerSection['data']['links'] as $link)
-                                                    <li class="md:py-1">
-                                                        <a href="{{ $link['link'] }}"
-                                                           class=" leading-6 text-gray-50 hover:text-white">{{ $link['label'] }}</a>
-                                                    </li>
-                                                @endforeach
+                                        @foreach($footerSection['data']['links'] as $link)
+                                            <li class="md:py-1">
+                                                <a href="{{ $link['link'] }}"
+                                                   class=" leading-6 text-gray-50 hover:text-white">{{ $link['label'] }}</a>
+                                            </li>
+                                        @endforeach
 
-                                            </ul>
+                                    </ul>
 
-                                        </div>
-                                    </div>
-                                @endif
-                        </div>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
 
                 @endforeach
             @endif
@@ -64,10 +74,10 @@
 
     </div>
 
-    <div class="relative" >
+    <div class="relative">
         <a
             target="_blank"
-           href="https://api.whatsapp.com/send?phone=@yield('whatsApp',  str($whatsApp)->trim()->toString() )&text=Hi tell me more about {{ url()->current() }}."
+            href="https://api.whatsapp.com/send?phone=@yield('whatsApp',  str($whatsApp)->trim()->toString() )&text=Hi tell me more about {{ url()->current() }}."
             class="open-button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-16 w-16" fill-rule="evenodd"
                  clip-rule="evenodd">
@@ -86,7 +96,7 @@
         </a>
         <a
             target="_blank"
-           href="tel:@yield('whatsApp',  str($whatsApp)->trim()->toString() )."
+            href="tel:@yield('whatsApp',  str($whatsApp)->trim()->toString() )."
             class="call-button button  bg-red-600 mx-auto max-w-4xl fixed left-[calc(30%)] z-50 hover:bg-red-600 py-2 block md:hidden">
 
            <span class="font-semibold">

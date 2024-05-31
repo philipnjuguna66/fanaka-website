@@ -73,20 +73,6 @@ class AppServiceProvider extends ServiceProvider
 
 
 
-        View::composer('layouts.partials.footer', function (\Illuminate\View\View $view) {
-
-
-
-            return $view->with([
-
-                'whatsApp' => Route::currentRouteName() === "home.page" ? "254700111172" : Whatsapp::query()
-                    ->inRandomOrder()->pluck('phone_number')->first(),
-
-            ]);
-        });
-
-
-
 
 
         Blade::directive('meta', function ($expression): string {
