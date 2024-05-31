@@ -1,5 +1,7 @@
 @php
-    use App\Models\Whatsapp;if (blank($whatsApp))
+    use App\Models\Whatsapp;
+
+    if ( ! isset($whatsApp) || blank($whatsApp))
         {
             $whatsApp =  Whatsapp::query()
                     ->inRandomOrder()->pluck('phone_number')->first()?->phone_number;
