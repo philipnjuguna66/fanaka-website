@@ -22,16 +22,16 @@ use Spatie\Sitemap\SitemapGenerator;
 */
 
 
-
 Route::get('/', function () {
-        $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
+    $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
 
-    return view('welcome')->with(['page' => $page,'whatsApp' => "254700111172"]);
+    return view('welcome')->with(['page' => $page,
+        'whatsApp' => "254700111172"]);
 })->name('home.page');
 
 
-Route::redirect('/property','/properties-for-sale');
+Route::redirect('/property', '/properties-for-sale');
 
 Route::get('location/{branch:slug}', ShowLocationPageController::class)->name('permalink.location.show');
 Route::get('tag/{tag:slug}', ShowTagPageController::class)->name('permalink.tag.show');
