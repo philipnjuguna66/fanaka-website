@@ -25,6 +25,7 @@
         "maatwebsite/excel": "^3.1",
         "openai-php/client": "^0.7.3",
         "ryangjchandler/filament-navigation": "^0.5.0",
+        "spatie/laravel-backup": "^8.8",
         "spatie/laravel-settings": "^2.8",
         "spatie/laravel-sitemap": "^7.2",
         "ysfkaya/filament-phone-input": "^1.3"
