@@ -4,7 +4,7 @@
     if ( ! isset($whatsApp) || blank($whatsApp))
         {
             $whatsApp =  Whatsapp::query()
-                    ->inRandomOrder()->pluck('phone_number')->first()?->phone_number;
+                    ->inRandomOrder()->pluck('phone_number')->first();
         }
 @endphp
 
