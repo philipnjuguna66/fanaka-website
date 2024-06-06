@@ -31,8 +31,8 @@ trait ProjectFormSectionConcern
 
                     return $options;
                 })
-            ->searchable()
-            ->preload(),
+                ->searchable()
+                ->preload(),
         ]);
     }
 
@@ -56,8 +56,34 @@ trait ProjectFormSectionConcern
 
                     return $options;
                 })
-            ->searchable()
-            ->preload(),
+                ->searchable()
+                ->preload(),
+        ]);
+    }
+
+    protected function featuredProjects(): Block
+    {
+        return Block::make('featured_section')->schema([
+            TextInput::make('heading')->required(),
+            TextInput::make('subheading'),
+            Checkbox::make('bg_white')->label('White Background')->nullable(),
+            Select::make('project_ids')
+                ->options(function (): array {
+
+                    $options = [];
+
+                    foreach (Permalink::query()->whereType('project')->cursor() as $link) {
+
+                        $options[$link->slug] = $link->linkable?->name;
+
+                    }
+
+                    return $options;
+                })
+                ->searchable()
+                ->multiple()
+                ->required()
+                ->preload(),
         ]);
     }
 }
