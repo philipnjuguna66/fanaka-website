@@ -13,7 +13,7 @@ class FeaturedProject extends Component
     public function render()
     {
         return view('livewire.project.website.featured-project',[
-            'projects' => Project::query()->whereIn('id', $this->projectIds)->get()
+            'projects' => Project::query()->whereIn('id', $this->projectIds)->inRandomOrder()->get()
         ]);
     }
 }
