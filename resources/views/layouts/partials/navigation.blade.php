@@ -8,10 +8,10 @@
     <div class=" mx-auto md:block">
         <div class=" py-2 md:py-2 flex  flex-col md:flex-row  md:justify-between">
 
-            <div class="flex flex-col md:flex-row  gap-4">
+            <div class="flex flex-col md:flex-row mx-auto gap-4">
 
                 @foreach($header->phones as $phone)
-                    <div class="">
+                    <div class="px-8">
                         <div class=>
                             <a href="{{ $phone['link'] }} " class="text-sm"> {{ $phone['label'] }} </a>
                         </div>
