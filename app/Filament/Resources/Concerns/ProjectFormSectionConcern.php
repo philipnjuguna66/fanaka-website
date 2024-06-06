@@ -93,6 +93,24 @@ trait ProjectFormSectionConcern
                 ->multiple()
                 ->required()
                 ->preload(),
+
+
+            Select::make('project_link')
+                ->options(function (): array {
+
+                    $options = [];
+
+                    foreach (Permalink::query()->whereType('page')->cursor() as $link) {
+
+                        $options[$link->slug] = $link->linkable?->name;
+
+                    }
+
+                    return $options;
+                })
+                ->searchable()
+                ->preload(),
+
         ]);
     }
 }
