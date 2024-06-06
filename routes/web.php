@@ -32,6 +32,17 @@ Route::get('/', function () {
 
 Route::redirect('/property', '/properties-for-sale');
 
+
+Route::get('/search', function (\Illuminate\Http\Request $request){
+
+    $searchTerm = $request->query('query');
+
+
+    return redirect(url('/property?query='.$searchTerm));
+
+
+});
+
 Route::get('location/{branch:slug}', ShowLocationPageController::class)->name('permalink.location.show');
 Route::get('tag/{tag:slug}', ShowTagPageController::class)->name('permalink.tag.show');
 Route::get('property/{permalink:slug}', ShowPageController::class)->name('permalink.property.show');
