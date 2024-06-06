@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\Concerns;
 
 use App\Models\Permalink;
+use App\Utils\Enums\ProjectStatusEnum;
+use Appsorigin\Plots\Models\Project;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Select;
@@ -72,9 +74,16 @@ trait ProjectFormSectionConcern
 
                     $options = [];
 
-                    foreach (Permalink::query()->whereType('project')->cursor() as $link) {
 
-                        $options[$link->slug] = $link->linkable?->name;
+                    $projects =  Project::query()
+                        ->with('link')
+                        ->latest('created_at')
+                        ->where('status',ProjectStatusEnum::FOR_SALE)
+                    ->get();
+
+                    foreach ($projects  as $link) {
+
+                        $options[$link->id] = $link->name;
 
                     }
 
