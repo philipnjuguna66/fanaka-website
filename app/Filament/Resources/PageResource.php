@@ -85,6 +85,7 @@ class PageResource extends Resource
                         static::build()->blogSection(),
                         static::build()->gallerySection(),
                         static::build()->pastProjectSection(),
+                        static::build()->featuredProjects(),
                         static::build()->heroWithService(),
                         static::build()->heroPageBuilder(),
 
