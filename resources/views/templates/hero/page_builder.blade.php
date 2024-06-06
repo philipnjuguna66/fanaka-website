@@ -25,7 +25,7 @@
 
                                 $autoPlay = $column['data']['autoplay'] ?? false;
 
-                                if (isset($section->extra['hide_on']) && filled($section->extra['hide_on'])) {
+                                if (isset($section->extra['hide_on']) && $section->extra['hide_on'] == "desktop") {
                                     $autoPlay = false;
 
                                 }
