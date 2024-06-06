@@ -7,8 +7,6 @@
             $styles = 'width=415 height=560';
         }
 
-    $canAutoPlay  = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile")) ;
-
 
 
         $videoUri = str($videoUri)
@@ -24,7 +22,7 @@
 
 <iframe
     {{ $styles }}
-    src="{{ $videoUri }}?rel=0&&mute=0&controls=0&autoplay={{ $autoplay && $canAutoPlay ?? false }}&loop=1"
+    src="{{ $videoUri }}?rel=0&&mute=0&controls=0&autoplay={{ $autoplay ?? false }}&loop=1"
     class="w-full aspect-video"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;web-share"
