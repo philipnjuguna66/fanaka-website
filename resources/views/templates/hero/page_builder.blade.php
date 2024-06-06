@@ -1,6 +1,6 @@
 <div class="bg-gray-50 md:py-12 @if($section->extra['bg_white'] )  bg-white @endif
  @if( isset($section->extra['hide_on']) && $section->extra['hide_on'] == "mobile") hidden md:block @endif
- @if( isset($section->extra['hide_on']) && $section->extra['hide_on'] == "desktop")block  md:hidden @endif
+ @if( isset($section->extra['hide_on']) && $section->extra['hide_on'] == "desktop") block  md:hidden @endif
  ">
     <div {{ $animationEffect }} class="md:mx-auto md:w-4/5 max-w-7xl px-2 lg:px-8">
 
@@ -21,9 +21,12 @@
                     <div class="md:text-justify md:max-w-7xl">
                         @foreach($columns as $column)
                                 <?php
+
+                                    $autoPlay = $section->extra['hide_on'] == "desktop" && $column['data']['autoplay'];
+
                                 $html = match ($column['type']) {
                                     "header" => view('templates.hero._header', ['heading' => $column['data']['heading'], "subheading" => $column['data']['subheading']])->render(),
-                                    "video" => view('templates.embeded._video_iframe', ["autoplay" => $column['data']['autoplay'], 'videoUri' => $column['data']['video_path']])->render(),
+                                    "video" => view('templates.embeded._video_iframe', ["autoplay" => $autoPlay, 'videoUri' => $column['data']['video_path']])->render(),
                                     "image" => view('templates.hero._image', ['image' => $column['data']['image'], "title" => $column['data']['title'], 'section' => $section])->render(),
                                     "booking_form" => view('templates.hero._site',['heading' =>  $column['data']['heading'] ?? null ])->render(),
                                     "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
