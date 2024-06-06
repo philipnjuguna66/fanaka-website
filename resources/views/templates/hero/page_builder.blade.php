@@ -36,7 +36,7 @@
                                     "default" => null,
                                 };
                                 ?>
-                            <div class="mx-auto md:px-2 max-w-7xl">
+                            <div class="mx-auto md:px-2 space-y-3.5 max-w-7xl">
 
                                 {{ str($html)->toHtmlString() }}
                             </div>
