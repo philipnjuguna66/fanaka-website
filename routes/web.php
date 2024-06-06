@@ -41,7 +41,7 @@ Route::get('/search', function (\Illuminate\Http\Request $request){
     return redirect(url('/property?query='.$searchTerm));
 
 
-});
+})->name('search');
 
 Route::get('location/{branch:slug}', ShowLocationPageController::class)->name('permalink.location.show');
 Route::get('tag/{tag:slug}', ShowTagPageController::class)->name('permalink.tag.show');
