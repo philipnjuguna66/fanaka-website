@@ -15,11 +15,11 @@
 
         </div>
 
-        <div class="mt-4 py-4">
+        <div class="mt-4 py-4 space-y-3.5">
             <div
-                class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-{{ $section->extra['columns'] }} flex-wrap  gap-x-2 gap-y-2">
+                class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-{{ $section->extra['columns'] }} flex-wrap  gap-4">
                 @foreach($section->extra['columns_sections'] as $index => $columns)
-                    <div class="md:text-justify md:max-w-7xl">
+                    <div class="md:text-justify md:max-w-7xl py-4">
                         @foreach($columns as $column)
                                 <?php
 
@@ -36,7 +36,7 @@
                                     "default" => null,
                                 };
                                 ?>
-                            <div class="mx-auto md:px-2 space-y-3.5 max-w-7xl">
+                            <div class="mx-auto md:px-2  max-w-7xl">
 
                                 {{ str($html)->toHtmlString() }}
                             </div>
