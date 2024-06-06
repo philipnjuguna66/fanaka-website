@@ -5,20 +5,14 @@
  @endphp
 
 <div class="bg-secondary-900 text-white mt-0 pt-0 sticky top-0 left-0 right-0 z-50" x-data="{ open: false }">
-    <div class=" mx-auto hidden md:block">
+    <div class=" mx-auto md:block">
         <div class=" py-2 md:py-2 flex  flex-col md:flex-row  md:justify-between">
 
-            <div class="flex flex-col md:flex-row  gap-4 mx-auto">
+            <div class="flex flex-col md:flex-row  gap-4">
 
                 @foreach($header->phones as $phone)
                     <div class="">
-                        <div class="flex flex-row gap-4">
-
-                            <x-dynamic-component
-                                component="heroicon-s-phone-outgoing"
-                                class="h-5 w-5 shrink-0"
-                            />
-
+                        <div class=>
                             <a href="{{ $phone['link'] }} " class="text-sm"> {{ $phone['label'] }} </a>
                         </div>
                     </div>
