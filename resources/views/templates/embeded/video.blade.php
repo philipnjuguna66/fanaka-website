@@ -14,7 +14,7 @@
                         <article class="">
                             <div class="rounded-xl shadow-2xl shadow-secondary-400/20">
 
-                                @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $video['video_link']])
+                                @include('templates.embeded._video_iframe' , [ 'videoUri' =>   $video['video_link'], 'autoplay' => false ])
                             </div>
                         </article>
 
