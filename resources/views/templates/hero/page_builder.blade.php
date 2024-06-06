@@ -16,19 +16,26 @@
         </div>
 
         <div class="mt-4 py-4">
-            <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-{{ $section->extra['columns'] }} flex-wrap  gap-x-2 gap-y-2">
+            <div
+                class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-{{ $section->extra['columns'] }} flex-wrap  gap-x-2 gap-y-2">
                 @foreach($section->extra['columns_sections'] as $index => $columns)
                     <div class="md:text-justify md:max-w-7xl">
                         @foreach($columns as $column)
                                 <?php
 
-                                    $autoPlay = $section->extra['hide_on'] == "desktop" && $column['data']['autoplay'];
+                                $autoPlay = $column['data']['autoplay'];
+
+                                if (isset($section->extra['hide_on']) && filled($section->extra['hide_on'])) {
+                                    $autoPlay = false;
+
+                                }
+
 
                                 $html = match ($column['type']) {
                                     "header" => view('templates.hero._header', ['heading' => $column['data']['heading'], "subheading" => $column['data']['subheading']])->render(),
                                     "video" => view('templates.embeded._video_iframe', ["autoplay" => $autoPlay, 'videoUri' => $column['data']['video_path']])->render(),
                                     "image" => view('templates.hero._image', ['image' => $column['data']['image'], "title" => $column['data']['title'], 'section' => $section])->render(),
-                                    "booking_form" => view('templates.hero._site',['heading' =>  $column['data']['heading'] ?? null ])->render(),
+                                    "booking_form" => view('templates.hero._site', ['heading' => $column['data']['heading'] ?? null])->render(),
                                     "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
                                     "slider" => view('templates.hero._slider', ['sliders' => $column['data']['body'], 'page' => $page])->render(),
                                     "masonary_block" => view('templates.hero.masionary', ['masonrySections' => $column['data']['masonary_block'], 'page' => $page])->render(),
