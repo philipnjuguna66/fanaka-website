@@ -8,6 +8,8 @@ use Livewire\Component;
 class FeaturedProject extends Component
 {
     public array $projectIds = [];
+    public $grid = 3;
+
     public function render()
     {
         return view('livewire.project.website.featured-project',[
