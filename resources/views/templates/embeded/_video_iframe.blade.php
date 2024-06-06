@@ -8,7 +8,7 @@
         }
 
 
-    dd($autoplay);
+    dump($autoplay);
 
         $videoUri = str($videoUri)
         ->replace("watch?v=", "")
