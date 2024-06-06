@@ -8,8 +8,6 @@
         }
 
 
-    dump($autoplay);
-
         $videoUri = str($videoUri)
         ->replace("watch?v=", "")
         ->replace("https://www.youtube.com/", "https://www.youtube.com/embed/")
