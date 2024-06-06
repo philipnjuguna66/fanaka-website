@@ -23,7 +23,7 @@
                         @foreach($columns as $column)
                                 <?php
 
-                                $autoPlay = $column['data']['autoplay'];
+                                $autoPlay = $column['data']['autoplay'] ?? false;
 
                                 if (isset($section->extra['hide_on']) && filled($section->extra['hide_on'])) {
                                     $autoPlay = false;
