@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{\Illuminate\Support\Facades\Storage::url($options?->favicon) }}">
+    <link rel="icon" type="image/x-icon" href="{{ url(\Illuminate\Support\Facades\Storage::url($options?->favicon))  }}">
+    <link rel="shortcut icon" href="{{ url(\Illuminate\Support\Facades\Storage::url($options?->favicon))  }}">
     <title class="capitalize">@yield('title',config('app.name')) - {{ $options?->name  }}</title>
     <meta name="description" content="@yield('description', $options?->meta_description)">
     <link rel="canonical"
