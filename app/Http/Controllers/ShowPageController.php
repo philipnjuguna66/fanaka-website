@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\BlogCreatedEvent;
+use App\Events\PageCreatedEvent;
 use App\Models\Page;
 use App\Models\Permalink;
 use App\Models\Whatsapp;
@@ -19,7 +21,14 @@ class ShowPageController extends Controller
 
 
             if (!Cache::has($key)) {
-                return redirect('/');
+
+                if ( $permalink->linkable instanceof  Page)
+                {
+                    event(new PageCreatedEvent($permalink->linkable));
+                }
+                else{
+                    event(new BlogCreatedEvent($permalink->linkable));
+                }
             }
 
 
