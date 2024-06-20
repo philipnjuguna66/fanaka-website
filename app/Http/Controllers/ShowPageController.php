@@ -17,13 +17,20 @@ class ShowPageController extends Controller
     public function __invoke(Permalink $permalink)
     {
         try {
+
+            if($permalink->linkable_id == 79)
+            {
+                dd($permalink);
+            }
+
+
             $key = $permalink->linkable::CACHE_KEY . ".{$permalink->linkable_id}";
 
 
             if (!Cache::has($key)) {
 
 
-                    $key = $permalink->linkable::CACHE_KEY.".{$permalink->linkable->id}";
+                    $key = $permalink->linkable::CACHE_KEY.".{$permalink->linkable_id}";
 
                     Cache::forget($key);
 
