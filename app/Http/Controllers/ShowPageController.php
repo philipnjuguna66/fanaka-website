@@ -36,7 +36,6 @@ class ShowPageController extends Controller
 
 
 
-
             Log::info("Page", ['class' => get_class($page)]);
 
             if ($page instanceof Project) {
