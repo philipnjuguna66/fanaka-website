@@ -22,13 +22,13 @@ class ShowPageController extends Controller
 
             if (!Cache::has($key)) {
 
-                if ( $permalink->linkable instanceof  Page)
-                {
-                    event(new PageCreatedEvent($permalink->linkable));
-                }
-                else{
-                    event(new BlogCreatedEvent($permalink->linkable));
-                }
+
+                    $key = $permalink->linkable::CACHE_KEY.".{$permalink->linkable->id}";
+
+                    Cache::forget($key);
+
+                    Cache::forever($key, $permalink->linkable->loadMissing('link'));
+
             }
 
 
