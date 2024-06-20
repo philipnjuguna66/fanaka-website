@@ -18,14 +18,15 @@ class ShowPageController extends Controller
     {
         try {
 
-            if($permalink->linkable_id == 79)
-            {
-                dd($permalink);
-            }
 
 
             $key = $permalink->linkable::CACHE_KEY . ".{$permalink->linkable_id}";
 
+
+            if($permalink->linkable_id == 79)
+            {
+                dd($permalink, $key, Cache::has($key));
+            }
 
             if (!Cache::has($key)) {
 
