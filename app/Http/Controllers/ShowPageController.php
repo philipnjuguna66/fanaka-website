@@ -73,7 +73,7 @@ class ShowPageController extends Controller
         }
         catch (\Exception $e)
         {
-            dd($e->getMessage());
+            Log::error($e->getMessage());
             return redirect('/');
         }
     }
