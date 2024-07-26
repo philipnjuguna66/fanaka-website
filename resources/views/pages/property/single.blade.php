@@ -44,6 +44,7 @@
                         <div class="mx-auto py-12 max-w-7xl prose md:text-justify">
 
                             <div class="">
+                                @dd($page->body)
 
                                 {{ str($page->body)->toHtmlString() }}
 

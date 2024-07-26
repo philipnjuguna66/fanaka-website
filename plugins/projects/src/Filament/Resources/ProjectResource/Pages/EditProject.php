@@ -21,14 +21,10 @@ class EditProject extends EditRecord
         return [
             Actions\DeleteAction::make(),
             Actions\Action::make('Save')
-            ->action(function (Actions\Action $action){
+                ->action(function (Actions\Action $action){
+                    $this->save();
 
-                $this->save();
-
-
-                return $action->sendSuccessNotification();
-
-
+                    return $action->sendSuccessNotification();
 
             }),
             Actions\Action::make('view')

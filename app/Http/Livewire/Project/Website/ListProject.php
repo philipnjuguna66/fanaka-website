@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Project\Website;
 
 use App\Utils\Enums\ProjectStatusEnum;
 use Appsorigin\Plots\Models\Project;
+use Illuminate\Contracts\Database\Query\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -15,6 +16,8 @@ class ListProject extends Component
 
     public $grid = 3;
 
+    public  $projectId = null;
+
     public function mount(?int $take)
     {
         $this->take = $take;
@@ -25,6 +28,7 @@ class ListProject extends Component
     {
 
         $projects = Project::query()
+            ->when(filled($this->projectId), fn(Builder $query, $projectId) => $query->where('id', $projectId))
             ->with('link')
             ->latest('created_at')
             ->where('status',ProjectStatusEnum::FOR_SALE);
