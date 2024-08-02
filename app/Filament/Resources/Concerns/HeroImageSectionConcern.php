@@ -124,7 +124,7 @@ trait HeroImageSectionConcern
                                                 ]),
                                             Block::make('text_area')
                                                 ->schema([
-                                                    RichEditor::make('body'),
+                                                    TiptapEditor::make('body'),
                                                 ]),
                                            // $this->masonaryBlocks(),
                                         ])

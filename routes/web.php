@@ -21,6 +21,29 @@ use Spatie\Sitemap\SitemapGenerator;
 |
 */
 
+Route::get('test', function (\App\Utils\Services\ShortcodeService $service){
+
+    $content = 'Your content with ["project:1, take:1"] shortcode';
+
+    $processedContent = $service->replaceShortcodes($content);
+
+    $page = \Appsorigin\Blog\Models\Blog::query()->first();
+
+    $page->body = str($processedContent)->append($page->body)->toHtmlString();
+
+    $page->save();
+
+
+    return view('pages.post.single', [
+        'post' => $page,
+    ]);
+
+
+    dd(str($processedContent)->toHtmlString() , "=> Reso");
+
+
+
+});
 
 Route::get('/', function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
