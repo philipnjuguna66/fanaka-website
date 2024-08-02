@@ -23,6 +23,8 @@ use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('test', function (\App\Utils\Services\ShortcodeService $service){
 
+
+    abort_if(app()->isProduction(), 403);
     $content = 'Your content with ["project:1, take:1"] shortcode';
 
     $processedContent = $service->replaceShortcodes($content);
