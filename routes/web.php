@@ -20,9 +20,12 @@ use Spatie\Sitemap\SitemapGenerator;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('test', function (\App\Utils\Services\ShortcodeService $service){
 
+
+
+    return view('test.ads-landing-page');
 
     abort_if(app()->isProduction(), 403);
     $content = 'Your content with ["project:1, take:1"] shortcode';
@@ -45,7 +48,7 @@ Route::get('test', function (\App\Utils\Services\ShortcodeService $service){
 
 
 
-});
+});*/
 
 Route::get('/', function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();

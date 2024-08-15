@@ -8,7 +8,7 @@ $menu = FilamentNavigation::get('header');
 
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li class="py-2 border-b-1 border-primary-300/50 md:border-b-0">
-                    <a wire:navigate href="{{ url('/') }}" class="block  py-1 text-center  {{ activeLink("/")  ? "border-b-2 border-primary-900 text-gray-900 font-bold " : "    text-gray-800  " }} rounded md:bg-transparent dark:bg-blue-600 md:dark:bg-transparent"  @if(activeLink("/") ) aria-current="page" @endif>{{ str("HOME")->title()->toString() }}</a>
+                    <a wire:navigate href="{{ url('/') }}" class="block  py-1 text-center  hover:text-green-400  {{ activeLink("/")  ? "border-b-2 border-primary-900 text-secondary-900 font-extrabold " : "    text-gray-950  " }} rounded md:bg-transparent dark:bg-blue-600 md:dark:bg-transparent"  @if(activeLink("/") ) aria-current="page" @endif>{{ str("HOME")->title()->toString() }}</a>
                 </li>
 
 

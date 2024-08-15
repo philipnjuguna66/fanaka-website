@@ -126,7 +126,7 @@ trait HeroImageSectionConcern
                                                 ->schema([
                                                     TiptapEditor::make('body'),
                                                 ]),
-                                           // $this->masonaryBlocks(),
+                                            // $this->masonaryBlocks(),
                                         ])
                                         ->disableItemDeletion(false)
                                         ->createItemButtonLabel("Hero Section")
@@ -140,6 +140,20 @@ trait HeroImageSectionConcern
 
             ]);
 
+    }
+
+
+    private function positionalBanner(): Block
+    {
+        return Block::make('position_banner')
+            ->schema([
+                FileUpload::make('image')
+                    ->preserveFilenames()
+                    ->required(),
+                TextInput::make('video_path')
+                    ->helperText("Youtube video path")
+                    ->required(),
+            ]);
     }
 
 

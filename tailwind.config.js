@@ -14,7 +14,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                poppins: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'montserrat': ['Montserrat', 'Arial', 'sans-serif'],
             },
             colors: {
                 primary: {

@@ -3,6 +3,7 @@
 namespace Appsorigin\Plots\Models;
 
 use App\Models\Permalink;
+use App\Models\Whatsapp;
 use App\Utils\Concerns\InteractsWithPermerlinks;
 use App\Utils\Enums\ProjectStatusEnum;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -16,6 +17,10 @@ class Project extends Model
     use InteractsWithPermerlinks;
 
     const CACHE_KEY = "project";
+
+    protected $with = [
+        'link'
+    ];
     public $casts = [
         'status' => ProjectStatusEnum::class,
         'gallery' => 'json',
@@ -40,4 +45,21 @@ class Project extends Model
             get: fn() => $this->name
         );
     }
+
+    public function getPhoneNumber() : ?string
+    {
+        $locationIds =  $this->loadMissing('branches')->branches()?->pluck('location_id')->toArray();
+
+        $ids = [];
+
+        foreach ($locationIds as $locationId) {
+
+            $ids[] = "$locationId";
+        }
+
+        return Whatsapp::query()
+            ->whereJsonContains('location_tags', $ids)
+            ->first()?->phone_number;
+    }
+
 }

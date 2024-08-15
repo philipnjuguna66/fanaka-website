@@ -19,6 +19,7 @@ enum SectionEnum: string
     case BOOK_SITE_VISIT = 'book_sit_visit_section';
 
     case VIDE0_SECTION = 'video_section';
+    case POSITION_BANNER = 'position_banner';
     case PAST_PROJECT_SECTION = 'past_project_section';
     case SLIDER_SECTION = 'slider_section';
     case GALLERY_SECTION = 'gallery_section';
@@ -42,6 +43,7 @@ enum SectionEnum: string
             static::PROJECT_SECTION => 'templates.projects.index',
             static::BLOG_SECTION => 'templates.blog.index',
             static::FULL_IMAGE_WIDTH => 'templates.full_image_width.index',
+            static::POSITION_BANNER => 'templates.full_image_width.position_banner',
             static::GALLERY_SECTION => 'templates.gallery.index',
             static::TESTIMONIAL_SECTION => 'templates.testimonials.index',
             static::BOOK_SITE_VISIT => 'templates.cta.book_site_visit',

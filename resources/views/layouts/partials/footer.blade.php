@@ -9,9 +9,9 @@
 @endphp
 
 
-<footer class="bg-secondary-900 py-12" aria-labelledby="footer-heading">
+<footer class="bg-secondary-900" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto md:w-4/5 max-w-8xl px-6 lg:px-8">
+    <div class="mx-auto md:w-4/5 max-w-8xl px-6 lg:px-8 py-12">
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-x-2 justify-between gap-y-4">
             @if(isset(app(\App\Settings\FooterSettings::class)->sections  ) && is_array(app(\App\Settings\FooterSettings::class)->sections))
@@ -64,18 +64,21 @@
         </div>
 
 
-        <div class="mt-16 border-t border-white/10 pt-2 sm:mt-2 lg:mt-2 text-center">
-            <p class="text-xs leading-5 text-gray-50 ">&copy; 2016-{{ now()->format('Y') }}
-                {{ config('app.name') }}. All rights reserved.
 
-                <span class=" text-gray-50/70">Powered By <a
-                        href="https://fanaka.co.ke/ict-department" target="_blank">Fanaka Real Estate </a> </span>
-            </p>
-        </div>
 
 
     </div>
 
+    <div class="bg-primary-400 py-2">
+        <div class="mt-2 border-t border-white/10 pt-2 sm:mt-2 lg:mt-2 text-center">
+            <p class="text-xs leading-5 text-secondary-400">&copy; 2016-{{ now()->format('Y') }}
+                {{ config('app.name') }}. All rights reserved.
+
+                <span class="text-secondary-400 font-normal">Powered By <a
+                        href="https://fanaka.co.ke/ict-department" target="_blank">Fanaka Real Estate </a> </span>
+            </p>
+        </div>
+    </div>
     <div class="relative">
         <a
             target="_blank"

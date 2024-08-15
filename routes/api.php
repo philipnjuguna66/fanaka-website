@@ -14,6 +14,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('posts', function () {
 
 
+    foreach (\App\Models\Page::all() as $project) {
+        event(new BlogCreatedEvent($project));
+    }
+
     foreach (Project::all() as $project) {
         event(new BlogCreatedEvent($project));
     }

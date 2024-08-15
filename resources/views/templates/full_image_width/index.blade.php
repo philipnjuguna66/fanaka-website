@@ -1,5 +1,5 @@
 <section class="">
-    <img
+<img
         loading="lazy"
         class="w-full object-cover"
 

@@ -4,7 +4,7 @@
 
  @endphp
 
-<div class="bg-secondary-900 text-white mt-0 pt-0 sticky top-0 left-0 right-0 z-50" x-data="{ open: false }">
+<div class="bg-primary-900 text-white mt-0 pt-0 sticky top-0 left-0 right-0 z-50" x-data="{ open: false }">
     <div class=" mx-auto md:block">
         <div class=" py-2 md:py-2 flex  flex-col md:flex-row  md:justify-between">
 
@@ -12,7 +12,7 @@
 
                 @foreach($header->phones as $phone)
                     <div class="px-8">
-                        <div class=>
+                        <div class="text-white font-semibold">
                             <a href="{{ $phone['link'] }} " class="text-sm"> {{ $phone['label'] }} </a>
                         </div>
                     </div>

@@ -83,6 +83,7 @@ class PageResource extends Resource
                         static::build()->featuredProjects(),
                         static::build()->heroWithService(),
                         static::build()->heroPageBuilder(),
+                        static::build()->positionalBanner(),
 
                     ])
                     ->columns(3)
