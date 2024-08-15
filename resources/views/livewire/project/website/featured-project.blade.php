@@ -51,7 +51,7 @@
                              <a href="tel:{{ $project->getPhoneNumber() }}"
                                 aria-describedby="property-name"
                                 class="mt-8 block rounded-md bg-red-500 px-3 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                 Talk To Relation Manager
+                                 Talk To Relationship Manager
                              </a>
                         </span>
 
@@ -59,7 +59,7 @@
                              <a href="tel:{{ $project->getPhoneNumber() }}"
                                 aria-describedby="property-name"
                                 class="mt-8 block rounded-md bg-red-500 px-3 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                 Talk To Relation Manager
+                                 Talk To Relationship Manager
                              </a>
                         </span>
 
