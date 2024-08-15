@@ -6,15 +6,18 @@
             <article
                 class="{{ $loop->even ? "bg-white" : "bg-gray-50" }}  border-b-4 border-b-secondary-400 flex flex-col items-start justify-between shadow-2xl shadow-gray-900/50 rounded-xl  flex-wrap-reverse inset-0">
                 <div class="relative w-full">
-                    <img
-                        src="{{ \Illuminate\Support\Facades\Storage::url($project->featured_image) }}"
-                        alt="{{ $project->name }}"
-                        class="aspect-[16/9] w-full object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+                    <a href="{{ route('permalink.property.show', $project->link) }}">
+                        <img
+                            src="{{ \Illuminate\Support\Facades\Storage::url($project->featured_image) }}"
+                            alt="{{ $project->name }}"
+                            class="aspect-[16/9] w-full object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+                    </a>
+
                     <div class="absolute inset-0  ring-1 ring-inset ring-gray-900/10"></div>
                 </div>
                 <div class="flex relative mt-4 sm:h-48 flex-1 flex-col space-y-2 ">
                     <h3 class="font-semibold px-4 ">
-                        <a href="#" class="text-xl text">
+                        <a href="{{ route('permalink.property.show', $project->link) }}"class="text-xl font-semibold">
                             Land for Sale In {{ $location = $project->branches?->first()?->name }} -  {{ $project->name }}
                         </a>
                     </h3>
