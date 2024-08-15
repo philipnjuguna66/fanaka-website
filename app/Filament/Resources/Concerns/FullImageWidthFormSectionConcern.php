@@ -17,7 +17,7 @@ trait FullImageWidthFormSectionConcern
         return Block::make('full_image_width')->schema([
 
             FileUpload::make('image')->nullable(),
-            TextInput::make('url'),
+            TextInput::make('url')->url()->nullable(),
 
         ]);
     }
