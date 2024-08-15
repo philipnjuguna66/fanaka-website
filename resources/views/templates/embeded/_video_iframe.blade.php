@@ -8,6 +8,15 @@
         }
 
 
+    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+
+
+    if ($isMob)
+        {
+              $styles = 'width=415 height=560';
+        }
+
+
         $videoUri = str($videoUri)
         ->replace("watch?v=", "")
         ->replace("https://www.youtube.com/", "https://www.youtube.com/embed/")
