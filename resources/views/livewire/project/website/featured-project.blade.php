@@ -21,7 +21,7 @@
                             Land for Sale In {{ $location = $project->branches?->first()?->name }} -  {{ $project->name }}
                         </a>
                     </h3>
-                    <ul role="list" class="grid grid-cols-1 px-12  ">
+                    <ul role="list" class="grid grid-cols-1 px-4  ">
                         <li class="overflow-hidden rounded">
                             <ul class="-my-3 divide-y divide-gray-100  py-4 text-md leading-6">
 
