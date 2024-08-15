@@ -13,7 +13,7 @@
 
     if ($isMob)
         {
-              $styles = 'width=415 height=560';
+              $styles = 'width=520 height=560';
         }
 
 

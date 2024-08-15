@@ -7,7 +7,7 @@
                     <p class="mt-2 text-lg leading-8 text-gray-600">{{ $section->extra['subheading'] }}</p>
                 </div>
                 <div
-                    class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
 
 
                     @foreach($section->extra['videos'] as $video)
