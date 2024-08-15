@@ -54,7 +54,7 @@ Route::get('/', function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
     return view('welcome')->with(['page' => $page,
-        'whatsApp' => "254700111172"]);
+        'whatsApp' => "254799001133"]);
 })->name('home.page');
 
 
@@ -80,5 +80,5 @@ Route::fallback(function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
     return view('welcome')->with(['page' => $page,
-        'whatsApp' => "254700111172"]);
+        'whatsApp' => "254799001133"]);
 });
