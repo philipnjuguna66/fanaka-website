@@ -20,7 +20,7 @@
             <div class="flex flex-row flex-wrap md:flex-nowrap  sm:flex-nowrap gap-4 justify-center">
 
                 <div class="px-4 sm:hidden ">
-                    {!! view('templates.embeded._video_iframe', ["autoplay" => true, 'videoUri' => trim($section->extra['video_path'])])->render() !!}
+                    {!! view('templates.embeded._video_iframe', ["autoplay" => false, 'videoUri' => trim($section->extra['video_path'])])->render() !!}
                 </div>
 
 
