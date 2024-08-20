@@ -20,13 +20,7 @@
             <div class="flex flex-row flex-wrap md:flex-nowrap  sm:flex-nowrap gap-4 justify-center">
 
                 <div class="px-4 sm:hidden ">
-                    <iframe width="560" height="315"
-                            src="{{ $section->extra['video_path'] }}"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            autoplay="1"
-                            allowfullscreen></iframe>
+                    {!! view('templates.embeded._video_iframe', ["autoplay" => true, 'videoUri' => trim($section->extra['video_path'])])->render() !!}
                 </div>
 
 
