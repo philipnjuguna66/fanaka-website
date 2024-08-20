@@ -21,7 +21,9 @@
 
 </head>
 <body
-    class="h-full bg-gray-100 text-gray-900  font-montserrat"> {!! app(\App\Settings\ScriptSettings::class)?->body !!} @include('layouts.partials.navigation',['options' => $options])
+    class="h-full bg-gray-100 text-gray-900  font-montserrat">
+{!! app(\App\Settings\ScriptSettings::class)?->body !!}
+  @include('layouts.partials.navigation',['options' => $options])
 <div
     class="font-sans text-gray-900 "> {{ $slot }}
     @livewire('notifications')
