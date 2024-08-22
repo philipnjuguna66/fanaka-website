@@ -34,7 +34,7 @@
                                 <li class="flex justify-between gap-x-4 py-3">
                                     <p class="text-gray-500">Phone Number</p>
                                     <p class="text-gray-700">
-                                        <a href="tel:{{ $project->getPhoneNumber() }}">{{ $project->getPhoneNumber() }} </a>
+                                        <a href="tel:+{{ $project->getPhoneNumber() }}">{{ +$project->getPhoneNumber() }} </a>
                                     </p>
                                 </li>
 
@@ -62,7 +62,7 @@
                         </a>
 
                         <span class="md:hidden">
-                             <a href="tel:{{ $project->getPhoneNumber() }}"
+                             <a href="tel:+{{ $project->getPhoneNumber() }}"
                                 aria-describedby="property-name"
                                 class="mt-8 block rounded-md bg-red-500 px-3 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                  Talk To Relationship Manager
@@ -70,7 +70,7 @@
                         </span>
 
                         <span class="hidden md:block">
-                             <a href="tel:{{ $project->getPhoneNumber() }}"
+                             <a href="tel:+{{ $project->getPhoneNumber() }}"
                                 aria-describedby="property-name"
                                 class="mt-8 block rounded-md bg-red-500 px-3 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                  Talk To Relationship Manager
