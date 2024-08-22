@@ -11,7 +11,7 @@
 
         </div>
 
-    <div class="mx-auto px-12">
+    <div class="mx-auto px-4">
         <livewire:project.website.featured-project :projectIds="$section->extra['project_ids']"/>
     </div>
 
