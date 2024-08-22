@@ -5,7 +5,7 @@
                 <h1 class="text-xl  md:text-3xl font-bold tracking-tight"> {{ str($section->extra['heading'])->toHtmlString() }}</h1>
 
             </div>
-            <div class="mx-auto max-w-5xl">
+            <div class="mx-auto sm:max-w-5xl">
                 <p class="py-3 px-8 text-lg leading-8 text-gray-600 sm:text-center">{{ str($section->extra['subheading'])->toHtmlString() }}</p>
             </div>
         </div>
