@@ -8,13 +8,13 @@
         }
 
 
-    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+  /*  $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 
 
     if ($isMob)
         {
               $styles = 'width=520 height=560';
-        }
+        }*/
 
 
         $videoUri = str($videoUri)
