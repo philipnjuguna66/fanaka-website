@@ -42,7 +42,7 @@
                                 <li class="flex justify-between gap-x-4 py-3">
                                     <p class="text-gray-500">Discounted Cash Price Of: </p>
                                     <p class="text-gray-700">
-                                    <span class="flex justify-center text-red-600 font-semibold">
+                                    <span class="flex justify-center text-sm sm:text-sm text-red-600 font-semibold">
                                          Kes. {{ $project->price}}
                                     </span>
                                     </p>
