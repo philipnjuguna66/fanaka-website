@@ -6,7 +6,7 @@
 
             </div>
             <div class="mx-auto max-w-5xl">
-                <p class="py-3 text-lg leading-8 text-gray-600 sm:text-center">{{ str($section->extra['subheading'])->toHtmlString() }}</p>
+                <p class="py-3 px-8 text-lg leading-8 text-gray-600 sm:text-center">{{ str($section->extra['subheading'])->toHtmlString() }}</p>
             </div>
         </div>
         <livewire:project.website.featured-project :projectIds="$section->extra['project_ids']"/>
