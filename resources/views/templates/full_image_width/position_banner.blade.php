@@ -39,7 +39,7 @@
                     </svg>
 
                     <p class="font-bold text-base text-center sm:py-2">
-                        No hidden charges: Our prices are all inclusive
+                        No hidden charges
                     </p>
                 </li>
                 <li class="flex flex-col items-center space-x-1 bg-white z-10 shadow-xl shadow-secondary-500/50 px-3 rounded-2xl py-8">
@@ -80,7 +80,7 @@
 
                     <p class="font-bold text-base text-center sm:py-2">
 
-                        {{ __("Flexible payment terms: Cash , Installment , Bank Financing") }}
+                        {{ __("Flexible payment terms: Cash and Lipa Mdogo Mdogo") }}
 
 
                     </p>
