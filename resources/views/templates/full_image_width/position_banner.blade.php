@@ -38,7 +38,7 @@
                         <path d="M3 3l18 18"/>
                     </svg>
 
-                    <p class="font-bold text-base text-center sm:py-2">
+                    <p class="font-bold text-base text-center w-auto sm:py-2">
                         No hidden charges
                     </p>
                 </li>
