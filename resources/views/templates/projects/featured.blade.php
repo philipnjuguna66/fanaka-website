@@ -10,7 +10,10 @@
             </div>
 
         </div>
+
+    <div class="mx-auto px-12">
         <livewire:project.website.featured-project :projectIds="$section->extra['project_ids']"/>
+    </div>
 
 
 
