@@ -7,6 +7,7 @@ use App\Utils\Enums\ProjectStatusEnum;
 use Appsorigin\Plots\Models\Project;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 
@@ -67,7 +68,7 @@ trait ProjectFormSectionConcern
     {
         return Block::make('featured_section')->schema([
             TextInput::make('heading')->required(),
-            TextInput::make('subheading'),
+            RichEditor::make('subheading'),
             Checkbox::make('bg_white')->label('White Background')->nullable(),
             Select::make('project_ids')
                 ->options(function (): array {
