@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
+        $schedule->command('app:update-cache')->everyThirtyMinutes();
         $schedule->command('sitemap:generate')->daily();
         $schedule->command('app:google-reviews')->daily();
         $schedule->command('backup:clean')->weekly();

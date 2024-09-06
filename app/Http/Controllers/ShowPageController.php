@@ -39,8 +39,6 @@ class ShowPageController extends Controller
 
 
 
-            Log::info("Page", ['class' => get_class($page)]);
-
             if ($page instanceof Project) {
 
                 $locationIds =  $page->branches()?->pluck('location_id')->toArray();
@@ -68,6 +66,7 @@ class ShowPageController extends Controller
                 'page' => $page,
                 'post' => $page,
                 'whatsApp' => $whatsApp,
+
             ]);
 
         }

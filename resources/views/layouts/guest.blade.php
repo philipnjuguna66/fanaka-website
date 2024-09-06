@@ -14,9 +14,7 @@
     <link rel="canonical" href="@yield('cononical', url()->current())"/>
     @stack('metas')
     {{ str($styles)->toHtmlString() }}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap" rel="stylesheet">
+
 
 
 </head>

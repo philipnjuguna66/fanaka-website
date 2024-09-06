@@ -13,9 +13,19 @@ class PageCreatedListener
 
         $key = Page::CACHE_KEY.".{$event->page->id}";
 
+        $htmlKey = $key.".html";
+
         Cache::forget($key);
+        Cache::forget($htmlKey);
 
         Cache::forever($key, $event->page->loadMissing('sections', 'link'));
+
+        $html = view("layouts.cache.page")
+            ->with('page', $event->page)
+            ->render();
+
+
+        Cache::forever($htmlKey, $html);
 
 
     }

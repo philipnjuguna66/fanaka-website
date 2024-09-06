@@ -5,6 +5,7 @@ use App\Http\Controllers\ShowPageController;
 use App\Http\Controllers\ShowPropertyController;
 use App\Http\Controllers\ShowTagPageController;
 use App\Imports\PropertiesImport;
+use App\Models\Page;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\LaravelSettings\Migrations\SettingsMigration;

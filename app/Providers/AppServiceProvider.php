@@ -61,9 +61,6 @@ class AppServiceProvider extends ServiceProvider
         if ( ! $this->app->runningInConsole()){
             Cache::forever('styles', view('layouts.partials.styles')->render());
 
-
-
-
             View::composer('layouts.guest', fn(\Illuminate\View\View $view) => $view->with([
                 'styles' =>  Cache::get('styles')
 

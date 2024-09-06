@@ -23,7 +23,7 @@
                         @foreach($columns as $column)
                                 <?php
 
-                                $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+                                $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"] ?? null), "mobile"));
 
                                 $html = match ($column['type']) {
                                     "header" => view('templates.hero._header', ['heading' => $column['data']['heading'], "subheading" => $column['data']['subheading']])->render(),
