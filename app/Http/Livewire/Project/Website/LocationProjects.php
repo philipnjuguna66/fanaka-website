@@ -30,7 +30,6 @@ class LocationProjects extends Component
         $projects = Project::query()
             ->with('link')
             ->where('status', ProjectStatusEnum::FOR_SALE)
-            ->inRandomOrder()
             ->when(isset($this->branch?->id), fn(Builder $query) => $query->whereHas('branches', fn($query) =>
             $query->whereIn('project_id', $this->branch?->projects()->pluck('project_id')->toArray()))
             )

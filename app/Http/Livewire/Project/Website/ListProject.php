@@ -30,7 +30,7 @@ class ListProject extends Component
         $projects = Project::query()
             ->when(filled($this->projectId), fn(Builder $query, $projectId) => $query->where('id', $projectId))
             ->with('link')
-            ->latest('created_at')
+            ->latest('id')
             ->where('status',ProjectStatusEnum::FOR_SALE);
 
         if ($this->take > 0) {
