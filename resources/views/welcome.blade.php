@@ -11,7 +11,7 @@
 
         @if(\Illuminate\Support\Facades\Cache::has(\App\Models\Page::CACHE_KEY.".{$page->id}.html"))
 
-            {!! \Illuminate\Support\Facades\Cache::get(\App\Models\Page::CACHE_KEY.".{$page->id}.html") !!}
+            {{--{!! \Illuminate\Support\Facades\Cache::get(\App\Models\Page::CACHE_KEY.".{$page->id}.html") !!}--}}
         @else
             @include('layouts.cache.page',['page' => $page])
 

@@ -30,8 +30,6 @@ enum PermerlinkTypeEnums : string
             static::PAGE => "layouts.cache.page",
             static::POST => "layouts.cache.blog",
             static::PROJECT => "layouts.cache.property",
-
-
         };
     }
 }

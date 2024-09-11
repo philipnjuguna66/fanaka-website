@@ -21,7 +21,7 @@ class PageCreatedListener
         Cache::forever($key, $event->page->loadMissing('sections', 'link'));
 
         $html = view("layouts.cache.page")
-            ->with('page', $event->page)
+            ->with(['page'=>  $event->page])
             ->render();
 
 
