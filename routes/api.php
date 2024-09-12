@@ -11,7 +11,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('posts', function () {
+/*Route::get('posts', function () {
 
 
     foreach (\App\Models\Page::all() as $project) {
@@ -27,4 +27,4 @@ Route::get('posts', function () {
     }
 
 
-});
+});*/
