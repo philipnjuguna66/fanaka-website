@@ -54,8 +54,7 @@ Route::get('test', function (\App\Utils\Services\ShortcodeService $service){
 Route::get('/', function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
-    return view('welcome')->with(['page' => $page,
-        'whatsApp' => "254799001133"]);
+    return view('welcome')->with(['page' => $page]);
 })->name('home.page');
 
 
@@ -80,6 +79,5 @@ Route::get('/{permalink:slug}', ShowPageController::class)->name('permalink.show
 Route::fallback(function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
-    return view('welcome')->with(['page' => $page,
-        'whatsApp' => "254799001133"]);
+    return view('welcome')->with(['page' => $page]);
 });
