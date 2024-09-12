@@ -11,20 +11,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('posts', function () {
-
-
-    foreach (\App\Models\Page::all() as $project) {
-        event(new BlogCreatedEvent($project));
-    }
-
-    foreach (Project::all() as $project) {
-        event(new BlogCreatedEvent($project));
-    }
-
-    foreach (\Appsorigin\Blog\Models\Blog::all() as $blog) {
-        event(new BlogCreatedEvent($blog));
-    }
-
-
-});
+//Route::get('posts', function () {
+//
+//
+//    foreach (\App\Models\Page::all() as $project) {
+//        event(new BlogCreatedEvent($project));
+//    }
+//
+//    foreach (Project::all() as $project) {
+//        event(new BlogCreatedEvent($project));
+//    }
+//
+//    foreach (\Appsorigin\Blog\Models\Blog::all() as $blog) {
+//        event(new BlogCreatedEvent($blog));
+//    }
+//
+//
+//});

@@ -54,7 +54,8 @@ Route::get('test', function (\App\Utils\Services\ShortcodeService $service){
 Route::get('/', function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
-    return view('welcome')->with(['page' => $page]);
+    return view('welcome')->with(['page' => $page,
+        'whatsApp' => \App\Models\Whatsapp::query()->inRandomOrder()->first()->phone_number]);
 })->name('home.page');
 
 
@@ -79,5 +80,6 @@ Route::get('/{permalink:slug}', ShowPageController::class)->name('permalink.show
 Route::fallback(function () {
     $page = \App\Models\Page::query()->with('sections', 'link')->where('is_front_page', true)->firstOrFail();
 
-    return view('welcome')->with(['page' => $page]);
+    return view('welcome')->with(['page' => $page,
+        'whatsApp' => \App\Models\Whatsapp::query()->inRandomOrder()->first()->phone_number]);
 });
