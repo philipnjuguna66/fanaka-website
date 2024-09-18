@@ -31,6 +31,7 @@ class SimilarProject extends Component
             ->whereNot('id', $this->project?->id)
             ->where('status', ProjectStatusEnum::FOR_SALE)
             ->inRandomOrder()
+            ->latest('id')
             ->with('link')
             ->take(3)
             ->when(isset($this->project?->id), fn(Builder $query) => $query->whereHas('branches', fn($query) =>

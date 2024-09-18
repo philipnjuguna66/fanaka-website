@@ -33,6 +33,7 @@ class LocationProjects extends Component
             ->when(isset($this->branch?->id), fn(Builder $query) => $query->whereHas('branches', fn($query) =>
             $query->whereIn('project_id', $this->branch?->projects()->pluck('project_id')->toArray()))
             )
+            ->latest('id')
             ->paginate(10);
 
         return view('livewire.project.website.list-project')->with(['projects' => $projects]);

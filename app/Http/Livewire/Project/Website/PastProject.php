@@ -26,6 +26,7 @@ class PastProject extends Component
 
         $projects = Project::query()
             ->with('link')
+            ->latest('id')
             ->whereStatus(ProjectStatusEnum::SOLD_OUT);
 
         if ($this->take > 0) {
