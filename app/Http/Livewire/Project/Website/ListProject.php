@@ -31,6 +31,7 @@ class ListProject extends Component
             ->when(filled($this->projectId), fn(Builder $query, $projectId) => $query->where('id', $projectId))
             ->with('link')
             ->latest('id')
+            ->inRandomOrder()
             ->where('status',ProjectStatusEnum::FOR_SALE);
 
         if ($this->take > 0) {
