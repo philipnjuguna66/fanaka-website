@@ -176,8 +176,8 @@ class ProjectResource extends Resource
                         TextInput::make('slug')
                             ->disabled(fn($livewire , ?Project $record =null) => ($livewire instanceof EditProject) && $record->status != ProjectStatusEnum::DRAFT),
                         Textarea::make('meta_description'),
-                        Forms\Components\DateTimePicker::make('created_at')
-                            ->visible(fn($livewire) => $livewire instanceof EditProject)
+                        /*Forms\Components\DateTimePicker::make('created_at')
+                            ->visible(fn($livewire) => $livewire instanceof EditProject)*/
 
                     ])
                     ->collapsible(),
