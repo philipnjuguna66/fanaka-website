@@ -198,6 +198,8 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('created_at')->date(),
                 Tables\Columns\TextColumn::make('name')->searchable(),
 
                 Tables\Columns\TextColumn::make('location')
