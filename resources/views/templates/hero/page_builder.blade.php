@@ -30,7 +30,7 @@
                                     "video" => view('templates.embeded._video_iframe', ["autoplay" => $column['data']['autoplay'] && $isMob && (isset($section->extra['hide_on']) && $section->extra['hide_on'] == "desktop") , 'videoUri' => $column['data']['video_path']])->render(),
                                     "image" => view('templates.hero._image', ['image' => $column['data']['image'], "title" => $column['data']['title'], 'section' => $section])->render(),
                                     "booking_form" => view('templates.hero._site', ['heading' => $column['data']['heading'] ?? null])->render(),
-                                    "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body']])->render(),
+                                    "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body'],'hasBoxShadow' => $column['data']['has_box_shadow'] ?? false])->render(),
                                     "slider" => view('templates.hero._slider', ['sliders' => $column['data']['body'], 'page' => $page])->render(),
                                     "masonary_block" => view('templates.hero.masionary', ['masonrySections' => $column['data']['masonary_block'], 'page' => $page])->render(),
                                     "default" => null,

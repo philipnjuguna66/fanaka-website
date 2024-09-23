@@ -124,6 +124,7 @@ trait HeroImageSectionConcern
                                                 ]),
                                             Block::make('text_area')
                                                 ->schema([
+                                                    Checkbox::make('has_box_shadow'),
                                                     TiptapEditor::make('body'),
                                                 ]),
                                             // $this->masonaryBlocks(),
