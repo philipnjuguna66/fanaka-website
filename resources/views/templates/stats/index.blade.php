@@ -1,9 +1,11 @@
 <div class="relative bg-gray-950">
-    <section  class="bg-opacity-90 py-12 bg-gray-950 bg-cover bg-center bg-norepeat" style=" background-image: url('{{ url(Storage::url($section->extra['bg_image'])) }}');  background-position: center center; background-size: cover; background-repeat: no-repeat ">
+    <section  class="
+    saturate-200   group-hover:scale-105 transition duration-300 ease-linear   inset-0  -z-10 h-full w-full sm:object-cover object-center
+    bg-opacity-90 py-12 bg-gray-950 bg-cover bg-center bg-norepeat" style=" background-image: url('{{ url(Storage::url($section->extra['bg_image'])) }}');  background-position: center center; background-size: cover; background-repeat: no-repeat ">
 
 
         <div class="" >
-            <div class=" mx-auto md:w-4/5 py-12 lg:py-24" >
+            <div class=" mx-auto md:w-4/5" >
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div  {{ $animationEffect }} class="mx-auto max-w-2xl lg:max-w-none">
                         <div class="text-center">
@@ -11,9 +13,9 @@
                             <p class="mt-4 text-lg leading-8  text-gray-50">{{ $section->extra['subheading'] }}</p>
                         </div>
 
-                        <dl class="mt-16 grid grid-cols-1 gap-4 overflow-hidden rounded-2xl justify-center text-center sm:grid-cols-2 lg:grid-cols-4">
+                        <dl class="my-8 grid grid-cols-1 gap-4 overflow-hidden rounded-2xl justify-center text-center sm:grid-cols-2 lg:grid-cols-{{ sizeof($section->extra['counts']) }}">
                             @foreach($section->extra['counts'] as $stat)
-                                <div class="flex flex-col bg-white p-8 shadow-2xl shadow-white/50 rounded-md ">
+                                <div class="flex flex-col bg-white p-8 shadow-2xl rounded-md ">
                                     <dt class="text-sm font-semibold leading-6 text-gray-900">{{ $stat['title'] }}</dt>
                                     <div class="flex justify-center items-center text-center">
                                         <dd
