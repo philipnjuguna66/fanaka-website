@@ -11,7 +11,7 @@
                             <p class="mt-4 text-lg leading-8  text-gray-50">{{ $section->extra['subheading'] }}</p>
                         </div>
 
-                        <dl class="mt-16 grid grid-cols-1 gap-4 overflow-hidden rounded-2xl justify-center text-center sm:grid-cols-2 lg:grid-cols-4">
+                        <dl class="mt-16 grid grid-cols-1 gap-4 overflow-hidden rounded-2xl justify-center text-center sm:grid-cols-2 lg:grid-cols-{{ $section->extra['counts'] }}">
                             @foreach($section->extra['counts'] as $stat)
                                 <div class="flex flex-col bg-white p-8 shadow-2xl shadow-white/50 rounded-md ">
                                     <dt class="text-sm font-semibold leading-6 text-gray-900">{{ $stat['title'] }}</dt>
