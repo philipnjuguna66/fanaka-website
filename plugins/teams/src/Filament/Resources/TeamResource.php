@@ -3,6 +3,7 @@
 namespace Appsorigin\Teams\Filament\Resources;
 
 
+use App\Utils\Enums\TeamTypeEnum;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\CreateTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\EditTeam;
 use Appsorigin\Teams\Filament\Resources\TeamResource\Pages\ListTeam;
@@ -54,22 +55,22 @@ class TeamResource extends Resource
                             ->maxLength(255),
                         RichEditor::make('body')
                             ->minLength(500),
-                        Select::make('category')
+                        Select::make('type')
                             ->required()
-                            ->label('Role')
+                            ->label('Type')
                             ->multiple()
-                            ->options(TeamCategory::query()->pluck('name', 'id')->toArray())
+                            ->options(function () : array {
+                                $options =  [];
+
+                                foreach (TeamTypeEnum::cases() as $case)
+                                {
+                                    $options[$case->name] = $case->value;
+                                }
+                                 return $options;
+                            })
                             ->preload()
                             ->searchable()
-                            ->getSearchResultsUsing(fn(string $search) => TeamCategory::query()->where('name', 'like', "%$search%")->pluck('name', 'id')->toArray())
-                            ->createOptionModalHeading("create a team category")
-                            ->createOptionForm([
-                                TextInput::make('name')
-                                    ->required()
-                                    ->unique('team_categories', 'name')
-                            ])
-                            ->createOptionUsing(fn(array $data) => TeamCategory::create(['name' => $data['name']]))
-                    ]),
+                            ]),
                 ])->columnSpan([
                     12,
                     'lg' => 8,

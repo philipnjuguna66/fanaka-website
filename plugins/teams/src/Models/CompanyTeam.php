@@ -3,6 +3,7 @@
 namespace Appsorigin\Teams\Models;
 
 use App\Models\Permalink;
+use App\Utils\Enums\TeamTypeEnum;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -13,7 +14,8 @@ class CompanyTeam extends Model
     const CACHE_KEY = 'team';
 
     protected $casts = [
-        'socials' => 'json'
+        'socials' => 'json',
+        'type' => TeamTypeEnum::class
     ];
 
     protected $appends = [
