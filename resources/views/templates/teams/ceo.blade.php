@@ -1,5 +1,5 @@
 <div class="shadow-md rounded-md bg-white">
-    <div class="grid grid-cols-1 md:grid-col-12">
+    <div class="grid grid-cols-1 md:grid-cols-12">
         <div class="col-span-3">
             <img class="rounded-2xl object-cover w-[200px] h-[200px]"
 
