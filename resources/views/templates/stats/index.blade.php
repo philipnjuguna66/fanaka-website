@@ -4,7 +4,7 @@
     bg-opacity-90 py-12 bg-gray-950 bg-cover bg-center bg-norepeat" style=" background-image: url('{{ url(Storage::url($section->extra['bg_image'])) }}');  background-position: center center; background-size: cover; background-repeat: no-repeat ">
 
 
-        <div class="" >
+        <div class="py-28" >
             <div class=" mx-auto md:w-4/5" >
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div  {{ $animationEffect }} class="mx-auto max-w-2xl lg:max-w-none">
