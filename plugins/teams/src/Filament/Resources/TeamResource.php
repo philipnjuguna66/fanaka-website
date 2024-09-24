@@ -58,7 +58,6 @@ class TeamResource extends Resource
                         Select::make('type')
                             ->required()
                             ->label('Type')
-                            ->multiple()
                             ->options(function () : array {
                                 $options =  [];
 
