@@ -17,8 +17,6 @@ class CreateTeam extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        unset($data['category']);
-
 
         return $data;
     }
@@ -29,9 +27,6 @@ class CreateTeam extends CreateRecord
         event(new BlogCreatedEvent($this->record));
 
         $data = $this->form->getState();
-
-
-        $this->record->teamCategories()->attach($data['category']);
 
         $this->record->link()->create([
             'slug' => str($this->record->name)->slug(),

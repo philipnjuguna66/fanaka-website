@@ -26,14 +26,12 @@ class EditTeam extends EditRecord
     protected function mutateFormDataBeforeFill(array $data): array
     {
 
-        $data['category'] = $this->record->teamCategories->pluck('id')->toArray();
 
         return $data;
     }
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        unset($data['category']);
 
 
         return $data;
@@ -52,10 +50,6 @@ class EditTeam extends EditRecord
         $companyTeam->saveQuietly();
 
 
-
-        $companyTeam->teamCategories()->detach($data['category']);
-
-        $companyTeam->teamCategories()->attach($data['category']);
 
 
         $this->record->link()?->delete();
