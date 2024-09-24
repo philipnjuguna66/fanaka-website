@@ -15,7 +15,7 @@
                 </a>
 
             </h3>
-            <p class="prose">{{ str($ceo->body)->limit(815,'<a class="button text-white py-0.5 px-2 rounded-md"
+            <p class="prose">{{ str($ceo->body)->limit(700,'<a class="button text-white py-0.5 px-2 rounded-md"
                     href="'. route('permalink.show', $ceo->link?->slug) .'">
                 Read More
                 </a>')->toHtmlString() }}</p>
