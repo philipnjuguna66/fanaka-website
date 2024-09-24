@@ -6,7 +6,7 @@
                  src="{{ \Illuminate\Support\Facades\Storage::url($ceo->featured_image) }}" alt="{{ $ceo->name }}">
 
         </div>
-        <div class="col-span-8">
+        <div class="col-span-8 px-4">
             <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
 
                 <a
@@ -15,7 +15,7 @@
                 </a>
 
             </h3>
-            <p class="prose">{{ str($ceo->body)->limit(200)->toHtmlString() }}</p>
+            <p class="prose">{{ str($ceo->body)->limit(600)->toHtmlString() }}</p>
         </div>
     </div>
 </div>
