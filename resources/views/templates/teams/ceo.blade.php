@@ -15,7 +15,7 @@
                 </a>
 
             </h3>
-            <p class="prose">{{ str($ceo->body)->limit(800)->toHtmlString() }}</p>
+            <p class="prose">{{ str($ceo->body)->limit(803)->toHtmlString() }}</p>
         </div>
     </div>
 </div>
