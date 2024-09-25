@@ -9,7 +9,7 @@
         <div class=" px-4">
             <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
 
-                <a
+                <a class="bg-primary-400"
                     href="{{ route('permalink.show', $team->link?->slug) }}">
                     {{ $team->name }} : {{ $team->title }}
                 </a>
