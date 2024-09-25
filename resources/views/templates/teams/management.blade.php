@@ -7,7 +7,7 @@
 
         </div>
         <div class=" px-4 bg-primary-400">
-            <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
+            <h3 class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-50">
 
                 <a
                     href="{{ route('permalink.show', $team->link?->slug) }}">
