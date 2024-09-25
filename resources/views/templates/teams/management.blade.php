@@ -1,4 +1,4 @@
-<div class="shadow-md rounded-2xl  bg-primary-500 mt-6">
+<div class="shadow-md rounded-2xl  bg-white mt-6">
     <div class="grid grid-cols-1">
         <div class="">
             <img class="rounded-full h-96 w-96 object-cover"
