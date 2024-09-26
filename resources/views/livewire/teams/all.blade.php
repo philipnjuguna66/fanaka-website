@@ -24,7 +24,7 @@
 
 
                 @if(\App\Utils\Enums\TeamTypeEnum::MANAGEMENT == $item->type)
-                    @include('templates.teams.management')
+                    @include('templates.teams.management',['team' => $item])
 
                     @else
                         <img class="rounded-2xl object-cover w-[800px] h-[500px]"
