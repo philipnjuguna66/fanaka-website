@@ -33,7 +33,7 @@
                                     "text_area" => view('templates.hero._text_area', ['html' => $column['data']['body'],'hasBoxShadow' => $column['data']['has_box_shadow'] ?? false])->render(),
                                     "sliders" => view('templates.hero._slider', ['sliders' => $column['data']['images'], 'page' => $page])->render(),
                                     "masonary_block" => view('templates.hero.masionary', ['masonrySections' => $column['data']['masonary_block'], 'page' => $page])->render(),
-                                    "default" => null,
+                                    default => null,
                                 };
                                 ?>
                             <div class="mx-auto md:px-2 py-4  max-w-7xl">
