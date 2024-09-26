@@ -19,7 +19,7 @@
             <div
                 class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-{{ $section->extra['columns'] }} flex-wrap  gap-4">
                 @foreach($section->extra['columns_sections'] as $index => $columns)
-                    <div class="md:text-justify md:max-w-7xl">
+                    <div class="md:text-start md:max-w-7xl">
                         @foreach($columns as $column)
                                 <?php
 
