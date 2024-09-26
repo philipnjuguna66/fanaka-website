@@ -1,4 +1,4 @@
-<div class="bg-gray-50 md:py-12 @if($section->extra['bg_white'] )  bg-white @endif
+<div class=" @if($section->extra['bg_white'] )  bg-white @endif
  @if( isset($section->extra['hide_on']) && $section->extra['hide_on'] == "mobile") hidden md:block @endif
  @if( isset($section->extra['hide_on']) && $section->extra['hide_on'] == "desktop") block  md:hidden @endif
  ">
