@@ -4,7 +4,7 @@
  ">
     <div {{ $animationEffect }} class="md:mx-auto md:w-4/5 py-12 max-w-7xl px-2 lg:px-8">
 
-        <div class="mx-auto max-w-5xl text-center">
+        <div class="mx-auto max-w-5xl text-center py-4">
             <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ $section->extra['heading'] ?? null }}</h1>
 
         </div>
