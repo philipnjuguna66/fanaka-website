@@ -129,7 +129,7 @@ trait HeroImageSectionConcern
                                                     Checkbox::make('has_box_shadow'),
                                                     TiptapEditor::make('body'),
                                                 ]),
-                                            // $this->masonaryBlocks(),
+                                            $this->HtmlBlocks(),
                                         ])
                                         ->disableItemDeletion(false)
                                         ->createItemButtonLabel("Hero Section")
@@ -171,6 +171,12 @@ trait HeroImageSectionConcern
                         TextInput::make('title')->helperText("image title"),
                         Textarea::make('description'),
                     ])
+            ]);
+    }private function HtmlBlocks()
+    {
+        return Block::make('html_block')
+            ->schema([
+                Textarea::make("html")
             ]);
     }
 }
