@@ -94,7 +94,7 @@
                                             wire:navigate
                                             href="https://api.whatsapp.com/send?phone={{ $whatsApp->phone_number }}/?text=Hi+{{ $whatsApp->name }}%2c+I%e2%80%99d+like+to+chat+about+this+property+I+saw+on+the+Fanaka++Website.+Please+contact+me.+{{ url()->current() }}"
                                         >
-                                            Click here to WhatsApp Me {{ $whatsApp->phone_number  }}
+                                            Click here to WhatsApp Me
                                         </a>
                                     </div>
 
