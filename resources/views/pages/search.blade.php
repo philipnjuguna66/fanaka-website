@@ -13,15 +13,15 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     @foreach($results as $index => $result)
-                        <div class="bg-white rounded-2xl shadow-md px-5 py-2">
+                        <div class="bg-white rounded-2xl shadow-md">
                             <a href="{{ $result['url'] }}">
                                 <div>
                                     <img
                                         src="{{ $result['featured_image'] }}"
-                                        class="w-[800px] h-[500px] object-cover"
+                                        class="w-full-[250px] object-cover"
                                         alt="{{ $result['title'] }}"
                                     >
-                                    <div>
+                                    <div class=" px-5 py-2">
                                         {{ $result['title'] }}
                                     </div>
                                 </div>
