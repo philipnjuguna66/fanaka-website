@@ -66,8 +66,15 @@ Route::get('/search', function (\Illuminate\Http\Request $request){
 
     $searchTerm = $request->query('query');
 
+    $result = \App\Utils\Services\SearchResults::make()->search($searchTerm);
 
-    return redirect(url('/property?query='.$searchTerm));
+
+    return view('pages.search')->with([
+        'results' => $result,
+    ]);
+
+
+    //return redirect(url('/property?query='.$searchTerm));
 
 
 })->name('search');

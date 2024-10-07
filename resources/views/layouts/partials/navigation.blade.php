@@ -21,6 +21,14 @@
 
 
             </div>
+
+            <div class="mx-auto">
+               <form method="get" action="{{ route('search') }}">
+                   <input placeholder="search ...." name="query" class="px-4 py-0.5 rounded-xl text-gray-800">
+               </form>
+            </div>
+
+
             {{--<div class="hidden ">
                 <div class="text-white">
                     <div class="flex flex-row gap-4">
