@@ -18,7 +18,7 @@
                                 <div>
                                     <img
                                         src="{{ $result['featured_image'] }}"
-                                        class="w-[500px] h-[800px] object-cover"
+                                        class="w-[800px] h-[500px] object-cover"
                                         alt="{{ $result['title'] }}"
                                     >
                                     <div>
