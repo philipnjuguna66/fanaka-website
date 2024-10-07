@@ -23,8 +23,6 @@
                                     <div>
                                         {{ $result['title'] }}
                                     </div>
-
-
                                 </div>
                             </a>
 
