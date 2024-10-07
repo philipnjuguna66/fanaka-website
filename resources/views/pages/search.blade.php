@@ -27,12 +27,14 @@
                                 </div>
                             </a>
 
-                            <a
-                                href="{{ $result['url'] }}"
-                                class="button"
-                            >
-                                View More Details
-                            </a>
+                           <div class="py-4 px-8">
+                               <a
+                                   href="{{ $result['url'] }}"
+                                   class="button"
+                               >
+                                   View More Details
+                               </a>
+                           </div>
                         </div>
                     @endforeach
                 </div>
