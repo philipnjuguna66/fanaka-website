@@ -14,7 +14,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     @foreach($results as $index => $result)
                         <div class="bg-white rounded-2xl shadow-md">
-                            <a href="{{ $result['url'] }}">
+                            <a href="{{ $result['url'] }}" target="_blank">
                                 <div>
                                     <img
                                         src="{{ $result['featured_image'] }}"
@@ -29,6 +29,7 @@
 
                            <div class="py-4 px-8">
                                <a
+                                   target="_blank"
                                    href="{{ $result['url'] }}"
                                    class="button"
                                >
