@@ -44,7 +44,7 @@
                     </div>
                 @else
                   <div class="h3 mx-auto text-center">
-                      <p>No Result found for {{ old('query') }}</p>
+                      <p>No Result found for {{ request('query', old('query')) }}</p>
                   </div>
               @endif
 
