@@ -24,7 +24,7 @@
 
             <div class="mx-auto">
                <form method="get" action="{{ route('search') }}">
-                   <input placeholder="search ...." name="query" class="px-4 py-0.5 rounded-xl text-gray-800">
+                   <input placeholder="search ...." name="query" value="{{ request('query', old('query')) }}" class="px-4 py-0.5 rounded-xl text-gray-800">
                </form>
             </div>
 
